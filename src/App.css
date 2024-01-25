@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #f9f9f9;
 }
 
 .App-logo {
@@ -35,4 +36,517 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.h1-bold {
+  font-family: "Cairo";
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.h1-med {
+  font-family: "Cairo";
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+.h2 {
+  font-family: "Cairo";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.h2-med {
+  font-family: "Cairo";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.h2-bold {
+  font-family: "Cairo";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.h3 {
+  font-family: "Cairo";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 34px;
+}
+
+.h3-med {
+  font-family: "Cairo";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 34px;
+}
+
+.h3-bold {
+  font-family: "Cairo";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.h4-semi {
+  font-family: "Cairo";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.h4-bold {
+  font-family: "Cairo";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.h5 {
+  font-family: "Cairo";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.h5-med {
+  font-family: "Cairo";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.h5-semi {
+  font-family: "Cairo";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.h5-bold {
+  font-family: "Cairo";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.h6-bold {
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.p {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.p-reg {
+  font-family: "Open Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.p-bold {
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+.p-semi {
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.label {
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.label-reg {
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.label-semi {
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.label-bold {
+  font-family: "Open Sans";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.pass-req {
+  color: #979da3;
+  font-family: "Nunito Sans";
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.reqs {
+  color: #989da3;
+  font-family: "Nunito Sans";
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.card-shadow {
+  box-shadow: 0px 4px 18px 0px rgba(75, 70, 92, 0.05);
+}
+
+/* Styling the range input */
+
+/* Style the thumb (circle) of the range input */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+  width: 20px; /* Set width of the thumb */
+  height: 20px; /* Set height of the thumb */
+  border-radius: 30%; /* Create a circular thumb */
+  background: #ffffff; /* Set background color of the thumb */
+  border: 1px solid #a3a3a3;
+  flex-shrink: 0;
+  cursor: pointer; /* Change cursor style on hover */
+}
+
+input[type="range"]:focus {
+  outline: none; /* Remove the default focus outline for better appearance */
+}
+
+.white-btn {
+  border-radius: 10px;
+  border: 1px solid #00ccb6;
+  background: #fff;
+  font-family: "Open Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: #00ccb6;
+  padding: 10px 20px;
+  height: 50px;
+  transition: 0.3s;
+}
+
+.white-btn:hover {
+  background: #00ccb6;
+  color: #fff;
+}
+
+.red-btn {
+  border-radius: 10px;
+  border: 1px solid #ff4a55;
+  background: #ff4a55;
+  font-family: "Open Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: #fff;
+  padding: 10px 20px;
+  height: 50px;
+  transition: 0.3s;
+}
+
+.cyan-btn {
+  border-radius: 10px;
+  border: 1px solid #00ccb6;
+  background: #00ccb6;
+  font-family: "Open Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: #fff;
+  padding: 10px 20px;
+  height: 50px;
+  transition: 0.3s;
+}
+
+.cyan-btn:hover {
+  background: #fff;
+  color: #00ccb6;
+}
+
+.unactive-btn {
+  border-radius: 10px;
+  border: 1px solid #ebebeb;
+  background: #ebebeb;
+  font-family: "Open Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: #a4a4a4;
+  padding: 10px 20px;
+  height: 50px;
+}
+
+.sidebar-footer {
+  color: #a5a5a5;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+#vertical-chart canvas {
+  width: 100% !important;
+}
+
+.arrow-container {
+  transition: transform 0.3s ease; /* Adjust the duration and easing function as needed */
+}
+
+.action-btn {
+  color: #fff;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+
+/* Dashboard Calendar Styling */
+.custom-calendar {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none !important;
+  padding-bottom: 1rem;
+}
+
+.react-calendar__navigation {
+  font-family: "Cairo" !important;
+  font-size: 18px !important;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  text-transform: uppercase !important;
+  color: #383838;
+  border-radius: 10px;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #ff4a55;
+}
+
+.react-calendar__month-view__weekdays {
+  font-family: "Open Sans" !important;
+  font-size: 13px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #a5a5a5;
+  text-decoration: none !important;
+}
+
+abbr:where([title]) {
+  -webkit-text-decoration: none !important;
+  text-decoration: none !important;
+}
+
+abbr:where([title="Sunday"]),
+abbr:where([title="Saturday"]) {
+  -webkit-text-decoration: none !important;
+  text-decoration: none !important;
+  color: #ff4a55;
+}
+
+.selected-date {
+  background-color: #00ccb6; /* Set your desired background color for the selected date */
+  color: #fff; /* Set your desired text color for the selected date */
+  border-radius: 15px; /* Optional: add rounded corners for a circular appearance */
+  font-family: "Open Sans" !important;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.react-calendar__month-view__days {
+  font-family: "Open Sans" !important;
+  font-size: 15px !important;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  border-radius: 15px;
+  color: #383838;
+}
+
+.react-calendar__tile--active {
+  background-color: #00ccb6 !important;
+  color: white;
+  border-radius: 15px;
+  padding: 0px !important;
+}
+
+.react-calendar__tile--now {
+  background: #00ccb6 !important;
+  color: white !important;
+}
+
+.react-calendar__navigation__label__labelText {
+  text-transform: uppercase !important;
+}
+
+/* Big Calendar Styling */
+
+.rbc-month-view {
+  gap: 13.512px;
+  align-self: stretch;
+  border: none !important;
+  padding: 1rem !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.rbc-header {
+  border: none !important;
+  color: #a4a4a4;
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: "Cairo";
+  font-size: 13.512px !important;
+  font-style: normal;
+  font-weight: 600 !important;
+  line-height: 16.515px;
+}
+
+.rbc-month-row {
+  height: 93.084px !important;
+  border: none !important;
+}
+
+.rbc-row-bg {
+  gap: 10px;
+}
+
+.rbc-off-range-bg {
+  color: #a4a4a4;
+}
+
+.rbc-day-bg {
+  border-radius: 10.509px !important;
+  border: 0.751px solid #ebebeb !important;
+}
+
+.rbc-date-cell {
+  text-align: left !important;
+  font-family: "Cairo";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  color: #383838 !important;
+  padding-left: 20px;
+  padding-top: 8px;
+}
+
+.rbc-today {
+  background-color: #00ccb6 !important;
+  color: white !important;
+  border: 1.501px solid #fff !important;
+}
+
+.rbc-current {
+  color: white !important;
+}
+
+/* .rbc-row-segment {
+  padding: 0 1px 1px 1px;
+} */
+
+/* Styling the scrollbar for Firefox */
+#custom-scroll::-webkit-scrollbar {
+  width: 6px; /* You can adjust the width of the scrollbar */
+}
+
+#custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 90px; /* Border radius of the scrollbar thumb */
+}
+
+/* Styling the scrollbar for other browsers (including Edge, IE, and Opera) */
+#custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent; /* Color of the scrollbar thumb and track */
+}
+
+/* Optional: Styling the scrollbar track */
+#custom-scroll::-webkit-scrollbar-track {
+  background-color: #ebebeb; /* Color of the scrollbar track */
+  border-radius: 90px; /* Border radius of the scrollbar track */
+}
+
+/* Mobile Screen Form Wizard Progress Bar */
+.progress-line {
+  width: 100%;
+  height: 11px;
+  background-color: #ebebeb;
+  border-radius: 90px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-num {
+  height: 100%;
+  background-color: #00ccb6;
+  transition: width 0.5s ease-in-out;
+  border-radius: 10px;
 }
