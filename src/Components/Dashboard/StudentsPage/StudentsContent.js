@@ -4,7 +4,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 
 import plusIcon from "../../../Assets/circle-plus-icon.svg";
 import exportIcon from "../../../Assets/export-icon.svg";
-import AddNewChildrenModal from "../../AddNewChildrenModal";
+import AddNewChildrenModal from "./AddNewChildrenModal";
 
 function StudentsContent() {
   // Get the current path using useLocation from react-router-dom
@@ -14,33 +14,33 @@ function StudentsContent() {
   return (
     <div className="flex px-[30px] flex-col items-start gap-10 self-stretch">
       {/* Title */}
-      <div className="flex justify-between items-center self-stretch">
+      <div className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center gap-5 lg:gap-0 self-stretch">
         <SchoolTitle />
         {/* Conditionally render the button based on the current path */}
         {currentPath === "/students/attendance" ? (
-          <div className="flex justify-end items-center gap-5">
+          <div className="flex flex-col lg:flex-row justify-center lg:justify-end items-end lg:items-center gap-5 self-stretch lg:self-auto">
             <Link
               to="/students/add"
-              className="cyan-btn flex justify-center items-center gap-3"
+              className="cyan-btn flex justify-center items-center gap-3 self-stretch lg:self-auto"
             >
               <img src={plusIcon} alt="" />
               Add Children
             </Link>
-            <Link className="unactive-btn flex justify-center items-center gap-3">
+            <Link className="unactive-btn flex justify-center items-center gap-3 self-stretch lg:self-auto">
               <img src={exportIcon} alt="" />
               Export Data
             </Link>
           </div>
         ) : currentPath === "/students/list" ? (
-          <div className="flex justify-end items-center gap-5">
+          <div className="flex flex-col lg:flex-row justify-center lg:justify-end items-end lg:items-center gap-5 self-stretch lg:self-auto">
             <Link
               to="/students/add"
-              className="cyan-btn flex justify-center items-center gap-3"
+              className="cyan-btn flex justify-center items-center gap-3 self-stretch lg:self-auto"
             >
               <img src={plusIcon} alt="" />
               Add New Student
             </Link>
-            <Link className="unactive-btn flex justify-center items-center gap-3">
+            <Link className="unactive-btn flex justify-center items-center gap-3 self-stretch lg:self-auto">
               <img src={exportIcon} alt="" />
               Export Data
             </Link>

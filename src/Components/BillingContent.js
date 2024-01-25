@@ -6,7 +6,7 @@ function BillingContent() {
   return (
     <div className="flex w-full flex-col gap-[30px] self-stretch">
       {/* Overview Row */}
-      <div className="flex p-5 flec items-start gap-[30px] self-stretch rounded-[10px] bg-white">
+      <div className="flex p-5 flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-white">
         {/* Cards */}
         <div className="flex w-full items-center gap-5 self-stretch">
           <div

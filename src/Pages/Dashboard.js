@@ -37,7 +37,7 @@ function Dashboard() {
           </div>
           {/* Nav Menu */}
           <div className="flex h-11 items-center gap-[30px]">
-            <div className="flexx items-center gap-5">
+            <div className="flex items-center gap-5">
               <div className="relative flex items-center w-10 h-[38.438px]">
                 <img src={navEmailIcon} alt="" />
                 <div

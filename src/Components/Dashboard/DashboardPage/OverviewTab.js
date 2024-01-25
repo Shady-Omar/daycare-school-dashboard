@@ -318,7 +318,7 @@ function OverviewTab() {
                   <div className="flex w-[45px] h-[45px] justify-center items-start gap-2.5">
                     <img src={profileImgPlaceholder} alt="" />
                   </div>
-                  <div className="flexx flex-col justify-center items-start gap-[5px] text-left">
+                  <div className="flex flex-col justify-center items-start gap-[5px] text-left">
                     <p className="label-bold !text-[13px] text-[#383838]">
                       Mohammad Ishtiyaq
                     </p>
@@ -334,7 +334,7 @@ function OverviewTab() {
                   <div className="flex w-[45px] h-[45px] justify-center items-start gap-2.5">
                     <img src={profileImgPlaceholder} alt="" />
                   </div>
-                  <div className="flexx flex-col justify-center items-start gap-[5px] text-left">
+                  <div className="flex flex-col justify-center items-start gap-[5px] text-left">
                     <p className="label-bold !text-[13px] text-[#383838]">
                       Mohammad Ishtiyaq
                     </p>
@@ -350,7 +350,7 @@ function OverviewTab() {
                   <div className="flex w-[45px] h-[45px] justify-center items-start gap-2.5">
                     <img src={profileImgPlaceholder} alt="" />
                   </div>
-                  <div className="flexx flex-col justify-center items-start gap-[5px] text-left">
+                  <div className="flex flex-col justify-center items-start gap-[5px] text-left">
                     <p className="label-bold !text-[13px] text-[#383838]">
                       Mohammad Ishtiyaq
                     </p>
@@ -366,7 +366,7 @@ function OverviewTab() {
                   <div className="flex w-[45px] h-[45px] justify-center items-start gap-2.5">
                     <img src={profileImgPlaceholder} alt="" />
                   </div>
-                  <div className="flexx flex-col justify-center items-start gap-[5px] text-left">
+                  <div className="flex flex-col justify-center items-start gap-[5px] text-left">
                     <p className="label-bold !text-[13px] text-[#383838]">
                       Mohammad Ishtiyaq
                     </p>
@@ -382,7 +382,7 @@ function OverviewTab() {
                   <div className="flex w-[45px] h-[45px] justify-center items-start gap-2.5">
                     <img src={profileImgPlaceholder} alt="" />
                   </div>
-                  <div className="flexx flex-col justify-center items-start gap-[5px] text-left">
+                  <div className="flex flex-col justify-center items-start gap-[5px] text-left">
                     <p className="label-bold !text-[13px] text-[#383838]">
                       Mohammad Ishtiyaq
                     </p>

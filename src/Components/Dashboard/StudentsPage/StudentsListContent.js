@@ -17,16 +17,22 @@ function StudentsListContent() {
         }}
       >
         <div
-          className="flex p-5 items-start gap-[30px] self-stretch rounded-[10px] bg-[#F9F9F9]"
+          className="flex p-5 flex-col lg:flex-row items-start gap-[30px] self-stretch rounded-[10px] bg-[#F9F9F9]"
           style={{ flex: "1 0 0" }}
         >
           <div
-            className="flex p-5 items-center justify-between rounded-[10px] bg-[#FFF]"
+            className="flex p-5 items-center justify-between rounded-[10px] bg-[#FFF] self-stretch lg:self-auto"
             style={{ flex: "1 0 0" }}
           >
-            <div className="flex items-center gap-[15px]">
-              <img src={usersIcon} alt="users" />
-              <div className="w-[108px] h-[55px] text-left">
+            <div
+              className="flex items-center gap-[15px]"
+              style={{ flex: "1 0 0" }}
+            >
+              <img className="w-[43px] h-[43px]" src={usersIcon} alt="users" />
+              <div
+                className="lg:w-[108px] h-[78.941px] lg:h-[55px] text-left"
+                style={{ flex: "1 0 0" }}
+              >
                 <h4 className="h4-bold text-[#202020]">384</h4>
                 <p className="p-reg text-[#A5A5A5]">Students Active</p>
               </div>
@@ -34,10 +40,13 @@ function StudentsListContent() {
             <img src={activeChart} alt="chart" />
           </div>
           <div
-            className="flex p-5 items-center justify-between rounded-[10px] bg-[#FFF]"
+            className="flex p-5 items-center justify-between rounded-[10px] bg-[#FFF] self-stretch lg:self-auto"
             style={{ flex: "1 0 0" }}
           >
-            <div className="flex items-center gap-[15px]">
+            <div
+              className="flex items-center gap-[15px]"
+              style={{ flex: "1 0 0" }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="43"
@@ -54,7 +63,10 @@ function StudentsListContent() {
                   fill="#6418C3"
                 />
               </svg>
-              <div className="w-[120px] h-[55px] text-left">
+              <div
+                className="lg:w-[108px] h-[78.941px] lg:h-[55px] text-left"
+                style={{ flex: "1 0 0" }}
+              >
                 <h4 className="h4-bold text-[#202020]">139</h4>
                 <p className="p-reg text-[#A5A5A5]">Students Inactive</p>
               </div>
@@ -72,7 +84,10 @@ function StudentsListContent() {
           style={{ borderRadius: "0px 0px 10px 10px" }}
         >
           <div className="flex justify-between items-center self-stretch rounded-xl">
-            <div className="flex items-end gap-2.5" style={{ flex: "1 0 0" }}>
+            <div
+              className="flex flex-col lg:flex-row items-start lg:items-end gap-5 lg:gap-2.5"
+              style={{ flex: "1 0 0" }}
+            >
               <div className="flex w-full flex-col items-start gap-2">
                 <label className="label text-[#868686]">Student Name</label>
                 <input
@@ -104,261 +119,252 @@ function StudentsListContent() {
                   {/* <option value="PM">PM</option> */}
                 </select>
               </div>
-              <button className="white-btn">Filter</button>
+              <button className="white-btn self-stretch lg:self-auto">
+                Filter
+              </button>
             </div>
           </div>
-          <div className="flex flex-col items-start gap-5 self-stretch">
-            {/* Sort */}
-            <div className="flex items-start gap-[5px]">
-              <p className="label-reg text-[#646464]">Sort by:</p>
-              <div className="flex items-center gap-[11px] rounded-lg">
-                <p className="label-semi text-[#383838]">First Name</p>
-                <img src={sortArrow} alt="" />
-              </div>
+          {/* Sort */}
+          <div className="flex items-start gap-[5px]">
+            <p className="label-reg text-[#646464]">Sort by:</p>
+            <div className="flex items-center gap-[11px] rounded-lg">
+              <p className="label-semi text-[#383838]">First Name</p>
+              <img src={sortArrow} alt="" />
             </div>
-            {/* Table */}
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
-              <table className="w-full text-left rtl:text-right bg-[#FFF] ">
-                <thead
-                  className=" bg-[#EBEBEB] text-[#383838]"
-                  style={{
-                    borderRadius: "10px 10px 0px 0px",
-                    border: "0.5px solid #EBEBEB",
-                  }}
-                >
-                  <tr>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 p-semi flex items-center gap-[15px]"
-                    >
-                      <input type="checkbox" />
-                      Children Name
-                    </th>
-                    <th scope="col" className="px-6 py-3 p-semi">
-                      Age
-                    </th>
-                    <th scope="col" className="px-6 py-3 p-semi">
-                      Parent
-                    </th>
-                    <th scope="col" className="px-6 py-3 p-semi">
-                      Contract End
-                    </th>
-                    <th scope="col" className="px-6 py-3 p-semi">
-                      Days Left
-                    </th>
-                    <th scope="col" className="px-6 py-3 p-semi">
-                      Child Status
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-6 py-3 label-bold text-[#000] !text-[13px]"
-                    >
-                      Actions
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
-                    <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
-                      <input type="checkbox" />
-                      Mohammad Ishtiyaq
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">5</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      Abdullah Shawez
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      10/21/2023
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">32</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      <div className="flex flex-col items-start gap-2">
-                        <div
-                          className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
-                          style={{ background: "rgba(0, 204, 182, 0.10)" }}
-                        >
-                          <p className="label-semi text-[#00CCB6]">Active</p>
-                        </div>
+          </div>
+          {/* Table */}
+          <div
+            id="custom-scroll"
+            className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+          >
+            <table className="w-full text-left rtl:text-right bg-[#FFF] ">
+              <thead
+                className=" bg-[#EBEBEB] text-[#383838]"
+                style={{
+                  borderRadius: "10px 10px 0px 0px",
+                  border: "0.5px solid #EBEBEB",
+                }}
+              >
+                <tr>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 p-semi flex items-center gap-[15px]"
+                  >
+                    <input type="checkbox" />
+                    Children Name
+                  </th>
+                  <th scope="col" className="px-6 py-3 p-semi">
+                    Age
+                  </th>
+                  <th scope="col" className="px-6 py-3 p-semi">
+                    Parent
+                  </th>
+                  <th scope="col" className="px-6 py-3 p-semi">
+                    Contract End
+                  </th>
+                  <th scope="col" className="px-6 py-3 p-semi">
+                    Days Left
+                  </th>
+                  <th scope="col" className="px-6 py-3 p-semi">
+                    Child Status
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 label-bold text-[#000] !text-[13px]"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
+                  <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
+                    <input type="checkbox" />
+                    Mohammad Ishtiyaq
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">5</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    Abdullah Shawez
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">10/21/2023</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">32</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    <div className="flex flex-col items-start gap-2">
+                      <div
+                        className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
+                        style={{ background: "rgba(0, 204, 182, 0.10)" }}
+                      >
+                        <p className="label-semi text-[#00CCB6]">Active</p>
                       </div>
-                    </td>
-                    <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
-                      <div className="flex flex-col justify-center items-start gap-2">
-                        <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
-                          Actions
-                          <img src={actionArrow} alt="action" />
-                        </div>
+                    </div>
+                  </td>
+                  <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
+                    <div className="flex flex-col justify-center items-start gap-2">
+                      <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
+                        Actions
+                        <img src={actionArrow} alt="action" />
                       </div>
-                    </td>
-                  </tr>
-                  <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
-                    <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
-                      <input type="checkbox" />
-                      Mohammad Ishtiyaq
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">5</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      Abdullah Shawez
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      10/21/2023
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">32</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      <div className="flex flex-col items-start gap-2">
-                        <div
-                          className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
-                          style={{ background: "rgba(0, 204, 182, 0.10)" }}
-                        >
-                          <p className="label-semi text-[#00CCB6]">Active</p>
-                        </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
+                  <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
+                    <input type="checkbox" />
+                    Mohammad Ishtiyaq
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">5</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    Abdullah Shawez
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">10/21/2023</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">32</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    <div className="flex flex-col items-start gap-2">
+                      <div
+                        className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
+                        style={{ background: "rgba(0, 204, 182, 0.10)" }}
+                      >
+                        <p className="label-semi text-[#00CCB6]">Active</p>
                       </div>
-                    </td>
-                    <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
-                      <div className="flex flex-col justify-center items-start gap-2">
-                        <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
-                          Actions
-                          <img src={actionArrow} alt="action" />
-                        </div>
+                    </div>
+                  </td>
+                  <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
+                    <div className="flex flex-col justify-center items-start gap-2">
+                      <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
+                        Actions
+                        <img src={actionArrow} alt="action" />
                       </div>
-                    </td>
-                  </tr>
-                  <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
-                    <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
-                      <input type="checkbox" />
-                      Laiq Ahmad
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">7</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      Abdul Jabbar
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      10/21/2023
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">-</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      <div className="flex flex-col items-start gap-2">
-                        <div
-                          className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
-                          style={{ background: "rgba(255, 74, 85, 0.10)" }}
-                        >
-                          <p className="label-semi text-[#FF4A55]">Inactive</p>
-                        </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
+                  <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
+                    <input type="checkbox" />
+                    Laiq Ahmad
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">7</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    Abdul Jabbar
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">10/21/2023</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">-</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    <div className="flex flex-col items-start gap-2">
+                      <div
+                        className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
+                        style={{ background: "rgba(255, 74, 85, 0.10)" }}
+                      >
+                        <p className="label-semi text-[#FF4A55]">Inactive</p>
                       </div>
-                    </td>
-                    <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
-                      <div className="flex flex-col justify-center items-start gap-2">
-                        <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
-                          Actions
-                          <img src={actionArrow} alt="action" />
-                        </div>
+                    </div>
+                  </td>
+                  <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
+                    <div className="flex flex-col justify-center items-start gap-2">
+                      <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
+                        Actions
+                        <img src={actionArrow} alt="action" />
                       </div>
-                    </td>
-                  </tr>
-                  <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
-                    <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
-                      <input type="checkbox" />
-                      Mohammad Ishtiyaq
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">5</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      Abdullah Shawez
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      10/21/2023
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">32</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      <div className="flex flex-col items-start gap-2">
-                        <div
-                          className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
-                          style={{ background: "rgba(0, 204, 182, 0.10)" }}
-                        >
-                          <p className="label-semi text-[#00CCB6]">Active</p>
-                        </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
+                  <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
+                    <input type="checkbox" />
+                    Mohammad Ishtiyaq
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">5</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    Abdullah Shawez
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">10/21/2023</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">32</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    <div className="flex flex-col items-start gap-2">
+                      <div
+                        className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
+                        style={{ background: "rgba(0, 204, 182, 0.10)" }}
+                      >
+                        <p className="label-semi text-[#00CCB6]">Active</p>
                       </div>
-                    </td>
-                    <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
-                      <div className="flex flex-col justify-center items-start gap-2">
-                        <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
-                          Actions
-                          <img src={actionArrow} alt="action" />
-                        </div>
+                    </div>
+                  </td>
+                  <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
+                    <div className="flex flex-col justify-center items-start gap-2">
+                      <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
+                        Actions
+                        <img src={actionArrow} alt="action" />
                       </div>
-                    </td>
-                  </tr>
-                  <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
-                    <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
-                      <input type="checkbox" />
-                      Mohammad Ishtiyaq
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">5</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      Abdullah Shawez
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      10/21/2023
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">32</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      <div className="flex flex-col items-start gap-2">
-                        <div
-                          className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
-                          style={{ background: "rgba(0, 204, 182, 0.10)" }}
-                        >
-                          <p className="label-semi text-[#00CCB6]">Active</p>
-                        </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
+                  <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
+                    <input type="checkbox" />
+                    Mohammad Ishtiyaq
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">5</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    Abdullah Shawez
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">10/21/2023</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">32</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    <div className="flex flex-col items-start gap-2">
+                      <div
+                        className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
+                        style={{ background: "rgba(0, 204, 182, 0.10)" }}
+                      >
+                        <p className="label-semi text-[#00CCB6]">Active</p>
                       </div>
-                    </td>
-                    <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
-                      <div className="flex flex-col justify-center items-start gap-2">
-                        <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
-                          Actions
-                          <img src={actionArrow} alt="action" />
-                        </div>
+                    </div>
+                  </td>
+                  <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
+                    <div className="flex flex-col justify-center items-start gap-2">
+                      <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
+                        Actions
+                        <img src={actionArrow} alt="action" />
                       </div>
-                    </td>
-                  </tr>
-                  <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
-                    <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
-                      <input type="checkbox" />
-                      Mohammad Ishtiyaq
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">5</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      Abdullah Shawez
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      10/21/2023
-                    </td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">32</td>
-                    <td className="px-6 py-4 p-reg text-[#646464]">
-                      <div className="flex flex-col items-start gap-2">
-                        <div
-                          className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
-                          style={{ background: "rgba(0, 204, 182, 0.10)" }}
-                        >
-                          <p className="label-semi text-[#00CCB6]">Active</p>
-                        </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">
+                  <td className="px-6 py-4 whitespace-nowrap text-[#383838] p-semi flex items-center gap-[15px]">
+                    <input type="checkbox" />
+                    Mohammad Ishtiyaq
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">5</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    Abdullah Shawez
+                  </td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">10/21/2023</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">32</td>
+                  <td className="px-6 py-4 p-reg text-[#646464]">
+                    <div className="flex flex-col items-start gap-2">
+                      <div
+                        className="flex py-[5px] px-2.5 items-center gap-2.5 rounded-md"
+                        style={{ background: "rgba(0, 204, 182, 0.10)" }}
+                      >
+                        <p className="label-semi text-[#00CCB6]">Active</p>
                       </div>
-                    </td>
-                    <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
-                      <div className="flex flex-col justify-center items-start gap-2">
-                        <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
-                          Actions
-                          <img src={actionArrow} alt="action" />
-                        </div>
+                    </div>
+                  </td>
+                  <td className="flex w-[148px] py-[15px] px-5 items-center gap-[15px] self-stretch">
+                    <div className="flex flex-col justify-center items-start gap-2">
+                      <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
+                        Actions
+                        <img src={actionArrow} alt="action" />
                       </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            {/* Footer */}
-            <div className="flex justify-between items-center self-stretch">
-              <p className="label-reg text-[#6D6D6D]">
-                Showing 10 results from 289 data
-              </p>
-            </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {/* Footer */}
+          <div className="flex justify-between items-center self-stretch">
+            <p className="label-reg text-[#6D6D6D]">
+              Showing 10 results from 289 data
+            </p>
           </div>
         </div>
       </div>

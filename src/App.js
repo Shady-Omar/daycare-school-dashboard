@@ -182,7 +182,6 @@ function App() {
             <Route path="add" element={<AddStudentContent />} />
             <Route path="admission" element={<AdmissionContent />}>
               <Route index element={<TotalStudentsContent />} />
-              <Route path="total-children" element={<TotalStudentsContent />} />
               <Route path="applied" element={<AppliedContent />} />
             </Route>
           </Route>

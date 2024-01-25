@@ -12,7 +12,7 @@ function FamilyTab() {
       className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch bg-[#FFF]"
       style={{ borderRadius: "0px 10px 10px 10px" }}
     >
-      <div className="flexx flex-col items-start gap-5 self-stretch">
+      <div className="flex flex-col items-start gap-5 self-stretch">
         {/* Table */}
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
           <table className="w-full text-left rtl:text-right bg-[#FFF] ">

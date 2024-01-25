@@ -1,19 +1,19 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import plusIcon from "../../../Assets/circle-plus-icon.svg";
 
 function AddNewChildrenModal() {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex justify-end items-center gap-5">
+    <>
       <button
         onClick={() => setIsOpen(true)}
-        className="cyan-btn flex justify-center items-center gap-3"
+        className="cyan-btn flex justify-center items-center gap-3 self-stretch lg:self-auto"
       >
         <img src={plusIcon} alt=""></img>
-        Add New Children
+        Add New Student
       </button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
@@ -39,7 +39,10 @@ function AddNewChildrenModal() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen items-start justify-center p-5 overflow-y-scroll"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -50,7 +53,7 @@ function AddNewChildrenModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex w-[582px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF] scale-75">
+              <Dialog.Panel className="flex w-[340px] lg:w-[582px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -74,17 +77,17 @@ function AddNewChildrenModal() {
 
                 <div className="flex flex-col justify-center items-center gap-[30px] self-stretch">
                   {/* Buttons */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                     <button className="cyan-btn w-full">Visited</button>
                     <button className="white-btn w-full">Waitlist</button>
                   </div>
 
-                  {/* Children Info */}
+                  {/* Students info */}
                   <div className="flex flex-col items-start justify-center gap-5 self-stretch">
-                    <p className="label text-[#383838]">Children info</p>
-                    <div className="flex justify-center items-center content-center gap-5 self-stretch flex-wrap">
+                    <p className="label text-[#383838]">Students info</p>
+                    <div className="flex lg:grid grid-cols-2 flex-col justify-center items-center content-center gap-5 self-stretch">
                       <div
-                        className="flex w-[251px] flex-col items-start gap-2"
+                        className="flex self-stretch flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <label className="label text-[#868686]">
@@ -98,7 +101,7 @@ function AddNewChildrenModal() {
                         />
                       </div>
                       <div
-                        className="flex w-[251px] flex-col items-start gap-2"
+                        className="flex self-stretch flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <label className="label text-[#868686]">
@@ -112,7 +115,7 @@ function AddNewChildrenModal() {
                         />
                       </div>
                       <div
-                        className="flex w-[251px] flex-col items-start gap-2"
+                        className="flex self-stretch flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <label className="label text-[#868686]">
@@ -126,12 +129,12 @@ function AddNewChildrenModal() {
                         />
                       </div>
                       <div
-                        className="flex w-[251px] flex-col items-start gap-2"
+                        className="flex self-stretch flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <label className="label text-[#868686]">Gender</label>
                         <select
-                          className="text-[#A4A4A4] w-[251px] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
+                          className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
                           style={{ border: "1px solid #DBDADE" }}
                           defaultValue={"Select"}
                         >
@@ -141,14 +144,14 @@ function AddNewChildrenModal() {
                       </div>
 
                       <div
-                        className="flex w-[251px] flex-col items-start gap-2"
+                        className="flex self-stretch flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <label className="label text-[#868686]">
                           Nationality
                         </label>
                         <select
-                          className="text-[#A4A4A4] w-[251px] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
+                          className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
                           style={{ border: "1px solid #DBDADE" }}
                           defaultValue={"Select"}
                         >
@@ -157,7 +160,7 @@ function AddNewChildrenModal() {
                         </select>
                       </div>
                       <div
-                        className="flex w-[251px] flex-col items-start gap-2"
+                        className="flex self-stretch flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <label className="label text-[#868686]">
@@ -174,9 +177,9 @@ function AddNewChildrenModal() {
                   {/* Family Info */}
                   <div className="flex flex-col items-start justify-center gap-5 self-stretch">
                     <p className="label text-[#383838]">FAMILY info</p>
-                    <div className="flex justify-center items-center content-center gap-5 self-stretch flex-wrap">
+                    <div className="flex lg:grid grid-cols-2 flex-col justify-center items-center content-center gap-5 self-stretch">
                       <div
-                        className="flex w-[251px] flex-col items-start gap-2"
+                        className="flex self-stretch flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <label className="label text-[#868686]">
@@ -190,7 +193,7 @@ function AddNewChildrenModal() {
                         />
                       </div>
                       <div
-                        className="flex w-[251px] flex-col items-start gap-2"
+                        className="flex self-stretch flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <label className="label text-[#868686]">
@@ -204,7 +207,7 @@ function AddNewChildrenModal() {
                         />
                       </div>
                       <div
-                        className="flex flex-col items-start gap-2"
+                        className="flex col-span-2 flex-col items-start gap-2 self-stretch"
                         style={{ flex: "1 0 0" }}
                       >
                         <label className="label text-[#868686]">
@@ -218,7 +221,7 @@ function AddNewChildrenModal() {
                         />
                       </div>
                       <div
-                        className="flex w-[522px] flex-col items-start gap-2"
+                        className="flex col-span-2 flex-col items-start gap-2 self-stretch"
                         style={{ flex: "1 0 0" }}
                       >
                         <label className="label text-[#868686]">
@@ -226,7 +229,7 @@ function AddNewChildrenModal() {
                         </label>
                         <input
                           type="text"
-                          className="text-[#A4A4A4] w-[522px] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                          className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
                           style={{ border: "1px solid #DBDADE" }}
                           placeholder="Enter phone number"
                         />
@@ -240,13 +243,13 @@ function AddNewChildrenModal() {
                       onClick={() => setIsOpen(false)}
                       className="cyan-btn w-full"
                     >
-                      Change Password
+                      Add Students
                     </button>
                     <button
                       onClick={() => setIsOpen(false)}
                       className="p-semi text-[#878787]"
                     >
-                      Cancel and back to profile
+                      Cancel and close
                     </button>
                   </div>
                 </div>
@@ -255,7 +258,7 @@ function AddNewChildrenModal() {
           </div>
         </Dialog>
       </Transition>
-    </div>
+    </>
   );
 }
 

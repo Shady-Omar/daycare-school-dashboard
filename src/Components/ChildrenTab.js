@@ -132,7 +132,7 @@ function ChildrenTab() {
             </div>
             <p className="label-reg text-[#6D6D6D]">5 Children Total</p>
           </div>
-          <div className="flexx flex-col items-start gap-5 self-stretch">
+          <div className="flex flex-col items-start gap-5 self-stretch">
             {/* Table */}
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
               <table className="w-full text-left rtl:text-right bg-[#FFF] ">
