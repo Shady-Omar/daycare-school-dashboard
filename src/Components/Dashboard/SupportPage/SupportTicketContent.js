@@ -1,6 +1,6 @@
 import React from "react";
 
-import actionArrow from "../Assets/action-arrow.svg";
+import actionArrow from "../../../Assets/action-arrow.svg";
 import { Link } from "react-router-dom";
 
 function SupportTicketContent() {
@@ -9,9 +9,9 @@ function SupportTicketContent() {
       {/* Overview */}
       <div className="flex p-5 flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-white">
         {/* Cards */}
-        <div className="flex items-center gap-5 self-stretch">
+        <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center gap-5 self-stretch">
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF]"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF] self-stretch"
             style={{ border: "1px solid #DCDCDC", flex: "1 0 0" }}
           >
             <div className="flex w-12 h-[47px] p-[7.128px] justify-center items-center gap-[14.256px] rounded-[5.702px] bg-[#00CCB6]">
@@ -37,7 +37,7 @@ function SupportTicketContent() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF]"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF] self-stretch"
             style={{ border: "1px solid #DCDCDC", flex: "1 0 0" }}
           >
             <div className="flex w-12 h-[47px] p-[7.128px] justify-center items-center gap-[14.256px] rounded-[5.702px] bg-[#5ECFFF]">
@@ -67,7 +67,7 @@ function SupportTicketContent() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF]"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF] self-stretch"
             style={{ border: "1px solid #DCDCDC", flex: "1 0 0" }}
           >
             <div className="flex w-12 h-[47px] p-[7.128px] justify-center items-center gap-[14.256px] rounded-[5.702px] bg-[#6418C3]">
@@ -114,7 +114,10 @@ function SupportTicketContent() {
             </div>
           </div>
           {/* Table */}
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+          <div
+            id="custom-scroll"
+            className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+          >
             <table className="w-full text-left rtl:text-right bg-[#FFF] ">
               <thead
                 className=" bg-[#EBEBEB] text-[#383838]"

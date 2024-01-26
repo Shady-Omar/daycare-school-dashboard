@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
-import uploadIcon from "../Assets/upload-icon.svg";
+import uploadIcon from "../../../Assets/upload-icon.svg";
 
 const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
 
@@ -34,7 +34,7 @@ function SupportCreateNewTicket() {
 
   return (
     <div className="flex flex-col justify-center items-center gap-[30px] self-stretch">
-      <div className="flex py-10 px-5 flex-col justify-center items-start gap-[30px] self-stretch rounded-[10px] bg-white">
+      <div className="flex py-[30px] lg:py-10 px-5 flex-col justify-center items-start gap-[30px] self-stretch rounded-[10px] bg-white">
         {/* Subject */}
         <div className="flex flex-col items-start gap-2 self-stretch">
           <label className="label text-[#868686]">Subject</label>
@@ -46,9 +46,9 @@ function SupportCreateNewTicket() {
           />
         </div>
         {/* Category & Priority */}
-        <div className="flex items-center gap-[30px] self-stretch">
+        <div className="flex flex-col lg:flex-row items-center gap-[30px] self-stretch">
           <div
-            className="flex flex-col items-start gap-2"
+            className="flex flex-col items-start gap-2 self-stretch"
             style={{ flex: "1 0 0" }}
           >
             <label className="label text-[#868686]">Category</label>
@@ -62,7 +62,7 @@ function SupportCreateNewTicket() {
             </select>
           </div>
           <div
-            className="flex flex-col items-start gap-2"
+            className="flex flex-col items-start gap-2 self-stretch"
             style={{ flex: "1 0 0" }}
           >
             <label className="label text-[#868686]">Priority</label>
@@ -94,7 +94,7 @@ function SupportCreateNewTicket() {
           </div>
           <div
             {...getRootProps()}
-            className="flex h-[307px] p-[30px] flex-col justify-center items-center gap-2.5 self-stretch rounded-[10px] bg-[#F9F9F9]"
+            className="flex h-[320px] lg:h-[357px] p-[30px] flex-col justify-center items-center gap-2.5 self-stretch rounded-[10px] bg-[#F9F9F9]"
             style={{ border: "1px dashed #A4A4A4" }}
           >
             <input {...getInputProps()} />
@@ -115,7 +115,7 @@ function SupportCreateNewTicket() {
                   <button className="flex w-[200px] p-bold h-[50px] justify-center items-center rounded-[10px] bg-[#00CCB6] text-[#FFF] py-[10px] px-5">
                     Choose File
                   </button>
-                  <p className="p-reg text-[#646464]">
+                  <p className="p-reg text-[#646464] text-center">
                     Maximum file size is 50MB.
                   </p>
                 </div>
@@ -125,11 +125,15 @@ function SupportCreateNewTicket() {
         </div>
         {/* Buttons */}
         <div
-          className="flex h-20 pt-[30px] justify-between items-center self-stretch"
+          className="flex flex-col lg:flex-row lg:h-20 pt-[30px] gap-2.5 lg:gap-0 justify-between items-center self-stretch"
           style={{ borderTop: "1px solid #DCDCDC" }}
         >
-          <button className="unactive-btn w-[400px]">Cancel</button>
-          <button className="cyan-btn w-[400px]">Submit</button>
+          <button className="unactive-btn self-stretch lg:self-auto lg:w-[400px]">
+            Cancel
+          </button>
+          <button className="cyan-btn self-stretch lg:self-auto lg:w-[400px]">
+            Submit
+          </button>
         </div>
       </div>
     </div>

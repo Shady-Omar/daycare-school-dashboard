@@ -37,7 +37,10 @@ function SendStudentReportToModal() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-5">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen items-center justify-center p-5 overflow-y-scroll lg:overflow-y-visible"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -48,12 +51,12 @@ function SendStudentReportToModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
                 >
-                  <h5 className="h5-bold text-[#383838]">Check In</h5>
+                  <h5 className="h5-bold text-[#383838]">Send Report To</h5>
 
                   <button onClick={() => setIsOpen(false)}>
                     <svg
@@ -71,9 +74,12 @@ function SendStudentReportToModal() {
                   </button>
                 </Dialog.Title>
 
-                <div className="flex flex-col justify-center items-center gap-[30px] self-stretch">
+                <div
+                  id="custom-scroll"
+                  className="flex flex-col justify-center items-center gap-[30px] self-stretch overflow-x-scroll lg:overflow-x-auto"
+                >
                   {/* Activity */}
-                  <div className="flex flex-col justify-center items-center gap-2.5 self-stretch">
+                  <div className="flex w-[671px] lg:w-auto flex-col justify-center items-start lg:items-center gap-2.5 self-stretch">
                     {/* Heading */}
                     <div
                       className="flex justify-between items-start self-stretch"
@@ -193,20 +199,19 @@ function SendStudentReportToModal() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col items-start gap-2 self-stretch">
-                    <label className="label text-[#868686]">Other</label>
-                    <input
-                      type="text"
-                      className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
-                      style={{ border: "1px solid #DBDADE" }}
-                      placeholder="Send to an email"
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <div className="flex items-center justify-center gap-[30px] self-stretch">
-                    <CheckInReportModal />
-                  </div>
+                </div>
+                <div className="flex flex-col items-start gap-2 self-stretch">
+                  <label className="label text-[#868686]">Other</label>
+                  <input
+                    type="text"
+                    className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                    style={{ border: "1px solid #DBDADE" }}
+                    placeholder="Send to an email"
+                  />
+                </div>
+                {/* Submit Button */}
+                <div className="flex items-center justify-center gap-[30px] self-stretch">
+                  <CheckInReportModal />
                 </div>
               </Dialog.Panel>
             </Transition.Child>

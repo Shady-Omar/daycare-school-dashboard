@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
-import uploadIcon from "../Assets/upload-icon.svg";
+import uploadIcon from "../../../Assets/upload-icon.svg";
 
 const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
 
@@ -33,9 +33,9 @@ function SupportViewTicket() {
   });
   return (
     <div className="flex flex-col justify-center items-center gap-[30px] self-stretch">
-      <div className="flex py-10 px-5 flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-white">
+      <div className="flex py-[30px] lg:py-10 px-5 flex-col justify-center lg:justify-normal items-start gap-[30px] self-stretch rounded-[10px] bg-white">
         {/* Info */}
-        <div className="flex py-5 px-[60px] justify-between items-center self-stretch rounded-[10px] bg-[#F9F9F9]">
+        <div className="flex flex-col lg:flex-row p-[30px] lg:p-0 lg:py-5 lg:px-[60px] gap-5 lg:gap-0 lg:justify-between items-start lg:items-center self-stretch rounded-[10px] bg-[#F9F9F9]">
           <div className="flex flex-col items-start gap-[5px]">
             <p className="p-reg text-[#383838]">Ticket ID</p>
             <h5 className="h5-bold text-[#00CCB6]">2334434</h5>
@@ -65,23 +65,27 @@ function SupportViewTicket() {
             style={{ border: "1px solid #DBDADE" }}
           >
             <div
-              className="flex py-5 px-[30px] justify-end items-center gap-3 rounded-md"
+              className="flex py-5 px-[30px] justify-end items-center gap-3 rounded-md overflow-hidden"
               style={{ flex: "1 0 0" }}
             >
-              <p className="p-reg text-[#383838] text-left">
+              <p className="hidden lg:block p-reg !text-[15px] text-[#383838] text-left">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
               </p>
+              <p className="lg:hidden p-reg !text-[15px] text-[#383838] text-left">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore.
+              </p>
             </div>
           </div>
         </div>
         {/* Messages */}
-        <div className="flex flex-col items-start gap-[30px] self-stretch">
+        <div className="flex flex-col items-start gap-[30px] self-stretch text-left">
           <div className="flex flex-col items-start gap-2.5 self-stretch">
             <div className="flex py-[18px] px-[15px] items-start gap-2.5 rounded-xl bg-[#F9F9F9]">
-              <p className="p-reg text-[#383838]">
+              <p className="p-reg !text-[15px] text-[#383838]">
                 Can you arrange schedule for next meeting?
               </p>
             </div>
@@ -89,7 +93,7 @@ function SupportViewTicket() {
           </div>
           <div className="flex flex-col items-start gap-2.5 self-stretch">
             <div className="flex py-[18px] px-[15px] items-start gap-2.5 rounded-xl bg-[#5ECFFF]">
-              <p className="p-reg text-white">
+              <p className="p-reg !text-[15px] text-white">
                 Okay, I’ll arrange it soon. i noftify you when it’s done
               </p>
             </div>
@@ -114,7 +118,7 @@ function SupportViewTicket() {
           </div>
           <div
             {...getRootProps()}
-            className="flex h-[357px] p-[30px] flex-col justify-center items-center gap-2.5 self-stretch rounded-[10px] bg-[#F9F9F9]"
+            className="flex h-[320px] lg:h-[357px] p-[30px] flex-col justify-center items-center gap-2.5 self-stretch rounded-[10px] bg-[#F9F9F9]"
             style={{ border: "1px dashed #A4A4A4" }}
           >
             <input {...getInputProps()} />

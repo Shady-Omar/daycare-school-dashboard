@@ -1,15 +1,19 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-import reportResultPlaceholder from "../Assets/report-result-placeholder.png";
 import SendStudentReportToModal from "./SendStudentReportToModal";
+import reportResultPlaceholder from "../../../../Assets/report-result-placeholder.png";
+import checkPrefix from "../../../../Assets/check-prefix.svg";
 
 function StudentEmailReportModal() {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className="cyan-btn w-[340px]">
+      <button
+        onClick={() => setIsOpen(true)}
+        className="cyan-btn lg:w-[340px] order-1 lg:order-2 self-stretch lg:self-auto"
+      >
         Email Report
       </button>
       <Transition appear show={isOpen} as={Fragment}>
@@ -36,7 +40,10 @@ function StudentEmailReportModal() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-5">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen items-start lg:items-center justify-center p-5 overflow-y-scroll lg:overflow-y-visible"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -47,7 +54,7 @@ function StudentEmailReportModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -75,7 +82,7 @@ function StudentEmailReportModal() {
                 <div className="flex flex-col justify-center items-center gap-[30px] self-stretch">
                   {/* Student Card */}
                   <div
-                    className="flex justify-between p-[15px] items-center self-stretch rounded-[10px] bg-white"
+                    className="flex flex-col lg:flex-row lg:justify-between p-[15px] items-start lg:items-center gap-2.5 lg:gap-0 self-stretch rounded-[10px] bg-white"
                     style={{ border: "1px solid #DCDCDC" }}
                   >
                     {/* Profile */}
@@ -111,20 +118,7 @@ function StudentEmailReportModal() {
                         className="flex py-5 items-center gap-[15px] self-stretch"
                         style={{ flex: "1 0 0" }}
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="28"
-                          height="29"
-                          viewBox="0 0 28 29"
-                          fill="none"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M14 26.1654C20.4435 26.1654 25.6667 20.9422 25.6667 14.4987C25.6667 8.0552 20.4435 2.83203 14 2.83203C7.55654 2.83203 2.33337 8.0552 2.33337 14.4987C2.33337 20.9422 7.55654 26.1654 14 26.1654ZM18.1254 10.3734C18.3444 10.1546 18.6414 10.0318 18.951 10.032C19.2606 10.0323 19.5574 10.1555 19.7762 10.3745C19.995 10.5936 20.1177 10.8906 20.1175 11.2002C20.1173 11.5098 19.9941 11.8066 19.775 12.0254L13.1799 18.6205L13.1752 18.6252C13.0671 18.7339 12.9386 18.8202 12.797 18.8791C12.6555 18.9379 12.5037 18.9682 12.3504 18.9682C12.1971 18.9682 12.0453 18.9379 11.9037 18.8791C11.7622 18.8202 11.6336 18.7339 11.5255 18.6252L11.5209 18.6205L8.22504 15.3247C8.11361 15.2171 8.02473 15.0883 7.96359 14.946C7.90245 14.8037 7.87026 14.6506 7.86892 14.4957C7.86757 14.3408 7.89709 14.1871 7.95575 14.0438C8.01441 13.9004 8.10104 13.7701 8.21058 13.6606C8.32012 13.551 8.45038 13.4644 8.59376 13.4057C8.73714 13.3471 8.89077 13.3176 9.04568 13.3189C9.20059 13.3203 9.35367 13.3524 9.49601 13.4136C9.63835 13.4747 9.76709 13.5636 9.87471 13.675L12.3504 16.1495L18.1254 10.3745V10.3734Z"
-                            fill="#00CCB6"
-                          />
-                        </svg>
+                        <img className="w-7 h-7" src={checkPrefix} alt="" />
                         <h5 className="h5-bold text-[#383838]">
                           Abdullah Checked In
                         </h5>
@@ -147,20 +141,7 @@ function StudentEmailReportModal() {
                         className="flex py-5 items-center gap-[15px] self-stretch"
                         style={{ flex: "1 0 0" }}
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="28"
-                          height="29"
-                          viewBox="0 0 28 29"
-                          fill="none"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M14 26.1654C20.4435 26.1654 25.6667 20.9422 25.6667 14.4987C25.6667 8.0552 20.4435 2.83203 14 2.83203C7.55654 2.83203 2.33337 8.0552 2.33337 14.4987C2.33337 20.9422 7.55654 26.1654 14 26.1654ZM18.1254 10.3734C18.3444 10.1546 18.6414 10.0318 18.951 10.032C19.2606 10.0323 19.5574 10.1555 19.7762 10.3745C19.995 10.5936 20.1177 10.8906 20.1175 11.2002C20.1173 11.5098 19.9941 11.8066 19.775 12.0254L13.1799 18.6205L13.1752 18.6252C13.0671 18.7339 12.9386 18.8202 12.797 18.8791C12.6555 18.9379 12.5037 18.9682 12.3504 18.9682C12.1971 18.9682 12.0453 18.9379 11.9037 18.8791C11.7622 18.8202 11.6336 18.7339 11.5255 18.6252L11.5209 18.6205L8.22504 15.3247C8.11361 15.2171 8.02473 15.0883 7.96359 14.946C7.90245 14.8037 7.87026 14.6506 7.86892 14.4957C7.86757 14.3408 7.89709 14.1871 7.95575 14.0438C8.01441 13.9004 8.10104 13.7701 8.21058 13.6606C8.32012 13.551 8.45038 13.4644 8.59376 13.4057C8.73714 13.3471 8.89077 13.3176 9.04568 13.3189C9.20059 13.3203 9.35367 13.3524 9.49601 13.4136C9.63835 13.4747 9.76709 13.5636 9.87471 13.675L12.3504 16.1495L18.1254 10.3745V10.3734Z"
-                            fill="#00CCB6"
-                          />
-                        </svg>
+                        <img className="w-7 h-7" src={checkPrefix} alt="" />
                         <h5 className="h5-bold text-[#383838]">Diaper</h5>
                       </div>
                       <div
@@ -181,20 +162,7 @@ function StudentEmailReportModal() {
                         className="flex py-5 items-center gap-[15px] self-stretch"
                         style={{ flex: "1 0 0" }}
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="28"
-                          height="29"
-                          viewBox="0 0 28 29"
-                          fill="none"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M14 26.1654C20.4435 26.1654 25.6667 20.9422 25.6667 14.4987C25.6667 8.0552 20.4435 2.83203 14 2.83203C7.55654 2.83203 2.33337 8.0552 2.33337 14.4987C2.33337 20.9422 7.55654 26.1654 14 26.1654ZM18.1254 10.3734C18.3444 10.1546 18.6414 10.0318 18.951 10.032C19.2606 10.0323 19.5574 10.1555 19.7762 10.3745C19.995 10.5936 20.1177 10.8906 20.1175 11.2002C20.1173 11.5098 19.9941 11.8066 19.775 12.0254L13.1799 18.6205L13.1752 18.6252C13.0671 18.7339 12.9386 18.8202 12.797 18.8791C12.6555 18.9379 12.5037 18.9682 12.3504 18.9682C12.1971 18.9682 12.0453 18.9379 11.9037 18.8791C11.7622 18.8202 11.6336 18.7339 11.5255 18.6252L11.5209 18.6205L8.22504 15.3247C8.11361 15.2171 8.02473 15.0883 7.96359 14.946C7.90245 14.8037 7.87026 14.6506 7.86892 14.4957C7.86757 14.3408 7.89709 14.1871 7.95575 14.0438C8.01441 13.9004 8.10104 13.7701 8.21058 13.6606C8.32012 13.551 8.45038 13.4644 8.59376 13.4057C8.73714 13.3471 8.89077 13.3176 9.04568 13.3189C9.20059 13.3203 9.35367 13.3524 9.49601 13.4136C9.63835 13.4747 9.76709 13.5636 9.87471 13.675L12.3504 16.1495L18.1254 10.3745V10.3734Z"
-                            fill="#00CCB6"
-                          />
-                        </svg>
+                        <img className="w-7 h-7" src={checkPrefix} alt="" />
                         <h5 className="h5-bold text-[#383838]">Teething</h5>
                       </div>
                       <div
@@ -209,7 +177,7 @@ function StudentEmailReportModal() {
                   </div>
 
                   {/* Submit Button */}
-                  <div className="flex items-center justify-center gap-[30px] self-stretch">
+                  <div className="flex flex-col lg:flex-row items-center justify-center gap-5 lg:gap-[30px] self-stretch">
                     <button
                       onClick={() => setIsOpen(false)}
                       className="white-btn flex justify-center w-full items-center gap-3"

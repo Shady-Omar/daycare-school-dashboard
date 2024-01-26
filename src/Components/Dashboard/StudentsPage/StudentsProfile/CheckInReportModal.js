@@ -36,7 +36,10 @@ function SendStudentReportToModal() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-5">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen items-start lg:items-center justify-center p-5 overflow-y-scroll"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -47,7 +50,7 @@ function SendStudentReportToModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -83,9 +86,9 @@ function SendStudentReportToModal() {
                     </div>
                   </div>
                   {/* Date */}
-                  <div className="flex justify-center items-end gap-[30px] self-stretch">
+                  <div className="flex flex-col lg:flex-row justify-center items-end gap-2.5 lg:gap-[30px] self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">
@@ -100,12 +103,14 @@ function SendStudentReportToModal() {
                         {/* <option value="PM">PM</option> */}
                       </select>
                     </div>
-                    <button className="white-btn w-[110px]">Edit</button>
+                    <button className="white-btn self-stretch lg:self-auto lg:w-[110px]">
+                      Edit
+                    </button>
                   </div>
                   {/* Staff */}
-                  <div className="flex justify-center items-end gap-[30px] self-stretch">
+                  <div className="flex flex-col lg:flex-row justify-center items-end gap-2.5 lg:gap-[30px] self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Staff Only</label>
@@ -118,12 +123,14 @@ function SendStudentReportToModal() {
                         {/* <option value="PM">PM</option> */}
                       </select>
                     </div>
-                    <button className="white-btn w-[110px]">Edit</button>
+                    <button className="white-btn self-stretch lg:self-auto lg:w-[110px]">
+                      Edit
+                    </button>
                   </div>
                   {/* Notes */}
-                  <div className="flex justify-center items-end gap-[30px] self-stretch">
+                  <div className="flex flex-col lg:flex-row justify-center items-end gap-2.5 lg:gap-[30px] self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">
@@ -136,11 +143,13 @@ function SendStudentReportToModal() {
                         placeholder="Notes here"
                       />
                     </div>
-                    <button className="white-btn w-[110px]">Edit</button>
+                    <button className="white-btn self-stretch lg:self-auto lg:w-[110px]">
+                      Edit
+                    </button>
                   </div>
 
                   {/* Submit Button */}
-                  <div className="flex items-center justify-center gap-[30px] self-stretch">
+                  <div className="flex flex-col lg:flex-row items-center justify-center gap-5 lg:gap-[30px] self-stretch">
                     <button
                       onClick={() => setIsOpen(false)}
                       className="flex h-[50px] justify-center items-center rounded-[10px] bg-white py-2.5 px-5 gap-3 p-bold text-[#FF4A55] !text-[15px] w-full"

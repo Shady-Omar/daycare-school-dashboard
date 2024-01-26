@@ -5,10 +5,10 @@ function SupportNoTicketContent() {
   return (
     <>
       {/* Overview */}
-      <div className="flex p-5 flex-col items-center gap-[30px] self-stretch rounded-[10px] bg-white">
+      <div className="flex p-[30px_20px_20px_20px] lg:p-5 flex-col items-center gap-[30px] self-stretch rounded-[10px] bg-white">
         <h2 className="h2-bold text-[#202020]">Welcome to Support</h2>
         {/* Cards */}
-        <div className="flex items-center gap-5 self-stretch">
+        <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center gap-5 self-stretch">
           <div
             className="flex py-[30px] px-5 items-center gap-7 rounded-[7.2px] bg-white"
             style={{ flex: "1 0 0", border: "1px solid #DCDCDC" }}
@@ -33,8 +33,10 @@ function SupportNoTicketContent() {
               className="flex flex-col justify-center items-start gap-[5px]"
               style={{ flex: "1 0 0" }}
             >
-              <h4 className="h4-bold text-[#383838]">Have a request?</h4>
-              <p className="p-reg text-[#878787]">
+              <h4 className="h4-bold text-left text-[#383838]">
+                Have a request?
+              </h4>
+              <p className="p-reg !text-[15px] text-left text-[#878787]">
                 Create a help ticket and our teams will help you as soon as
                 possible
               </p>
@@ -64,8 +66,10 @@ function SupportNoTicketContent() {
               className="flex flex-col justify-center items-start gap-[5px]"
               style={{ flex: "1 0 0" }}
             >
-              <h4 className="h4-bold text-[#383838]">Have an objection?</h4>
-              <p className="p-reg text-[#878787]">
+              <h4 className="h4-bold text-left text-[#383838]">
+                Have an objection?
+              </h4>
+              <p className="p-reg !text-[15px] text-left text-[#878787]">
                 Create a help ticket and our teams will help you as soon as
                 possible
               </p>
@@ -95,8 +99,10 @@ function SupportNoTicketContent() {
               className="flex flex-col justify-center items-start gap-[5px]"
               style={{ flex: "1 0 0" }}
             >
-              <h4 className="h4-bold text-[#383838]">Have a suggestion?</h4>
-              <p className="p-reg text-[#878787]">
+              <h4 className="h4-bold text-left text-[#383838]">
+                Have a suggestion?
+              </h4>
+              <p className="p-reg !text-[15px] text-left text-[#878787]">
                 Create a help ticket and our teams will help you as soon as
                 possible
               </p>
@@ -119,7 +125,10 @@ function SupportNoTicketContent() {
                 </p>
               </div>
               {/* button */}
-              <Link to="/support/ticket" className="cyan-btn">
+              <Link
+                to="/support/ticket"
+                className="cyan-btn flex justify-center items-center"
+              >
                 Create Ticket
               </Link>
             </div>

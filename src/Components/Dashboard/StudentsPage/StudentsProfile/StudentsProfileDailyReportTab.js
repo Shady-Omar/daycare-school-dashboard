@@ -4,21 +4,21 @@ import babyIcon from "../../../../Assets/baby-bottle-icon.svg";
 import diaperIcon from "../../../../Assets/diaper-icon.svg";
 import imageIcon from "../../../../Assets/image-icon.svg";
 import photosPlaceholder from "../../../../Assets/photos-placeholder.png";
-import StudentEmailReportModal from "../../../StudentEmailReportModal";
+import StudentEmailReportModal from "./StudentEmailReportModal";
 
 function StudentsProfileDailyReportTab() {
   return (
     <div className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch rounded-[10px] bg-white">
       {/* Title */}
-      <div className="flex flex-col items-start gap-[5px] self-stretch">
+      <div className="flex flex-col items-start gap-[5px] self-stretch order-2 lg:order-1">
         <h3 className="h3-med text-[#383838]">September 10, 2023</h3>
-        <p className="p-reg text-[#383838]">
+        <p className="p-reg !text-[15px] text-[#383838] text-left">
           Family can opt into automatic daily report emails from their profile.
         </p>
       </div>
-      {/* Allergies */}
+      {/* Switch */}
       <div
-        className="flex justify-between items-start self-stretch"
+        className="hidden lg:flex justify-between items-start self-stretch lg:order-2"
         style={{ borderBottom: "1px solid #DCDCDC" }}
       >
         <div
@@ -42,16 +42,16 @@ function StudentsProfileDailyReportTab() {
       {/* Button */}
       <StudentEmailReportModal />
       {/* activity cards */}
-      <div className="flex flex-col items-start justify-center gap-[30px] self-stretch">
+      <div className="flex flex-col items-start justify-center gap-[30px] self-stretch order-3 lg:order-4">
         <div className="flex flex-col items-start justify-center gap-[15px] self-stretch">
           <div
-            className="flex h-[75px] px-5 justify-between items-center self-stretch rounded-[10px]"
+            className="flex flex-col lg:flex-row lg:h-[75px] p-5 lg:p-0 lg:px-5 lg:justify-between items-start lg:items-center self-stretch rounded-[10px] gap-2.5 lg:gap-0"
             style={{ border: "1px solid #DCDCDC" }}
           >
             {/* Name */}
-            <div className="flex w-[555.5px] items-center gap-[50px]">
+            <div className="flex lg:w-[555.5px] items-center gap-[50px] self-stretch lg:self-auto">
               {/* Text */}
-              <div className="flex items-center gap-[15px] shrink-0">
+              <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center self-stretch lg:self-auto gap-[15px] shrink-0">
                 <div
                   className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 shrink-0 rounded-[5px]"
                   style={{ background: "rgba(0, 204, 182, 0.10)" }}
@@ -68,17 +68,17 @@ function StudentsProfileDailyReportTab() {
             </div>
             {/* Action */}
             <div className="flex justify-end items-center gap-[30px]">
-              <p className="p-reg text-[#878787]">4:32 PM</p>
+              <p className="label-reg text-[#878787]">4:32 PM</p>
             </div>
           </div>
           <div
-            className="flex h-[75px] px-5 justify-between items-center self-stretch rounded-[10px]"
+            className="flex flex-col lg:flex-row lg:h-[75px] p-5 lg:p-0 lg:px-5 lg:justify-between items-start lg:items-center self-stretch rounded-[10px] gap-2.5 lg:gap-0"
             style={{ border: "1px solid #DCDCDC" }}
           >
             {/* Name */}
-            <div className="flex w-[555.5px] items-center gap-[50px]">
+            <div className="flex lg:w-[555.5px] items-center gap-[50px] self-stretch lg:self-auto">
               {/* Text */}
-              <div className="flex items-center gap-[15px] shrink-0">
+              <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center self-stretch lg:self-auto gap-[15px] shrink-0">
                 <div
                   className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 shrink-0 rounded-[5px]"
                   style={{ background: "rgba(100, 24, 195, 0.10)" }}
@@ -99,13 +99,13 @@ function StudentsProfileDailyReportTab() {
             </div>
           </div>
           <div
-            className="flex h-[75px] px-5 justify-between items-center self-stretch rounded-[10px]"
+            className="flex flex-col lg:flex-row lg:h-[75px] p-5 lg:p-0 lg:px-5 lg:justify-between items-start lg:items-center self-stretch rounded-[10px] gap-2.5 lg:gap-0"
             style={{ border: "1px solid #DCDCDC" }}
           >
             {/* Name */}
-            <div className="flex w-[555.5px] items-center gap-[50px]">
+            <div className="flex lg:w-[555.5px] items-center gap-[50px] self-stretch lg:self-auto">
               {/* Text */}
-              <div className="flex items-center gap-[15px] shrink-0">
+              <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center self-stretch lg:self-auto gap-[15px] shrink-0">
                 <div
                   className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 shrink-0 rounded-[5px]"
                   style={{ background: "rgba(94, 207, 255, 0.10)" }}
@@ -135,13 +135,13 @@ function StudentsProfileDailyReportTab() {
             </div>
           </div>
           <div
-            className="flex h-[75px] px-5 justify-between items-center self-stretch rounded-[10px]"
+            className="flex flex-col lg:flex-row lg:h-[75px] p-5 lg:p-0 lg:px-5 lg:justify-between items-start lg:items-center self-stretch rounded-[10px] gap-2.5 lg:gap-0"
             style={{ border: "1px solid #DCDCDC" }}
           >
             {/* Name */}
-            <div className="flex w-[555.5px] items-center gap-[50px]">
+            <div className="flex lg:w-[555.5px] items-center gap-[50px] self-stretch lg:self-auto">
               {/* Text */}
-              <div className="flex items-center gap-[15px] shrink-0">
+              <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center self-stretch lg:self-auto gap-[15px] shrink-0">
                 <div
                   className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 shrink-0 rounded-[5px]"
                   style={{ background: "rgba(255, 171, 45, 0.10)" }}
@@ -173,18 +173,18 @@ function StudentsProfileDailyReportTab() {
             </div>
           </div>
           <div
-            className="flex flex-col p-5 items-center gap-5 self-stretch rounded-[10px] overflow-hidden"
+            className="flex flex-col p-5 items-start lg:items-center gap-5 self-stretch rounded-[10px] lg:overflow-hidden"
             style={{ border: "1px solid #DCDCDC" }}
           >
             {/* Top */}
             <div
-              className="flex pb-5 justify-between items-center self-stretch"
+              className="flex pb-5 flex-col lg:flex-row lg:justify-between items-start lg:items-center self-stretch gap-5 lg:gap-0"
               style={{ borderBottom: "1px solid #DCDCDC" }}
             >
               {/* Name */}
-              <div className="flex w-[555.5px] items-center gap-[50px]">
+              <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center gap-[50px] self-stretch lg:self-auto">
                 {/* Text */}
-                <div className="flex w-[190px] items-center gap-[15px] shrink-0">
+                <div className="flex flex-col lg:flex-row self-stretch items-start lg:items-center gap-[15px] shrink-0">
                   <div
                     className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 shrink-0 rounded-[5px]"
                     style={{ background: "rgba(227, 40, 175, 0.10)" }}
@@ -205,7 +205,7 @@ function StudentsProfileDailyReportTab() {
               </div>
             </div>
             {/* Images */}
-            <div className="flex items-center gap-5 self-stretch">
+            <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center gap-5 self-stretch">
               <img src={photosPlaceholder} alt="" />
               <img src={photosPlaceholder} alt="" />
               <img src={photosPlaceholder} alt="" />

@@ -201,7 +201,9 @@ function SchoolTitle() {
         ) : currentPath.includes("/report") ? (
           <h2 className="h2-bold text-[#202020]">Reporting</h2>
         ) : currentPath.includes("/support") ? (
-          currentPath === "/support/ticket/create" ? (
+          currentPath === "/support/ticket" ? (
+            <h2 className="h2-bold text-[#202020]">Support</h2>
+          ) : currentPath === "/support/ticket/create" ? (
             <h2 className="h2-bold text-[#202020]">Create New Ticket</h2>
           ) : currentPath === "/support/ticket/view" ? (
             <h2 className="h2-bold text-[#202020]">Ticket Information</h2>

@@ -71,11 +71,10 @@ import StudentsProfileActivitiesTab from "./Components/Dashboard/StudentsPage/St
 import StudentsProfileAttachmentsTab from "./Components/Dashboard/StudentsPage/StudentsProfile/StudentsProfileAttachmentsTab";
 import StudentsProfileDailyReportTab from "./Components/Dashboard/StudentsPage/StudentsProfile/StudentsProfileDailyReportTab";
 import StudentsProfileInvoicesTab from "./Components/Dashboard/StudentsPage/StudentsProfile/StudentsProfileInvoicesTab";
-import Support from "./Pages/Support";
-import SupportNoTicketContent from "./Components/SupportNoTicketContent";
-import SupportTicketContent from "./Components/SupportTicketContent";
-import SupportCreateNewTicket from "./Components/SupportCreateNewTicket";
-import SupportViewTicket from "./Components/SupportViewTicket";
+import SupportNoTicketContent from "./Components/Dashboard/SupportPage/SupportNoTicketContent";
+import SupportTicketContent from "./Components/Dashboard/SupportPage/SupportTicketContent";
+import SupportCreateNewTicket from "./Components/Dashboard/SupportPage/SupportCreateNewTicket";
+import SupportViewTicket from "./Components/Dashboard/SupportPage/SupportViewTicket";
 import FormWizard from "./Pages/FormWizard";
 import FormWizardOne from "./Components/FormWizard/FormWizardOne";
 import FormWizardTwo from "./Components/FormWizard/FormWizardTwo";
@@ -92,6 +91,7 @@ import ResubmitPage from "./Components/Dashboard/DashboardPage/ResubmitPage";
 import SettingsContent from "./Components/Dashboard/SettingsPage/SettingsContent";
 import ServicesContent from "./Components/Dashboard/ServicesPage/ServicesContent";
 import StudentsContent from "./Components/Dashboard/StudentsPage/StudentsContent";
+import SupportContent from "./Components/Dashboard/SupportPage/SupportContent";
 
 function App() {
   return (
@@ -185,6 +185,16 @@ function App() {
               <Route path="applied" element={<AppliedContent />} />
             </Route>
           </Route>
+
+          {/* Support Page */}
+          <Route path={"support"} element={<SupportContent />}>
+            {/* Make 'Support' the default child route */}
+            <Route index element={<SupportNoTicketContent />} />
+            <Route path="no-ticket" element={<SupportNoTicketContent />} />
+            <Route path="ticket" element={<SupportTicketContent />} />
+            <Route path="ticket/create" element={<SupportCreateNewTicket />} />
+            <Route path="ticket/view" element={<SupportViewTicket />} />
+          </Route>
           {/*  */}
         </Route>
 
@@ -265,16 +275,6 @@ function App() {
         <Route path={"/review"} element={<Review />}>
           {/* Make 'reviews' the default child route */}
           <Route index element={<ReviewsContent />} />
-        </Route>
-
-        {/* Support */}
-        <Route path={"/support"} element={<Support />}>
-          {/* Make 'Support' the default child route */}
-          <Route index element={<SupportNoTicketContent />} />
-          <Route path="no-ticket" element={<SupportNoTicketContent />} />
-          <Route path="ticket" element={<SupportTicketContent />} />
-          <Route path="ticket/create" element={<SupportCreateNewTicket />} />
-          <Route path="ticket/view" element={<SupportViewTicket />} />
         </Route>
       </Routes>
     </div>
