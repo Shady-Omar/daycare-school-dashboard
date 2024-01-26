@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import { Transition } from "@headlessui/react";
 
-function SettingsTabs() {
+function StudentsProfileTabs() {
   const [isOpen, setIsOpen] = useState(false);
 
   const location = useLocation();
@@ -15,124 +15,88 @@ function SettingsTabs() {
     <>
       <div className="hidden lg:flex items-start gap-2.5 self-stretch">
         <Link
-          to="/settings/center"
+          to="/students/profile/activities"
           className={`flex p-5 items-center gap-2.5 ${
-            currentPath === "/settings/center" || currentPath === "/settings"
-              ? "bg-[#FFF]"
-              : ""
+            currentPath === "/students/profile/activities" ? "bg-[#FFF]" : ""
           }`}
           style={{ borderRadius: "8px 8px 0px 0px" }}
         >
           <h5
             className={`${
-              currentPath === "/settings/center" || currentPath === "/settings"
+              currentPath === "/students/profile/activities"
                 ? "h5-semi text-[#383838]"
                 : "h5-med  text-[#878787]"
             } `}
           >
-            Center Info
+            Activities
           </h5>
         </Link>
         <Link
-          to="/settings/address"
+          to="/students/profile"
           className={`flex p-5 items-center gap-2.5 ${
-            currentPath === "/settings/address" ? "bg-[#FFF]" : ""
+            currentPath === "/students/profile" ? "bg-[#FFF]" : ""
           }`}
           style={{ borderRadius: "8px 8px 0px 0px" }}
         >
           <h5
             className={`${
-              currentPath === "/settings/address"
+              currentPath === "/students/profile"
                 ? "h5-semi text-[#383838]"
                 : "h5-med  text-[#878787]"
             } `}
           >
-            Address
+            Profile
           </h5>
         </Link>
         <Link
-          to="/settings/timing"
+          to="/students/profile/attachments"
           className={`flex p-5 items-center gap-2.5 ${
-            currentPath === "/settings/timing" ? "bg-[#FFF]" : ""
+            currentPath === "/students/profile/attachments" ? "bg-[#FFF]" : ""
           }`}
           style={{ borderRadius: "8px 8px 0px 0px" }}
         >
           <h5
             className={`${
-              currentPath === "/settings/timing"
+              currentPath === "/students/profile/attachments"
                 ? "h5-semi text-[#383838]"
                 : "h5-med  text-[#878787]"
             } `}
           >
-            Timing
+            Attachments
           </h5>
         </Link>
         <Link
-          to="/settings/facilities"
+          to="/students/profile/daily-report"
           className={`flex p-5 items-center gap-2.5 ${
-            currentPath === "/settings/facilities" ? "bg-[#FFF]" : ""
+            currentPath === "/students/profile/daily-report" ? "bg-[#FFF]" : ""
           }`}
           style={{ borderRadius: "8px 8px 0px 0px" }}
         >
           <h5
             className={`${
-              currentPath === "/settings/facilities"
+              currentPath === "/students/profile/daily-report"
                 ? "h5-semi text-[#383838]"
                 : "h5-med  text-[#878787]"
             } `}
           >
-            Facilities
+            Daily Report
           </h5>
         </Link>
         <Link
-          to="/settings/financials"
+          to="/students/profile/invoices"
           className={`flex p-5 items-center gap-2.5 ${
-            currentPath === "/settings/financials" ? "bg-[#FFF]" : ""
+            currentPath === "/students/profile/invoices" ? "bg-[#FFF]" : ""
           }`}
           style={{ borderRadius: "8px 8px 0px 0px" }}
         >
           <h5
             className={`${
-              currentPath === "/settings/financials"
+              currentPath === "/students/profile/invoices"
                 ? "h5-semi text-[#383838]"
                 : "h5-med  text-[#878787]"
             } `}
           >
-            Financials
-          </h5>
-        </Link>
-        <Link
-          to="/settings/photos"
-          className={`flex p-5 items-center gap-2.5 ${
-            currentPath === "/settings/photos" ? "bg-[#FFF]" : ""
-          }`}
-          style={{ borderRadius: "8px 8px 0px 0px" }}
-        >
-          <h5
-            className={`${
-              currentPath === "/settings/photos"
-                ? "h5-semi text-[#383838]"
-                : "h5-med  text-[#878787]"
-            } `}
-          >
-            Photos
-          </h5>
-        </Link>
-        <Link
-          to="/settings/documents"
-          className={`flex p-5 items-center gap-2.5 ${
-            currentPath === "/settings/documents" ? "bg-[#FFF]" : ""
-          }`}
-          style={{ borderRadius: "8px 8px 0px 0px" }}
-        >
-          <h5
-            className={`${
-              currentPath === "/settings/documents"
-                ? "h5-semi text-[#383838]"
-                : "h5-med  text-[#878787]"
-            } `}
-          >
-            Documents
+            Invoices
           </h5>
         </Link>
       </div>
@@ -148,20 +112,16 @@ function SettingsTabs() {
           >
             {/* text */}
             <div className="flex items-center gap-[11px]">
-              {currentPath === "/settings/center" ? (
-                <h5 className="h5-semi text-[#383838]">Center</h5>
-              ) : currentPath === "/settings/timing" ? (
-                <h5 className="h5-semi text-[#383838]">Timing</h5>
-              ) : currentPath === "/settings/address" ? (
-                <h5 className="h5-semi text-[#383838]">Address</h5>
-              ) : currentPath === "/settings/facilities" ? (
-                <h5 className="h5-semi text-[#383838]">Facilities</h5>
-              ) : currentPath === "/settings/financials" ? (
-                <h5 className="h5-semi text-[#383838]">Financials</h5>
-              ) : currentPath === "/settings/photos" ? (
-                <h5 className="h5-semi text-[#383838]">Photos</h5>
-              ) : currentPath === "/settings/documents" ? (
-                <h5 className="h5-semi text-[#383838]">Documents</h5>
+              {currentPath === "/students/profile/activities" ? (
+                <h5 className="h5-semi text-[#383838]">Activities</h5>
+              ) : currentPath === "/students/profile" ? (
+                <h5 className="h5-semi text-[#383838]">Profile</h5>
+              ) : currentPath === "/students/profile/attachments" ? (
+                <h5 className="h5-semi text-[#383838]">Attachments</h5>
+              ) : currentPath === "/students/profile/daily-report" ? (
+                <h5 className="h5-semi text-[#383838]">Daily Report</h5>
+              ) : currentPath === "/students/profile/invoices" ? (
+                <h5 className="h5-semi text-[#383838]">Invoices</h5>
               ) : (
                 ""
               )}
@@ -198,46 +158,34 @@ function SettingsTabs() {
               {/* Dropdown content goes here */}
               <div className="py-1 self-stretch w-full">
                 <Link
-                  to="/settings/center"
+                  to="/students/profile/activities"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
-                  Center Info
+                  Activities
                 </Link>
                 <Link
-                  to="/settings/address"
+                  to="/students/profile"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
-                  Address
+                  Profile
                 </Link>
                 <Link
-                  to="/settings/timing"
+                  to="/students/profile/attachments"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
-                  Timing
+                  Attachments
                 </Link>
                 <Link
-                  to="/settings/facilities"
+                  to="/students/profile/daily-report"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
-                  Facilities
+                  Daily Report
                 </Link>
                 <Link
-                  to="/settings/financials"
+                  to="/students/profile/invoices"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
-                  Financials
-                </Link>
-                <Link
-                  to="/settings/photos"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Photos
-                </Link>
-                <Link
-                  to="/settings/documents"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Documents
+                  Invoices
                 </Link>
               </div>
             </div>
@@ -248,4 +196,4 @@ function SettingsTabs() {
   );
 }
 
-export default SettingsTabs;
+export default StudentsProfileTabs;

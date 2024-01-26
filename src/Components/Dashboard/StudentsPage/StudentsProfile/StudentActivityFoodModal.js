@@ -1,52 +1,26 @@
-import { Fragment, useState, useCallback } from "react";
+import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { useDropzone } from "react-dropzone";
 
-import activityInjury from "../Assets/injury.svg";
-import uploadIcon from "../Assets/upload-icon.svg";
-import infoIcon from "../Assets/info-icon.svg";
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import foodIcon from "../../../../Assets/food.svg";
+import infoIcon from "../../../../Assets/info-icon.svg";
+import plusIcon from "../../../../Assets/circle-plus-icon.svg";
 
-const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
-
-function StudentActivityInjuryModal() {
+function StudentActivityFoodModal() {
   let [isOpen, setIsOpen] = useState(false);
 
-  const handleImageUpload = (files) => {
-    // Handle the uploaded files
-    console.log("Uploaded files:", files);
-  };
-
-  const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
-    if (rejectedFiles && rejectedFiles.length > 0) {
-      const fileSizeExceeds = rejectedFiles.some(
-        (file) => file.size > MAX_FILE_SIZE_BYTES
-      );
-
-      if (fileSizeExceeds) {
-        console.log("File size exceeds the maximum allowed size.");
-      }
-    }
-
-    // Do something with the accepted files
-    handleImageUpload(acceptedFiles);
-  }, []);
-
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: "image/*",
-    maxSize: MAX_FILE_SIZE_BYTES,
-  });
   return (
     <>
       <button
         onClick={() => setIsOpen(true)}
         className="flex min-w-[110px] cursor-pointer flex-col justify-center items-center gap-2.5"
       >
-        <div className="flex w-[110px] h-[110px] justify-center items-center gap-2.5 rounded-[10px] bg-[#FF4A55]">
-          <img src={activityInjury} alt="photo_activity" />
+        <div
+          className="flex w-[110px] h-[110px] justify-center items-center gap-2.5 rounded-[10px]"
+          style={{ background: "rgba(255, 171, 45, 0.70)" }}
+        >
+          <img src={foodIcon} alt="food" />
         </div>
-        <h5 className="h5-med text-[#646464]">Injury</h5>
+        <h5 className="h5-med text-[#646464]">Food</h5>
       </button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
@@ -86,12 +60,12 @@ function StudentActivityInjuryModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
                 >
-                  <h5 className="h5-bold text-[#202020]">Add Injury</h5>
+                  <h5 className="h5-bold text-[#202020]">Add Food</h5>
                   <button onClick={() => setIsOpen(false)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -120,73 +94,43 @@ function StudentActivityInjuryModal() {
                       disabled
                     />
                   </div>
-                  {/* Injury Type */}
-                  <div className="flex flex-col items-start gap-2 self-stretch">
-                    <label className="label text-[#868686]">Injured Type</label>
-                    <select
-                      className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
-                      style={{ border: "1px solid #DBDADE" }}
-                      defaultValue={"Select"}
+                  {/* Date and Time */}
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
+                    <div
+                      className="flex flex-col items-start gap-2 self-stretch"
+                      style={{ flex: "1 0 0" }}
                     >
-                      <option value="Select">Select</option>
-                      {/* <option value="PM">PM</option> */}
-                    </select>
-                  </div>
-                  {/* Injury Part */}
-                  <div className="flex flex-col items-start gap-2 self-stretch">
-                    <label className="label text-[#868686]">Injured Part</label>
-                    <select
-                      className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
-                      style={{ border: "1px solid #DBDADE" }}
-                      defaultValue={"Select"}
-                    >
-                      <option value="Select">Select</option>
-                      {/* <option value="PM">PM</option> */}
-                    </select>
-                  </div>
-                  {/* Attachment */}
-                  <div
-                    className="flex min-w-[585px] flex-col items-start gap-2 self-stretch"
-                    style={{ borderRadius: "20px 20px 0px 0px" }}
-                  >
-                    {/* label */}
-                    <div className="flex flex-col items-start gap-2 self-stretch">
-                      <label className="label text-[#868686]">
-                        Upload Photo
-                      </label>
+                      <label className="label text-[#868686]">Date</label>
+                      <input
+                        type="date"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                        style={{ border: "1px solid #DBDADE" }}
+                      />
                     </div>
                     <div
-                      {...getRootProps()}
-                      className="flex h-[357px] p-[30px] flex-col justify-center items-center gap-2.5 self-stretch rounded-[10px] bg-[#F9F9F9]"
-                      style={{ border: "1px dashed #A4A4A4" }}
+                      className="flex flex-col items-start gap-2 self-stretch"
+                      style={{ flex: "1 0 0" }}
                     >
-                      <input {...getInputProps()} />
-                      {isDragActive ? (
-                        <p className="label text-[#383838] self-stretch">
-                          Drop the image here
-                        </p>
-                      ) : (
-                        <>
-                          <div className="flex flex-col justify-center items-center gap-2.5 self-stretch">
-                            <img src={uploadIcon} alt="upload" />
-                            <p className="label text-[#383838] text-center self-stretch">
-                              Drag and drop files here
-                            </p>
-                          </div>
-                          <p className="p-reg text-[#646464]">Or</p>
-                          <div className="flex flex-col items-center justify-center  gap-2.5">
-                            <button className="flex w-full p-bold h-[50px] justify-center items-center rounded-[10px] bg-[#00CCB6] text-[#FFF] py-[10px] px-5">
-                              Choose File
-                            </button>
-                            <p className="p-reg text-[#646464]">
-                              Maximum file size is 50MB.
-                            </p>
-                          </div>
-                        </>
-                      )}
+                      <label className="label text-[#868686]">Time</label>
+                      <input
+                        type="time"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                        style={{ border: "1px solid #DBDADE" }}
+                      />
                     </div>
                   </div>
-
+                  {/* Consumed */}
+                  <div className="flex flex-col items-start gap-2 self-stretch">
+                    <label className="label text-[#868686]">Consumed</label>
+                    <select
+                      className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
+                      style={{ border: "1px solid #DBDADE" }}
+                      defaultValue={"All"}
+                    >
+                      <option value="All">All</option>
+                      {/* <option value="PM">PM</option> */}
+                    </select>
+                  </div>
                   {/* Note */}
                   <div className="flex h-[134px] flex-col items-start gap-2 self-stretch">
                     <label className="label text-[#868686]">Notes</label>
@@ -218,7 +162,7 @@ function StudentActivityInjuryModal() {
                       className="cyan-btn flex justify-center w-full items-center gap-3"
                     >
                       <img src={plusIcon} alt="" />
-                      Add Injury
+                      Add Food
                     </button>
                   </div>
                 </div>
@@ -231,4 +175,4 @@ function StudentActivityInjuryModal() {
   );
 }
 
-export default StudentActivityInjuryModal;
+export default StudentActivityFoodModal;

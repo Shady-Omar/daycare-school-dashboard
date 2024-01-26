@@ -1,13 +1,24 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-function StudentRenewContractModal() {
+function StudentContractEditModal() {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className="cyan-btn self-stretch">
-        Renew Contract
+      <button onClick={() => setIsOpen(true)}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+        >
+          <path
+            d="M2.10833 14.759C1.92499 14.8507 1.83333 15.1257 1.83333 15.4007V19.2507C1.83333 19.8007 2.19999 20.1673 2.74999 20.1673H6.59999C6.87499 20.1673 7.05833 20.0757 7.24166 19.8923L15.95 11.184L10.725 5.95898L2.10833 14.759ZM19.8917 5.95898L16.0417 2.10898C15.675 1.74232 15.125 1.74232 14.7583 2.10898L12.1917 4.67565L17.4167 9.90065L19.9833 7.33398C20.2583 6.96732 20.2583 6.32565 19.8917 5.95898Z"
+            fill="#00CCB6"
+          />
+        </svg>
       </button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
@@ -47,12 +58,12 @@ function StudentRenewContractModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex w-[892px] p-[30px] flex-col justify-center items-center gap-[50px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-[892px] p-[30px] flex-col justify-center items-center gap-[50px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
                 >
-                  <h5 className="h5-bold text-[#202020]">Renew Contract</h5>
+                  <h5 className="h5-bold text-[#202020]">Contract Details</h5>
                   <button onClick={() => setIsOpen(false)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -70,120 +81,76 @@ function StudentRenewContractModal() {
                 </Dialog.Title>
 
                 <div className="flex flex-col justify-center items-center gap-5 self-stretch">
-                  {/* Student Name */}
-                  <div className="flex flex-col items-start gap-2 self-stretch">
-                    <label className="label text-[#868686]">
-                      Name of Student
-                    </label>
-                    <input
-                      type="text"
-                      className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
-                      style={{ border: "1px solid #DBDADE" }}
-                    />
-                  </div>
-                  {/* Plan Type */}
-                  <div className="flex flex-col items-start gap-2 self-stretch">
-                    <label className="label text-[#868686]">Plan Type</label>
-                    <select
-                      className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
-                      style={{ border: "1px solid #DBDADE" }}
-                      defaultValue={"Daily"}
-                    >
-                      <option value="Daily">Daily</option>
-                      {/* <option value="PM">PM</option> */}
-                    </select>
-                  </div>
-                  {/* Plan Timing */}
-                  <div className="flex items-end gap-2.5 self-stretch">
+                  {/* Plan & Service */}
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
-                      <label className="label text-[#868686]">
-                        Plan Timing
-                      </label>
+                      <label className="label text-[#868686]">Plan Type</label>
                       <select
                         className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
                         style={{ border: "1px solid #DBDADE" }}
-                        defaultValue={"Morning"}
+                        defaultValue={"Monthly"}
                       >
-                        <option value="Morning">Morning</option>
+                        <option value="Monthly">Monthly</option>
                         {/* <option value="PM">PM</option> */}
                       </select>
                     </div>
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
-                      <div className="flex items-start gap-[-1] self-stretch">
-                        <input
-                          id=""
-                          type="text"
-                          className="flex w-full  h-[50px] items-center border border-[#DBDADE] bg-[#FFF] py-[7px] px-[14px] gap-3"
-                          style={{
-                            flex: "1 0 0",
-                            borderRadius: "10px 0px 0px 10px",
-                            appearance: "none",
-                          }}
-                        />
-
-                        <div
-                          className="flex max-w-[85px] h-[50px] justify-center items-center border border-[#DBDADE] bg-[#FFF] py-[7px] px-[10px] gap-2.5"
-                          style={{
-                            flex: "1 0 0",
-                            borderRadius: "0px 10px 10px 0px",
-                          }}
-                        >
-                          <select
-                            id="timing"
-                            className="text-[#878787] p-reg cursor-pointer font-semibold w-full text-center rounded-lg text-sm block focus:border-none focus:outline-none placeholder-gray-400"
-                            defaultValue={"AM"}
-                          >
-                            <option value="AM">AM</option>
-                            <option value="PM">PM</option>
-                          </select>
-                        </div>
-                      </div>
+                      <label className="label text-[#868686]">
+                        Service Timing
+                      </label>
+                      <select
+                        className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
+                        style={{ border: "1px solid #DBDADE" }}
+                        defaultValue={"Evening"}
+                      >
+                        <option value="Evening">Evening</option>
+                        {/* <option value="PM">PM</option> */}
+                      </select>
+                    </div>
+                  </div>
+                  {/* Day & Hours */}
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
+                    <div
+                      className="flex flex-col items-start gap-2 self-stretch"
+                      style={{ flex: "1 0 0" }}
+                    >
+                      <label className="label text-[#868686]">
+                        Service Day
+                      </label>
+                      <input
+                        type="text"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#EDEDED]"
+                        style={{ border: "1px solid #DBDADE" }}
+                        disabled
+                        placeholder="5 Days a week"
+                      />
                     </div>
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
-                      <div className="flex items-start gap-[-1] self-stretch">
-                        <input
-                          id=""
-                          type="text"
-                          className="flex w-full  h-[50px] items-center border border-[#DBDADE] bg-[#FFF] py-[7px] px-[14px] gap-3"
-                          style={{
-                            flex: "1 0 0",
-                            borderRadius: "10px 0px 0px 10px",
-                            appearance: "none",
-                          }}
-                        />
-
-                        <div
-                          className="flex max-w-[85px] h-[50px] justify-center items-center border border-[#DBDADE] bg-[#FFF] py-[7px] px-[10px] gap-2.5"
-                          style={{
-                            flex: "1 0 0",
-                            borderRadius: "0px 10px 10px 0px",
-                          }}
-                        >
-                          <select
-                            id="timing"
-                            className="text-[#878787] p-reg cursor-pointer font-semibold w-full text-center rounded-lg text-sm block focus:border-none focus:outline-none placeholder-gray-400"
-                            defaultValue={"AM"}
-                          >
-                            <option value="AM">AM</option>
-                            <option value="PM">PM</option>
-                          </select>
-                        </div>
-                      </div>
+                      <label className="label text-[#868686]">
+                        Service Hours
+                      </label>
+                      <input
+                        type="text"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#EDEDED]"
+                        style={{ border: "1px solid #DBDADE" }}
+                        disabled
+                        placeholder="1:30 PM - 5:30 PM"
+                      />
                     </div>
                   </div>
                   {/* Start & End Dates */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Start Date</label>
@@ -194,7 +161,7 @@ function StudentRenewContractModal() {
                       />
                     </div>
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">End Date</label>
@@ -203,38 +170,30 @@ function StudentRenewContractModal() {
                         className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#EDEDED]"
                         style={{ border: "1px solid #DBDADE" }}
                         disabled
+                        placeholder="1:30 PM - 5:30 PM"
                       />
                     </div>
                   </div>
-                  {/* Amount & Payment */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
+                  {/* Status */}
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
-                      <label className="label text-[#868686]">Amount</label>
-                      <input
-                        type="text"
-                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
-                        style={{ border: "1px solid #DBDADE" }}
-                      />
-                    </div>
-                    <div
-                      className="flex flex-col items-start gap-2"
-                      style={{ flex: "1 0 0" }}
-                    >
-                      <label className="label text-[#868686]">
-                        Payment Status
-                      </label>
+                      <label className="label text-[#868686]">Status</label>
                       <select
                         className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
                         style={{ border: "1px solid #DBDADE" }}
-                        defaultValue={"Paid"}
+                        defaultValue={"Select"}
                       >
-                        <option value="Paid">Paid</option>
+                        <option value="Select">Select</option>
                         {/* <option value="PM">PM</option> */}
                       </select>
                     </div>
+                    <div
+                      className="hidden lg:flex flex-col items-start gap-2"
+                      style={{ flex: "1 0 0" }}
+                    ></div>
                   </div>
                 </div>
                 {/* Submit Button */}
@@ -261,4 +220,4 @@ function StudentRenewContractModal() {
   );
 }
 
-export default StudentRenewContractModal;
+export default StudentContractEditModal;

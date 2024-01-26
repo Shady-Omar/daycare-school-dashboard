@@ -1,6 +1,6 @@
 import React from "react";
 
-import StudentSelectActivityModal from "../../../StudentSelectActivityModal";
+import StudentSelectActivityModal from "./StudentSelectActivityModal";
 import babyIcon from "../../../../Assets/baby-bottle-icon.svg";
 import diaperIcon from "../../../../Assets/diaper-icon.svg";
 import teethIcon from "../../../../Assets/teeth-icon.svg";
@@ -13,9 +13,9 @@ function StudentsProfileActivitiesTab() {
     <div className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch bg-white rounded-[10px]">
       <StudentSelectActivityModal />
       {/* Filter */}
-      <div className="flex items-end gap-5 self-stretch">
+      <div className="flex flex-col lg:flex-row justify-end lg:justify-normal items-start lg:items-end gap-5 self-stretch">
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">From Date</label>
@@ -27,7 +27,7 @@ function StudentsProfileActivitiesTab() {
           />
         </div>
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">To Date</label>
@@ -39,7 +39,7 @@ function StudentsProfileActivitiesTab() {
           />
         </div>
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">Activity Type</label>
@@ -58,9 +58,9 @@ function StudentsProfileActivitiesTab() {
         {/* Activity 1 */}
         <div className="flex flex-col justify-center items-start gap-2.5 self-stretch rounded-[10px]">
           {/* Title */}
-          <div className="flex justify-between items-start self-stretch">
+          <div className="flex justify-between items-center lg:items-start self-stretch">
             <h3 className="h3-med text-[#383838]">Today</h3>
-            <button className="white-btn flex justify-center items-center gap-3 !text-[13px] !font-normal !text-[#383838]">
+            <button className="white-btn flex justify-center items-center gap-2 !h-auto !px-[15px] lg:gap-3 !text-[13px] !font-normal !text-[#383838]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -78,13 +78,13 @@ function StudentsProfileActivitiesTab() {
           </div>
           {/* activity cards */}
           <div
-            className="flex h-[75px] px-5 justify-between items-center self-stretch rounded-[10px]"
+            className="flex lg:h-[75px] p-5 lg:p-0 lg:px-5 flex-col lg:flex-row justify-center lg:justify-between items-start lg:items-center gap-5 lg:gap-0 self-stretch rounded-[10px]"
             style={{ border: "1px solid #DCDCDC" }}
           >
             {/* Name */}
-            <div className="flex w-[555.5px] items-center gap-[50px]">
+            <div className="flex self-stretch flex-col lg:flex-row items-start lg:items-center gap-5 lg:gap-[50px]">
               {/* Text */}
-              <div className="flex w-[190px] items-center gap-[15px] shrink-0">
+              <div className="flex self-stretch items-center gap-[15px] shrink-0">
                 <div
                   className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 shrink-0 rounded-[5px]"
                   style={{ background: "rgba(0, 204, 182, 0.10)" }}
@@ -98,7 +98,7 @@ function StudentsProfileActivitiesTab() {
               </div>
             </div>
             {/* Action */}
-            <div className="flex w-[307.75px] justify-end items-center gap-[30px]">
+            <div className="flex self-stretch justify-between lg:justify-end items-center lg:gap-[30px]">
               <p className="label-reg text-[#878787]">4:32 PM</p>
               <button
                 className="flex justify-center items-start gap-2.5 py-2.5 px-[15px] rounded-md label-reg text-[#383838]"
@@ -110,13 +110,13 @@ function StudentsProfileActivitiesTab() {
             </div>
           </div>
           <div
-            className="flex h-[75px] px-5 justify-between items-center self-stretch rounded-[10px]"
+            className="flex lg:h-[75px] p-5 lg:p-0 lg:px-5 flex-col lg:flex-row justify-center lg:justify-between items-start lg:items-center gap-5 lg:gap-0 self-stretch rounded-[10px]"
             style={{ border: "1px solid #DCDCDC" }}
           >
             {/* Name */}
-            <div className="flex w-[555.5px] items-center gap-[50px]">
+            <div className="flex self-stretch flex-col lg:flex-row items-start lg:items-center gap-5 lg:gap-[50px]">
               {/* Text */}
-              <div className="flex w-[190px] items-center gap-[15px] shrink-0">
+              <div className="flex self-stretch items-center gap-[15px] shrink-0">
                 <div
                   className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 shrink-0 rounded-[5px]"
                   style={{ background: "rgba(100, 24, 195, 0.10)" }}
@@ -130,7 +130,7 @@ function StudentsProfileActivitiesTab() {
               </div>
             </div>
             {/* Action */}
-            <div className="flex w-[307.75px] justify-end items-center gap-[30px]">
+            <div className="flex self-stretch justify-between lg:justify-end items-center lg:gap-[30px]">
               <p className="label-reg text-[#878787]">4:32 PM</p>
               <button
                 className="flex justify-center items-start gap-2.5 py-2.5 px-[15px] rounded-md label-reg text-[#383838]"
@@ -142,13 +142,13 @@ function StudentsProfileActivitiesTab() {
             </div>
           </div>
           <div
-            className="flex h-[75px] px-5 justify-between items-center self-stretch rounded-[10px]"
+            className="flex lg:h-[75px] p-5 lg:p-0 lg:px-5 flex-col lg:flex-row justify-center lg:justify-between items-start lg:items-center gap-5 lg:gap-0 self-stretch rounded-[10px]"
             style={{ border: "1px solid #DCDCDC" }}
           >
             {/* Name */}
-            <div className="flex w-[555.5px] items-center gap-[50px]">
+            <div className="flex self-stretch flex-col lg:flex-row items-start lg:items-center gap-5 lg:gap-[50px]">
               {/* Text */}
-              <div className="flex w-[190px] items-center gap-[15px] shrink-0">
+              <div className="flex self-stretch items-center gap-[15px] shrink-0">
                 <div
                   className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 shrink-0 rounded-[5px]"
                   style={{ background: "rgba(94, 207, 255, 0.10)" }}
@@ -162,7 +162,7 @@ function StudentsProfileActivitiesTab() {
               </div>
             </div>
             {/* Action */}
-            <div className="flex w-[307.75px] justify-end items-center gap-[30px]">
+            <div className="flex self-stretch justify-between lg:justify-end items-center lg:gap-[30px]">
               <p className="label-reg text-[#878787]">4:32 PM</p>
               <button
                 className="flex justify-center items-start gap-2.5 py-2.5 px-[15px] rounded-md label-reg text-[#383838]"
@@ -177,9 +177,9 @@ function StudentsProfileActivitiesTab() {
         {/* Activity 2 */}
         <div className="flex flex-col justify-center items-start gap-2.5 self-stretch rounded-[10px]">
           {/* Title */}
-          <div className="flex justify-between items-start self-stretch">
+          <div className="flex justify-between items-center lg:items-start self-stretch">
             <h3 className="h3-med text-[#383838]">09/10/2023</h3>
-            <button className="white-btn flex justify-center items-center gap-3 !text-[13px] !font-normal !text-[#383838]">
+            <button className="white-btn flex justify-center items-center gap-2 !h-auto !px-[15px] lg:gap-3 !text-[13px] !font-normal !text-[#383838]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -197,18 +197,18 @@ function StudentsProfileActivitiesTab() {
           </div>
           {/* activity cards */}
           <div
-            className="flex flex-col p-5 items-center gap-5 self-stretch rounded-[10px]"
+            className="flex flex-col p-5 items-start lg:items-center gap-5 self-stretch rounded-[10px]"
             style={{ border: "1px solid #DCDCDC" }}
           >
             {/* Top */}
             <div
-              className="flex pb-5 justify-between items-center self-stretch"
+              className="flex pb-5 flex-col lg:flex-row lg:justify-between items-start lg:items-center gap-5 lg:gap-0 self-stretch"
               style={{ borderBottom: "1px solid #DCDCDC" }}
             >
               {/* Name */}
-              <div className="flex w-[555.5px] items-center gap-[50px]">
+              <div className="flex self-stretch items-center gap-[50px]">
                 {/* Text */}
-                <div className="flex w-[190px] items-center gap-[15px] shrink-0">
+                <div className="flex self-stretch items-center gap-[15px] shrink-0">
                   <div
                     className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 shrink-0 rounded-[5px]"
                     style={{ background: "rgba(227, 40, 175, 0.10)" }}
@@ -224,7 +224,7 @@ function StudentsProfileActivitiesTab() {
                 </div>
               </div>
               {/* Action */}
-              <div className="flex w-[307.75px] justify-end items-center gap-[30px]">
+              <div className="flex self-stretch justify-between lg:justify-end items-center gap-[30px]">
                 <p className="label-reg text-[#878787]">4:32 PM</p>
                 <button
                   className="flex justify-center items-start gap-2.5 py-2.5 px-[15px] rounded-md label-reg text-[#383838]"
@@ -236,7 +236,7 @@ function StudentsProfileActivitiesTab() {
               </div>
             </div>
             {/* Images */}
-            <div className="flex items-center gap-5 self-stretch">
+            <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center gap-5 self-stretch">
               <img src={photosPlaceholder} alt="" />
               <img src={photosPlaceholder} alt="" />
               <img src={photosPlaceholder} alt="" />

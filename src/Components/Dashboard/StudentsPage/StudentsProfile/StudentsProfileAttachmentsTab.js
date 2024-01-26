@@ -1,7 +1,7 @@
 import React from "react";
 
 import actionArrow from "../../../../Assets/action-arrow.svg";
-import StudentNewAttachmentModal from "../../../StudentNewAttachmentModal";
+import StudentNewAttachmentModal from "./StudentNewAttachmentModal";
 
 function StudentsProfileAttachmentsTab() {
   return (
@@ -10,7 +10,10 @@ function StudentsProfileAttachmentsTab() {
       {/* Data */}
       <div className="flex flex-col items-start gap-5 self-stretch">
         {/* Table */}
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+        <div
+          id="custom-scroll"
+          className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+        >
           <table className="w-full text-left rtl:text-right bg-[#FFF] ">
             <thead
               className=" bg-[#EBEBEB] text-[#383838]"

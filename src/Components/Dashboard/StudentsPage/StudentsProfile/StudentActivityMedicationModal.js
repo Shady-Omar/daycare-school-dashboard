@@ -1,11 +1,11 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-import allergyIcon from "../Assets/allergy.svg";
-import infoIcon from "../Assets/info-icon.svg";
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import medicationIcon from "../../../../Assets/medication.svg";
+import infoIcon from "../../../../Assets/info-icon.svg";
+import plusIcon from "../../../../Assets/circle-plus-icon.svg";
 
-function StudentActivityAllergyModal() {
+function StudentActivityMedicationModal() {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -16,11 +16,11 @@ function StudentActivityAllergyModal() {
       >
         <div
           className="flex w-[110px] h-[110px] justify-center items-center gap-2.5 rounded-[10px]"
-          style={{ background: "rgba(255, 74, 85, 0.70)" }}
+          style={{ background: "rgba(94, 207, 255, 0.70)" }}
         >
-          <img src={allergyIcon} alt="allergies" />
+          <img src={medicationIcon} alt="medication" />
         </div>
-        <h5 className="h5-med text-[#646464]">Allergies</h5>
+        <h5 className="h5-med text-[#646464]">Medication</h5>
       </button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
@@ -60,12 +60,12 @@ function StudentActivityAllergyModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
                 >
-                  <h5 className="h5-bold text-[#202020]">Add Allergies</h5>
+                  <h5 className="h5-bold text-[#202020]">Add Medications</h5>
                   <button onClick={() => setIsOpen(false)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -95,9 +95,9 @@ function StudentActivityAllergyModal() {
                     />
                   </div>
                   {/* Date and Time */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Date</label>
@@ -108,7 +108,7 @@ function StudentActivityAllergyModal() {
                       />
                     </div>
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Time</label>
@@ -150,7 +150,7 @@ function StudentActivityAllergyModal() {
                       className="cyan-btn flex justify-center w-full items-center gap-3"
                     >
                       <img src={plusIcon} alt="" />
-                      Add Allergies
+                      Add Medications
                     </button>
                   </div>
                 </div>
@@ -163,4 +163,4 @@ function StudentActivityAllergyModal() {
   );
 }
 
-export default StudentActivityAllergyModal;
+export default StudentActivityMedicationModal;

@@ -2,7 +2,7 @@ import React from "react";
 
 import profilePlaceholder from "../../../../Assets/profile-img-placeholder.png";
 import editIcon from "../../../../Assets/pencil-edit-icon.svg";
-import StudentsProfileTabs from "../../../StudentsProfileTabs";
+import StudentsProfileTabs from "./StudentsProfileTabs";
 import { Outlet } from "react-router-dom";
 
 function StudentsProfileContent() {
@@ -34,7 +34,7 @@ function StudentsProfileContent() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-start self-stretch">
+      <div className="flex flex-col lg:gap-0 gap-[30px] items-start self-stretch">
         <StudentsProfileTabs />
         <Outlet />
       </div>

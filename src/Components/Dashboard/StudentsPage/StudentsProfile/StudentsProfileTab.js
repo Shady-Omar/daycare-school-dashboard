@@ -1,13 +1,13 @@
 import React from "react";
-import StudentPersonalInfoEditModal from "../../../StudentPersonalInfoEditModal";
-import StudentAddressInfoEditModal from "../../../StudentAddressInfoEditModal";
-import StudentContractEditModal from "../../../StudentContractEditModal";
-import StudentFamilyEditModal from "../../../StudentFamilyEditModal";
-import StudentRenewContractModal from "../../../StudentRenewContractModal";
+import StudentPersonalInfoEditModal from "./StudentPersonalInfoEditModal";
+import StudentAddressInfoEditModal from "./StudentAddressInfoEditModal";
+import StudentContractEditModal from "./StudentContractEditModal";
+import StudentFamilyEditModal from "./StudentFamilyEditModal";
+import StudentRenewContractModal from "./StudentRenewContractModal";
 
 function StudentsProfileTab() {
   return (
-    <div className="flex p-[30px] items-start gap-[30px] self-stretch rounded-[10px] bg-white">
+    <div className="flex p-5 flex-col lg:flex-row lg:p-[30px] items-start gap-[30px] self-stretch rounded-[10px] bg-white">
       {/* Left Side */}
       <div
         className="flex flex-col items-start gap-[30px]"
@@ -258,9 +258,9 @@ function StudentsProfileTab() {
             </div>
           </div>
         </div>
-        {/* Contact */}
+        {/* Contract */}
         <div
-          className="flex pb-5 flex-col justify-center items-center gap-2.5 self-stretch rounded-lg"
+          className="hidden lg:flex pb-5 flex-col justify-center items-center gap-2.5 self-stretch rounded-lg"
           style={{ border: "1px solid #EBEBEB" }}
         >
           <div className="flex px-5 flex-col justify-center items-center gap-[30px] self-stretch">
@@ -456,7 +456,7 @@ function StudentsProfileTab() {
       </div>
       {/* Right Side */}
       <div
-        className="flex flex-col items-start gap-[30px]"
+        className="flex flex-col items-start gap-[30px] self-stretch"
         style={{ flex: "1 0 0" }}
       >
         {/* Address Info */}
@@ -541,7 +541,7 @@ function StudentsProfileTab() {
                   className="flex py-5 items-start gap-[15px] self-stretch"
                   style={{ flex: "1 0 0" }}
                 >
-                  <h5 className="h5-bold text-[#383838]">Name</h5>
+                  <h5 className="h5-bold text-[#383838] text-left">Name</h5>
                 </div>
                 <div
                   className="flex p-5 items-start gap-2.5 self-stretch text-left"
@@ -558,7 +558,7 @@ function StudentsProfileTab() {
                   className="flex py-5 items-start gap-[15px] self-stretch"
                   style={{ flex: "1 0 0" }}
                 >
-                  <h5 className="h5-bold text-[#383838]">Relation</h5>
+                  <h5 className="h5-bold text-[#383838] text-left">Relation</h5>
                 </div>
                 <div
                   className="flex p-5 items-start gap-2.5 self-stretch text-left"
@@ -575,7 +575,9 @@ function StudentsProfileTab() {
                   className="flex py-5 items-start gap-[15px] self-stretch"
                   style={{ flex: "1 0 0" }}
                 >
-                  <h5 className="h5-bold text-[#383838]">Mobile Number</h5>
+                  <h5 className="h5-bold text-[#383838] text-left">
+                    Mobile Number
+                  </h5>
                 </div>
                 <div
                   className="flex p-5 items-start gap-2.5 self-stretch text-left"
@@ -592,13 +594,21 @@ function StudentsProfileTab() {
                   className="flex py-5 items-start gap-[15px] self-stretch"
                   style={{ flex: "1 0 0" }}
                 >
-                  <h5 className="h5-bold text-[#383838]">Email Address</h5>
+                  <h5
+                    className="h5-bold text-[#383838] text-left"
+                    style={{ overflowWrap: "anywhere" }}
+                  >
+                    Email Address
+                  </h5>
                 </div>
                 <div
                   className="flex p-5 items-start gap-2.5 self-stretch text-left"
                   style={{ flex: "1 0 0" }}
                 >
-                  <h5 className="h5-med text-[#646464]">
+                  <h5
+                    className="h5-med text-[#646464]"
+                    style={{ overflowWrap: "anywhere" }}
+                  >
                     irshadahmad@gmail.com
                   </h5>
                 </div>
@@ -745,6 +755,201 @@ function StudentsProfileTab() {
                   <h5 className="h5-med text-[#646464]">Saudi Arabia</h5>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        {/* Contract */}
+        <div
+          className="lg:hidden flex pb-5 flex-col justify-center items-center gap-2.5 self-stretch rounded-lg"
+          style={{ border: "1px solid #EBEBEB" }}
+        >
+          <div className="flex px-5 flex-col justify-center items-center gap-[30px] self-stretch">
+            <div className="flex flex-col items-center justify-center self-stretch">
+              {/* Head */}
+              <div
+                className="flex justify-between items-start self-stretch"
+                style={{ borderBottom: "1px solid #EBEBEB" }}
+              >
+                <div
+                  className="flex py-5 items-start gap-[15px] self-stretch"
+                  style={{ flex: "1 0 0" }}
+                >
+                  <h5 className="h5-bold text-[#00CCB6]">Contract Details</h5>
+                </div>
+                <div
+                  className="flex justify-end items-start gap-2.5 self-stretch cursor-pointer"
+                  style={{ padding: "20px 0px 20px 20px" }}
+                >
+                  <StudentContractEditModal />
+                </div>
+              </div>
+              {/* Info */}
+              <div className="flex flex-col items-center justify-center self-stretch">
+                <div
+                  className="flex justify-between items-start self-stretch"
+                  style={{ borderBottom: "1px solid #EBEBEB" }}
+                >
+                  <div
+                    className="flex py-5 items-start gap-[15px] self-stretch"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-bold text-[#383838]">Plan Type</h5>
+                  </div>
+                  <div
+                    className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-med text-[#646464]">Monthly</h5>
+                  </div>
+                </div>
+                <div
+                  className="flex justify-between items-start self-stretch"
+                  style={{ borderBottom: "1px solid #EBEBEB" }}
+                >
+                  <div
+                    className="flex py-5 items-start gap-[15px] self-stretch"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-bold text-[#383838]">Service Timing</h5>
+                  </div>
+                  <div
+                    className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-med text-[#646464]">Evening</h5>
+                  </div>
+                </div>
+                <div
+                  className="flex justify-between items-start self-stretch"
+                  style={{ borderBottom: "1px solid #EBEBEB" }}
+                >
+                  <div
+                    className="flex py-5 items-start gap-[15px] self-stretch"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-bold text-[#383838]">Service Days</h5>
+                  </div>
+                  <div
+                    className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-med text-[#646464]">5 days a week</h5>
+                  </div>
+                </div>
+                <div
+                  className="flex justify-between items-start self-stretch"
+                  style={{ borderBottom: "1px solid #EBEBEB" }}
+                >
+                  <div
+                    className="flex py-5 items-start gap-[15px] self-stretch"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-bold text-[#383838]">Service Hours</h5>
+                  </div>
+                  <div
+                    className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-med text-[#646464]">1:30 PM - 5:30 PM</h5>
+                  </div>
+                </div>
+                <div
+                  className="flex justify-between items-start self-stretch"
+                  style={{ borderBottom: "1px solid #EBEBEB" }}
+                >
+                  <div
+                    className="flex py-5 items-start gap-[15px] self-stretch"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-bold text-[#383838]">Start Date</h5>
+                  </div>
+                  <div
+                    className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-med text-[#646464]">01/12/2023</h5>
+                  </div>
+                </div>
+                <div
+                  className="flex justify-between items-start self-stretch"
+                  style={{ borderBottom: "1px solid #EBEBEB" }}
+                >
+                  <div
+                    className="flex py-5 items-start gap-[15px] self-stretch"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-bold text-[#383838]">End Date</h5>
+                  </div>
+                  <div
+                    className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-med text-[#646464]">03/12/2023</h5>
+                  </div>
+                </div>
+                <div
+                  className="flex justify-between items-start self-stretch"
+                  style={{ borderBottom: "1px solid #EBEBEB" }}
+                >
+                  <div
+                    className="flex py-5 items-start gap-[15px] self-stretch"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-bold text-[#383838]">Status</h5>
+                  </div>
+                  <div
+                    className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-med text-[#646464]">Active</h5>
+                  </div>
+                </div>
+                <div
+                  className="flex justify-between items-start self-stretch"
+                  style={{ borderBottom: "1px solid #EBEBEB" }}
+                >
+                  <div
+                    className="flex py-5 items-start gap-[15px] self-stretch"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-bold text-[#383838]">Amount</h5>
+                  </div>
+                  <div
+                    className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-med text-[#646464]">150.00 SAR</h5>
+                  </div>
+                </div>
+                <div
+                  className="flex justify-between items-start self-stretch"
+                  style={{ borderBottom: "1px solid #EBEBEB" }}
+                >
+                  <div
+                    className="flex py-5 items-start gap-[15px] self-stretch"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-bold text-[#383838]">Invoices </h5>
+                  </div>
+                  <div
+                    className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                    style={{ flex: "1 0 0" }}
+                  >
+                    <h5 className="h5-med text-[#646464]">Paid</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex flex-col items-center justify-center gap-2.5 self-stretch">
+              <StudentRenewContractModal />
+              <button className="unactive-btn !bg-white !border-[#A4A4A4] self-stretch">
+                View Contract
+              </button>
+              <button className="red-btn self-stretch">
+                Terminate Contract
+              </button>
             </div>
           </div>
         </div>

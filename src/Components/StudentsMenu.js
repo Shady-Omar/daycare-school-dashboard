@@ -166,7 +166,7 @@ function StudentsMenu({ collapsed }) {
               >
                 <span
                   className={`w-[3px] h-10 ${
-                    currentPath === "/students/admission"
+                    currentPath.includes("/students/admission")
                       ? "bg-[#00CCB6]"
                       : "bg-[#DCDCDC]"
                   }`}
@@ -174,7 +174,7 @@ function StudentsMenu({ collapsed }) {
                 <div className="flex items-center gap-[15px]">
                   <h5
                     className={` ${
-                      currentPath === "/students/admission"
+                      currentPath.includes("/students/admission")
                         ? "h5-bold !text-lg text-[#00CCB6]"
                         : "h5-semi text-[#A4A4A4] hover:text-[#00CCB6] transition-all"
                     } `}

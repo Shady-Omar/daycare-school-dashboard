@@ -2,14 +2,14 @@ import { Fragment, useState, useCallback } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useDropzone } from "react-dropzone";
 
-import activityPhoto from "../Assets/activity-photo.svg";
-import uploadIcon from "../Assets/upload-icon.svg";
-import infoIcon from "../Assets/info-icon.svg";
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import activityInjury from "../../../../Assets/injury.svg";
+import uploadIcon from "../../../../Assets/upload-icon.svg";
+import infoIcon from "../../../../Assets/info-icon.svg";
+import plusIcon from "../../../../Assets/circle-plus-icon.svg";
 
 const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
 
-function StudentActivityPhotoModal() {
+function StudentActivityInjuryModal() {
   let [isOpen, setIsOpen] = useState(false);
 
   const handleImageUpload = (files) => {
@@ -43,10 +43,10 @@ function StudentActivityPhotoModal() {
         onClick={() => setIsOpen(true)}
         className="flex min-w-[110px] cursor-pointer flex-col justify-center items-center gap-2.5"
       >
-        <div className="flex w-[110px] h-[110px] justify-center items-center gap-2.5 rounded-[10px] bg-[#00CCB6]">
-          <img src={activityPhoto} alt="photo_activity" />
+        <div className="flex w-[110px] h-[110px] justify-center items-center gap-2.5 rounded-[10px] bg-[#FF4A55]">
+          <img src={activityInjury} alt="photo_activity" />
         </div>
-        <h5 className="h5-med text-[#646464]">Photo</h5>
+        <h5 className="h5-med text-[#646464]">Injury</h5>
       </button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
@@ -86,12 +86,12 @@ function StudentActivityPhotoModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
                 >
-                  <h5 className="h5-bold text-[#202020]">Add Photos</h5>
+                  <h5 className="h5-bold text-[#202020]">Add Injury</h5>
                   <button onClick={() => setIsOpen(false)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -120,62 +120,73 @@ function StudentActivityPhotoModal() {
                       disabled
                     />
                   </div>
-                  {/* Date and Time */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
-                    <div
-                      className="flex flex-col items-start gap-2"
-                      style={{ flex: "1 0 0" }}
+                  {/* Injury Type */}
+                  <div className="flex flex-col items-start gap-2 self-stretch">
+                    <label className="label text-[#868686]">Injured Type</label>
+                    <select
+                      className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
+                      style={{ border: "1px solid #DBDADE" }}
+                      defaultValue={"Select"}
                     >
-                      <label className="label text-[#868686]">Date</label>
-                      <input
-                        type="date"
-                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
-                        style={{ border: "1px solid #DBDADE" }}
-                      />
-                    </div>
-                    <div
-                      className="flex flex-col items-start gap-2"
-                      style={{ flex: "1 0 0" }}
+                      <option value="Select">Select</option>
+                      {/* <option value="PM">PM</option> */}
+                    </select>
+                  </div>
+                  {/* Injury Part */}
+                  <div className="flex flex-col items-start gap-2 self-stretch">
+                    <label className="label text-[#868686]">Injured Part</label>
+                    <select
+                      className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
+                      style={{ border: "1px solid #DBDADE" }}
+                      defaultValue={"Select"}
                     >
-                      <label className="label text-[#868686]">Time</label>
-                      <input
-                        type="time"
-                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
-                        style={{ border: "1px solid #DBDADE" }}
-                      />
-                    </div>
+                      <option value="Select">Select</option>
+                      {/* <option value="PM">PM</option> */}
+                    </select>
                   </div>
                   {/* Attachment */}
                   <div
-                    {...getRootProps()}
-                    className="flex h-[357px] p-[30px] flex-col justify-center items-center gap-2.5 self-stretch rounded-[10px] bg-[#F9F9F9]"
-                    style={{ border: "1px dashed #A4A4A4" }}
+                    className="flex lg:min-w-[585px] flex-col items-start gap-2 self-stretch"
+                    style={{ borderRadius: "20px 20px 0px 0px" }}
                   >
-                    <input {...getInputProps()} />
-                    {isDragActive ? (
-                      <p className="label text-[#383838] self-stretch">
-                        Drop the image here
-                      </p>
-                    ) : (
-                      <>
-                        <div className="flex flex-col justify-center items-center gap-2.5 self-stretch">
-                          <img src={uploadIcon} alt="upload" />
-                          <p className="label text-[#383838] text-center self-stretch">
-                            Drag and drop files here
-                          </p>
-                        </div>
-                        <p className="p-reg text-[#646464]">Or</p>
-                        <div className="flex flex-col items-center justify-center  gap-2.5">
-                          <button className="flex w-full p-bold h-[50px] justify-center items-center rounded-[10px] bg-[#00CCB6] text-[#FFF] py-[10px] px-5">
-                            Choose File
-                          </button>
-                          <p className="p-reg text-[#646464]">
-                            Maximum file size is 50MB.
-                          </p>
-                        </div>
-                      </>
-                    )}
+                    {/* label */}
+                    <div className="flex flex-col items-start gap-2 self-stretch">
+                      <label className="label text-[#868686]">
+                        Upload Photo
+                      </label>
+                    </div>
+                    <div
+                      {...getRootProps()}
+                      className="flex h-[357px] p-[30px] flex-col justify-center items-center gap-2.5 self-stretch rounded-[10px] bg-[#F9F9F9]"
+                      style={{ border: "1px dashed #A4A4A4" }}
+                    >
+                      <input {...getInputProps()} />
+                      {isDragActive ? (
+                        <p className="label text-[#383838] self-stretch">
+                          Drop the image here
+                        </p>
+                      ) : (
+                        <>
+                          <div className="flex flex-col justify-center items-center gap-2.5 self-stretch">
+                            <img src={uploadIcon} alt="upload" />
+                            <p className="label text-[#383838] text-center self-stretch">
+                              Drag and drop files here
+                            </p>
+                          </div>
+                          <p className="p-reg text-[#646464]">Or</p>
+                          <div className="flex flex-col items-center justify-center  gap-2.5">
+                            <button className="flex w-full p-bold h-[50px] justify-center items-center rounded-[10px] bg-[#00CCB6] text-[#FFF] py-[10px] px-5">
+                              Choose File
+                            </button>
+                            <p className="p-reg text-[#646464]">
+                              Maximum file size is 50MB.
+                            </p>
+                          </div>
+                        </>
+                      )}
+                    </div>
                   </div>
+
                   {/* Note */}
                   <div className="flex h-[134px] flex-col items-start gap-2 self-stretch">
                     <label className="label text-[#868686]">Notes</label>
@@ -207,7 +218,7 @@ function StudentActivityPhotoModal() {
                       className="cyan-btn flex justify-center w-full items-center gap-3"
                     >
                       <img src={plusIcon} alt="" />
-                      Add Photo
+                      Add Injury
                     </button>
                   </div>
                 </div>
@@ -220,4 +231,4 @@ function StudentActivityPhotoModal() {
   );
 }
 
-export default StudentActivityPhotoModal;
+export default StudentActivityInjuryModal;

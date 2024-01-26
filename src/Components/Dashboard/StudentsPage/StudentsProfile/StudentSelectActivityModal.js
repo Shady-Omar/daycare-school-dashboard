@@ -14,7 +14,7 @@ import StudentActivityMedicationModal from "./StudentActivityMedicationModal";
 import StudentActivityTeethingModal from "./StudentActivityTeethingModal";
 import StudentActivityFoodModal from "./StudentActivityFoodModal";
 
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import plusIcon from "../../../../Assets/circle-plus-icon.svg";
 
 function StudentSelectActivityModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -22,7 +22,7 @@ function StudentSelectActivityModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="cyan-btn flex justify-center w-[340px] items-center gap-3"
+        className="cyan-btn flex justify-center self-stretch lg:self-auto lg:w-[340px] items-center gap-3"
       >
         <img src={plusIcon} alt="" />
         Add New Activity
@@ -51,7 +51,10 @@ function StudentSelectActivityModal() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen items-start lg:items-center justify-center p-5 overflow-y-scroll lg:overflow-visible"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -62,7 +65,7 @@ function StudentSelectActivityModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex p-[30px] min-w-[820px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex p-[30px] w-[340px] lg:min-w-[820px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -87,7 +90,7 @@ function StudentSelectActivityModal() {
                 </Dialog.Title>
 
                 {/* Activity Icons */}
-                <div className=" grid grid-cols-6 grid-rows-2 gap-5 self-stretch">
+                <div className=" grid grid-cols-2 lg:grid-cols-6 grid-rows-6 lg:grid-rows-2 gap-5 self-stretch">
                   <StudentActivityPhotoModal />
                   <StudentActivityBottleModal />
                   <StudentActivityMoodModal />

@@ -58,7 +58,7 @@ function StudentPersonalInfoEditModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex w-[892px] p-[30px] flex-col justify-center items-center gap-[50px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-[892px] p-[30px] flex-col justify-center items-center gap-[50px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -84,9 +84,9 @@ function StudentPersonalInfoEditModal() {
 
                 <div className="flex flex-col justify-center items-center gap-5 self-stretch">
                   {/* Names */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">First Name</label>
@@ -97,7 +97,7 @@ function StudentPersonalInfoEditModal() {
                       />
                     </div>
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Last Name</label>
@@ -118,9 +118,9 @@ function StudentPersonalInfoEditModal() {
                     />
                   </div>
                   {/* Birthday & Age */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Birthday</label>
@@ -131,7 +131,7 @@ function StudentPersonalInfoEditModal() {
                       />
                     </div>
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Age</label>
@@ -143,9 +143,9 @@ function StudentPersonalInfoEditModal() {
                     </div>
                   </div>
                   {/* Gender & Nationality */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Gender</label>
@@ -159,7 +159,7 @@ function StudentPersonalInfoEditModal() {
                       </select>
                     </div>
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">
@@ -180,23 +180,31 @@ function StudentPersonalInfoEditModal() {
                   <div className="flex flex-col justify-center items-center self-stretch">
                     {/* Vaccination */}
                     <div
-                      className="flex justify-between items-start self-stretch"
+                      className="flex flex-col lg:flex-row pb-5 lg:pb-0 lg:justify-between items-start self-stretch"
                       style={{ borderBottom: "1px solid #DCDCDC" }}
                     >
                       <div
-                        className="flex py-5 items-center gap-[15px] self-stretch"
+                        className="flex py-5 justify-between lg:justify-normal items-center lg:gap-[15px] self-stretch"
                         style={{ flex: "1 0 0" }}
                       >
                         <p className="p-reg text-[#383838]">Vaccination</p>
+                        <label className="relative inline-flex lg:hidden items-center cursor-pointer">
+                          <input
+                            type="checkbox"
+                            value=""
+                            className="sr-only peer"
+                          />
+                          <div className="w-11 h-6 bg-[#DCDCDC] peer-checked:bg-[#00CCB6] peer-focus:outline-none scale-[1.29] rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white  after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                        </label>
                       </div>
                       <div
-                        className="flex justify-end items-center gap-5 self-stretch"
-                        style={{ flex: "1 0 0", padding: "20px 0px 20px 20px" }}
+                        className="flex lg:justify-end items-center gap-5 self-stretch lg:p-[20px_0px_20px_20px]"
+                        style={{ flex: "1 0 0" }}
                       >
                         <p className="p-semi !text-[15px] text-[#00CCB6]">
                           + Add Vaccination
                         </p>
-                        <label className="relative inline-flex items-center cursor-pointer">
+                        <label className="relative hidden lg:inline-flex items-center cursor-pointer">
                           <input
                             type="checkbox"
                             value=""
@@ -208,7 +216,7 @@ function StudentPersonalInfoEditModal() {
                     </div>
                     {/* Autism */}
                     <div
-                      className="flex justify-between items-start self-stretch pt-3"
+                      className="flex justify-between items-start self-stretch lg:pt-3"
                       style={{ borderBottom: "1px solid #DCDCDC" }}
                     >
                       <div
@@ -217,7 +225,7 @@ function StudentPersonalInfoEditModal() {
                       >
                         <p className="p-reg text-[#383838]">Autism</p>
                       </div>
-                      <div className="relative w-[564px] h-7 max-h-[79px]">
+                      <div className="relative hidden lg:block w-[564px] h-7 max-h-[79px]">
                         <input
                           type="range"
                           id="fader"
@@ -253,28 +261,35 @@ function StudentPersonalInfoEditModal() {
                     </div>
                     {/* Disability */}
                     <div
-                      className="flex pb-5 flex-col items-start self-stretch"
+                      className="flex flex-col pb-5 lg:justify-between gap-[30px] lg:gap-0 items-start self-stretch"
                       style={{ borderBottom: "1px solid #DCDCDC" }}
                     >
                       {/* Top */}
-                      <div className="flex h-[72px] justify-between items-start self-stretch">
+                      <div className="flex flex-col lg:flex-row lg:h-[72px] lg:justify-between items-start self-stretch">
                         <div
-                          className="flex py-5 items-center gap-[15px] self-stretch"
+                          className="flex justify-between lg:justify-normal py-5 items-center gap-[15px] self-stretch"
                           style={{ flex: "1 0 0" }}
                         >
                           <p className="p-reg text-[#383838]">Disability</p>
+                          <label className="relative inline-flex lg:hidden items-center cursor-pointer">
+                            <input
+                              type="checkbox"
+                              value=""
+                              className="sr-only peer"
+                            />
+                            <div className="w-11 h-6 bg-[#DCDCDC] peer-checked:bg-[#00CCB6] peer-focus:outline-none scale-[1.29] rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white  after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                          </label>
                         </div>
                         <div
-                          className="flex justify-end items-center gap-5 self-stretch"
+                          className="flex lg:justify-end items-center gap-5 self-stretch lg:p-[20px_0px_20px_20px]"
                           style={{
                             flex: "1 0 0",
-                            padding: "20px 0px 20px 20px",
                           }}
                         >
                           <p className="p-semi !text-[15px] text-[#00CCB6]">
                             + Add Disability
                           </p>
-                          <label className="relative inline-flex items-center cursor-pointer">
+                          <label className="relative hidden lg:inline-flex items-center cursor-pointer">
                             <input
                               type="checkbox"
                               value=""
@@ -285,8 +300,8 @@ function StudentPersonalInfoEditModal() {
                         </div>
                       </div>
                       {/* Items */}
-                      <div className="flex items-start gap-5">
-                        <div className="flex flex-col items-start gap-2">
+                      <div className="flex flex-col lg:flex-row items-start gap-5">
+                        <div className="flex flex-col items-start gap-2 self-stretch">
                           <div
                             className="flex h-[50px] px-[15px] items-center gap-2.5 rounded-[10px] bg-[#00CCB6]"
                             style={{ border: "1px solid #00CCB6" }}

@@ -2,8 +2,8 @@ import { Fragment, useState, useCallback } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useDropzone } from "react-dropzone";
 
-import plusIcon from "../Assets/circle-plus-icon.svg";
-import uploadIcon from "../Assets/upload-icon.svg";
+import plusIcon from "../../../../Assets/circle-plus-icon.svg";
+import uploadIcon from "../../../../Assets/upload-icon.svg";
 
 const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
 
@@ -40,7 +40,7 @@ function StudentNewAttachmentModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="cyan-btn flex justify-center w-[340px] items-center gap-3"
+        className="cyan-btn flex justify-center self-stretch lg:w-[340px] items-center gap-3"
       >
         <img src={plusIcon} alt="" />
         Add New Attachment
@@ -83,7 +83,7 @@ function StudentNewAttachmentModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex p-[30px] min-w-[820px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex p-[30px] w-[340px] lg:min-w-[820px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -130,16 +130,16 @@ function StudentNewAttachmentModal() {
                           <button className="flex w-full p-bold h-[50px] justify-center items-center rounded-[10px] bg-[#00CCB6] text-[#FFF] py-[10px] px-5">
                             Choose File
                           </button>
-                          <p className="p-reg text-[#646464]">
+                          <p className="p-reg text-center text-[#646464]">
                             Maximum file size is 50MB.
                           </p>
                         </div>
                       </>
                     )}
                   </div>
-                  <p className="p-reg text-[#646464] text-center">
-                    Adding attachment types is easy: just start typing and
-                    <br /> click where it says "+ Click Here" when it's ready.
+                  <p className="p-reg !text-[15px] text-[#646464] text-center">
+                    Adding attachment types is easy: just start typing and click
+                    where it says "+ Click Here" when it's ready.
                   </p>
                 </div>
                 {/* Attachment Type */}
@@ -179,10 +179,10 @@ function StudentNewAttachmentModal() {
                 </div>
                 {/* Check Visibility */}
                 <div className="flex flex-col justify-center items-start gap-[15px] self-stretch">
-                  <p className="p-reg text-[#646464]">
+                  <p className="p-reg !text-[15px] text-[#646464]">
                     Who should be able to view this file?
                   </p>
-                  <div className="flex items-center gap-5">
+                  <div className="flex flex-col lg:flex-row items-start lg:items-center gap-5">
                     <div className="flex items-center gap-2.5">
                       <input
                         type="checkbox"

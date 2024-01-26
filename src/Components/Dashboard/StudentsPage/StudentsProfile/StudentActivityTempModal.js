@@ -1,9 +1,9 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-import temperatureIcon from "../Assets/temperature.svg";
-import infoIcon from "../Assets/info-icon.svg";
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import temperatureIcon from "../../../../Assets/temperature.svg";
+import infoIcon from "../../../../Assets/info-icon.svg";
+import plusIcon from "../../../../Assets/circle-plus-icon.svg";
 
 function StudentActivityTempModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -60,7 +60,7 @@ function StudentActivityTempModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:min-w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -95,9 +95,9 @@ function StudentActivityTempModal() {
                     />
                   </div>
                   {/* Date and Time */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Date</label>
@@ -108,7 +108,7 @@ function StudentActivityTempModal() {
                       />
                     </div>
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Time</label>

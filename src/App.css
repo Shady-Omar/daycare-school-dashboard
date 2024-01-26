@@ -277,6 +277,7 @@ input[type="range"]:focus {
   padding: 10px 20px;
   height: 50px;
   transition: 0.3s;
+  outline: none;
 }
 
 .white-btn:hover {
@@ -297,6 +298,7 @@ input[type="range"]:focus {
   padding: 10px 20px;
   height: 50px;
   transition: 0.3s;
+  outline: none;
 }
 
 .cyan-btn {
@@ -312,6 +314,7 @@ input[type="range"]:focus {
   padding: 10px 20px;
   height: 50px;
   transition: 0.3s;
+  outline: none;
 }
 
 .cyan-btn:hover {
@@ -331,6 +334,7 @@ input[type="range"]:focus {
   color: #a4a4a4;
   padding: 10px 20px;
   height: 50px;
+  outline: none;
 }
 
 .sidebar-footer {

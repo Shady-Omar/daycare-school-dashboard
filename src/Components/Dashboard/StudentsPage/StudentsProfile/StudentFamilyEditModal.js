@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-function StudentContractEditModal() {
+function StudentFamilyEditModal() {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -58,12 +58,12 @@ function StudentContractEditModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex w-[892px] p-[30px] flex-col justify-center items-center gap-[50px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-[892px] p-[30px] flex-col justify-center items-center gap-[50px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
                 >
-                  <h5 className="h5-bold text-[#202020]">Contract Details</h5>
+                  <h5 className="h5-bold text-[#202020]">Family Details</h5>
                   <button onClick={() => setIsOpen(false)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -81,119 +81,87 @@ function StudentContractEditModal() {
                 </Dialog.Title>
 
                 <div className="flex flex-col justify-center items-center gap-5 self-stretch">
-                  {/* Plan & Service */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
+                  {/* Names */}
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
-                      <label className="label text-[#868686]">Plan Type</label>
-                      <select
-                        className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
-                        style={{ border: "1px solid #DBDADE" }}
-                        defaultValue={"Monthly"}
-                      >
-                        <option value="Monthly">Monthly</option>
-                        {/* <option value="PM">PM</option> */}
-                      </select>
-                    </div>
-                    <div
-                      className="flex flex-col items-start gap-2"
-                      style={{ flex: "1 0 0" }}
-                    >
-                      <label className="label text-[#868686]">
-                        Service Timing
-                      </label>
-                      <select
-                        className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
-                        style={{ border: "1px solid #DBDADE" }}
-                        defaultValue={"Evening"}
-                      >
-                        <option value="Evening">Evening</option>
-                        {/* <option value="PM">PM</option> */}
-                      </select>
-                    </div>
-                  </div>
-                  {/* Day & Hours */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
-                    <div
-                      className="flex flex-col items-start gap-2"
-                      style={{ flex: "1 0 0" }}
-                    >
-                      <label className="label text-[#868686]">
-                        Service Day
-                      </label>
+                      <label className="label text-[#868686]">First Name</label>
                       <input
                         type="text"
-                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#EDEDED]"
-                        style={{ border: "1px solid #DBDADE" }}
-                        disabled
-                        placeholder="5 Days a week"
-                      />
-                    </div>
-                    <div
-                      className="flex flex-col items-start gap-2"
-                      style={{ flex: "1 0 0" }}
-                    >
-                      <label className="label text-[#868686]">
-                        Service Hours
-                      </label>
-                      <input
-                        type="text"
-                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#EDEDED]"
-                        style={{ border: "1px solid #DBDADE" }}
-                        disabled
-                        placeholder="1:30 PM - 5:30 PM"
-                      />
-                    </div>
-                  </div>
-                  {/* Start & End Dates */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
-                    <div
-                      className="flex flex-col items-start gap-2"
-                      style={{ flex: "1 0 0" }}
-                    >
-                      <label className="label text-[#868686]">Start Date</label>
-                      <input
-                        type="date"
                         className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
                         style={{ border: "1px solid #DBDADE" }}
                       />
                     </div>
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
-                      <label className="label text-[#868686]">End Date</label>
+                      <label className="label text-[#868686]">Last Name</label>
                       <input
-                        type="date"
-                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#EDEDED]"
+                        type="text"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
                         style={{ border: "1px solid #DBDADE" }}
-                        disabled
-                        placeholder="1:30 PM - 5:30 PM"
                       />
                     </div>
                   </div>
-                  {/* Status */}
-                  <div className="flex justify-center items-center gap-5 self-stretch">
+                  {/* Relation & ID Number */}
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
-                      <label className="label text-[#868686]">Status</label>
+                      <label className="label text-[#868686]">Relation</label>
                       <select
                         className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
                         style={{ border: "1px solid #DBDADE" }}
-                        defaultValue={"Select"}
+                        defaultValue={"Father"}
                       >
-                        <option value="Select">Select</option>
+                        <option value="Father">Father</option>
                         {/* <option value="PM">PM</option> */}
                       </select>
                     </div>
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
-                    ></div>
+                    >
+                      <label className="label text-[#868686]">ID Number</label>
+                      <input
+                        type="text"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                        style={{ border: "1px solid #DBDADE" }}
+                      />
+                    </div>
+                  </div>
+                  {/* Phone & Email */}
+                  <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-5 self-stretch">
+                    <div
+                      className="flex flex-col items-start gap-2 self-stretch"
+                      style={{ flex: "1 0 0" }}
+                    >
+                      <label className="label text-[#868686]">
+                        MOBILE phone number
+                      </label>
+                      <input
+                        type="text"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                        style={{ border: "1px solid #DBDADE" }}
+                      />
+                    </div>
+                    <div
+                      className="flex flex-col items-start gap-2 self-stretch"
+                      style={{ flex: "1 0 0" }}
+                    >
+                      <label className="label text-[#868686]">
+                        Email Address
+                      </label>
+                      <input
+                        type="text"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                        style={{ border: "1px solid #DBDADE" }}
+                      />
+                    </div>
                   </div>
                 </div>
                 {/* Submit Button */}
@@ -220,4 +188,4 @@ function StudentContractEditModal() {
   );
 }
 
-export default StudentContractEditModal;
+export default StudentFamilyEditModal;
