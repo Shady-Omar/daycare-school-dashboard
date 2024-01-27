@@ -25,14 +25,13 @@ import AddStudentContent from "./Components/Dashboard/StudentsPage/AddStudentCon
 import AdmissionContent from "./Components/Dashboard/StudentsPage/AdmissionContent";
 import TotalStudentsContent from "./Components/Dashboard/StudentsPage/TotalStudentsContent";
 import AppliedContent from "./Components/Dashboard/StudentsPage/AppliedChildrenContent";
-import RoomContent from "./Components/RoomContent";
-import MyCenter from "./Pages/MyCenter";
-import RoomDetails from "./Components/RoomDetails";
-import ChildrenTab from "./Components/ChildrenTab";
-import FamilyTab from "./Components/FamilyTab";
-import ActivitesTab from "./Components/ActivitesTab";
-import ManagingTab from "./Components/ManagingTab";
-import CalendarContent from "./Components/CalendarContent";
+import RoomContent from "./Components/Dashboard/MyCenterPage/RoomContent";
+import RoomDetails from "./Components/Dashboard/MyCenterPage/RoomDetails";
+import ChildrenTab from "./Components/Dashboard/MyCenterPage/ChildrenTab";
+import FamilyTab from "./Components/Dashboard/MyCenterPage/FamilyTab";
+import ActivitesTab from "./Components/Dashboard/MyCenterPage/ActivitesTab";
+import ManagingTab from "./Components/Dashboard/MyCenterPage/ManagingTab";
+import CalendarContent from "./Components/Dashboard/MyCenterPage/CalendarContent";
 import Messaging from "./Pages/Messaging";
 import MessagesContent from "./Components/MessagesContent";
 import AnnouncementContent from "./Components/AnnouncementContent";
@@ -92,6 +91,7 @@ import SettingsContent from "./Components/Dashboard/SettingsPage/SettingsContent
 import ServicesContent from "./Components/Dashboard/ServicesPage/ServicesContent";
 import StudentsContent from "./Components/Dashboard/StudentsPage/StudentsContent";
 import SupportContent from "./Components/Dashboard/SupportPage/SupportContent";
+import MyCenterContent from "./Components/Dashboard/MyCenterPage/MyCenterContent";
 
 function App() {
   return (
@@ -195,22 +195,22 @@ function App() {
             <Route path="ticket/create" element={<SupportCreateNewTicket />} />
             <Route path="ticket/view" element={<SupportViewTicket />} />
           </Route>
-          {/*  */}
-        </Route>
 
-        {/* My Center */}
-        <Route path={"/my-center"} element={<MyCenter />}>
-          {/* Make 'room' the default child route */}
-          <Route index element={<RoomContent />} />
-          <Route path="room" element={<RoomContent />} />
-          <Route path="room/details" element={<RoomDetails />}>
-            <Route index element={<ChildrenTab />} />
-            <Route path="children" element={<ChildrenTab />} />
-            <Route path="family" element={<FamilyTab />} />
-            <Route path="activities" element={<ActivitesTab />} />
-            <Route path="manage" element={<ManagingTab />} />
+          {/* My Center Page */}
+          <Route path={"my-center"} element={<MyCenterContent />}>
+            {/* Make 'room' the default child route */}
+            <Route index element={<RoomContent />} />
+            <Route path="room" element={<RoomContent />} />
+            <Route path="room/details" element={<RoomDetails />}>
+              <Route index element={<ChildrenTab />} />
+              <Route path="children" element={<ChildrenTab />} />
+              <Route path="family" element={<FamilyTab />} />
+              <Route path="activities" element={<ActivitesTab />} />
+              <Route path="manage" element={<ManagingTab />} />
+            </Route>
+            <Route path="calendar" element={<CalendarContent />} />
           </Route>
-          <Route path="calendar" element={<CalendarContent />} />
+          {/*  */}
         </Route>
 
         {/* Messaging */}

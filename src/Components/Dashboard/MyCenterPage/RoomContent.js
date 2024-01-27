@@ -1,20 +1,20 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
-
-import roomsIcon from "../Assets/rooms-icon.svg";
-import presentRoomsIcon from "../Assets/visited-icon.svg";
-import timeIcon from "../Assets/time-icon.svg";
-import schoolIcon from "../Assets/school-icon.svg";
-import actionArrow from "../Assets/action-arrow.svg";
+import React from "react";
 import { Link } from "react-router-dom";
+
+import roomsIcon from "../../../Assets/rooms-icon.svg";
+import presentRoomsIcon from "../../../Assets/visited-icon.svg";
+import timeIcon from "../../../Assets/time-icon.svg";
+import schoolIcon from "../../../Assets/school-icon.svg";
+import actionArrow from "../../../Assets/action-arrow.svg";
+import EditRoomModal from "./EditRoomModal";
 
 function RoomContent() {
   return (
     <div className="flex flex-col items-start gap-[30px] self-stretch">
       <div className="flex p-5 flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-[#FFF]">
-        <div className="flex items-center gap-5 self-stretch">
+        <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center gap-5 self-stretch">
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF]"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF] self-stretch"
             style={{ border: "2px solid #00CCB6", flex: "1 0 0" }}
           >
             <div className="flex w-12 h-[47px] p-[7.128px] justify-center items-center gap-[14.256px] rounded-[5.702px] bg-[#00CCB6]">
@@ -29,7 +29,7 @@ function RoomContent() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF]"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF] self-stretch"
             style={{ border: "1px solid #DCDCDC", flex: "1 0 0" }}
           >
             <div className="flex w-12 h-[47px] p-[7.128px] justify-center items-center gap-[14.256px] rounded-[5.702px] bg-[#6418C3]">
@@ -44,7 +44,7 @@ function RoomContent() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF]"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF] self-stretch"
             style={{ border: "1px solid #DCDCDC", flex: "1 0 0" }}
           >
             <div className="flex w-12 h-[47px] p-[7.128px] justify-center items-center gap-[14.256px] rounded-[5.702px] bg-[#E328AF]">
@@ -90,7 +90,10 @@ function RoomContent() {
           {/* Data */}
           <div className="flex flex-col items-start gap-5 self-stretch">
             {/* Table */}
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+            <div
+              id="custom-scroll"
+              className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+            >
               <table className="w-full text-left rtl:text-right bg-[#FFF] ">
                 <thead
                   className=" bg-[#EBEBEB] text-[#383838]"
@@ -141,12 +144,7 @@ function RoomContent() {
                     <td className="px-6 py-4 p-reg text-[#646464]">4 Staff</td>
 
                     <td className="flex w-full justify-center py-[15px] px-5 items-center gap-[15px] self-stretch">
-                      <div className="flex flex-col justify-center items-start gap-2">
-                        <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#00CCB6] action-btn">
-                          Actions
-                          <img src={actionArrow} alt="action" />
-                        </div>
-                      </div>
+                      <EditRoomModal />
                     </td>
                   </tr>
                   <tr className=" border-x-[0.5px] border-b-[0.5px] border-[#DCDCDC]">

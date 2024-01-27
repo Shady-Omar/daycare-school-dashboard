@@ -1,25 +1,22 @@
 import React from "react";
 
-import absentIcon from "../Assets/absent-icon.svg";
-import presentRoomsIcon from "../Assets/visited-icon.svg";
-import timeIcon from "../Assets/time-icon.svg";
-import childrenPlaceholder from "../Assets/children-placeholder.png";
-import sortArrow from "../Assets/sort-dropdown-arrow.svg";
-import downArrow from "../Assets/cyan-down-arrow.svg";
-import checkoutIcon from "../Assets/checkout-icon.svg";
+import absentIcon from "../../../Assets/absent-icon.svg";
+import presentRoomsIcon from "../../../Assets/visited-icon.svg";
+import timeIcon from "../../../Assets/time-icon.svg";
+import childrenPlaceholder from "../../../Assets/children-placeholder.png";
+import sortArrow from "../../../Assets/sort-dropdown-arrow.svg";
+import downArrow from "../../../Assets/cyan-down-arrow.svg";
+import checkoutIcon from "../../../Assets/checkout-icon.svg";
 import ChangeStudentStatus from "./ChangeStudentStatus";
 
 function ChildrenTab() {
   return (
     <>
       {/* Cards */}
-      <div
-        className="flex flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-[#FFF]"
-        style={{ padding: "30px 30px 0px 30px" }}
-      >
-        <div className="flex items-center gap-5 self-stretch">
+      <div className="flex p-[30px] lg:p-[30px_30px_0px_30px] flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-[#FFF]">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-5 self-stretch">
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF]"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF] self-stretch"
             style={{ border: "1px solid #DCDCDC", flex: "1 0 0" }}
           >
             <div className="flex w-12 h-[47px] p-[7.128px] justify-center items-center gap-[14.256px] rounded-[5.702px] bg-[#00CCB6]">
@@ -34,7 +31,7 @@ function ChildrenTab() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF]"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF] self-stretch"
             style={{ border: "1px solid #DCDCDC", flex: "1 0 0" }}
           >
             <div className="flex w-12 h-[47px] p-[7.128px] justify-center items-center gap-[14.256px] rounded-[5.702px] bg-[#FF4A55]">
@@ -49,7 +46,7 @@ function ChildrenTab() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF]"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF] self-stretch"
             style={{ border: "1px solid #DCDCDC", flex: "1 0 0" }}
           >
             <div className="flex w-12 h-[47px] p-[7.128px] justify-center items-center gap-[14.256px] rounded-[5.702px] bg-[#FFAB2D]">
@@ -64,7 +61,7 @@ function ChildrenTab() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF]"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-[#FFF] self-stretch"
             style={{ border: "1px solid #DCDCDC", flex: "1 0 0" }}
           >
             <div className="flex w-12 h-[47px] p-[7.128px] justify-center items-center gap-[14.256px] rounded-[5.702px] bg-[#5ECFFF]">
@@ -87,7 +84,7 @@ function ChildrenTab() {
       >
         <div className="flex items-center gap-[30px] self-stretch">
           <div
-            className="flex flex-col items-start gap-2"
+            className="flex flex-col items-start gap-2 self-stretch"
             style={{ flex: "1 0 0" }}
           >
             <label className="label text-[#868686]">Children</label>
@@ -104,14 +101,16 @@ function ChildrenTab() {
         {/* Info */}
         <div className="flex items-center gap-[30px] self-stretch">
           <div
-            className="flex py-[15px] px-5 justify-between items-center self-stretch rounded-[10px] bg-[#00CCB6]"
+            className="flex flex-col lg:flex-row py-[15px] px-5 justify-center lg:justify-between items-start lg:items-center gap-5 lg:gap-0 self-stretch rounded-[10px] bg-[#00CCB6]"
             style={{ flex: "1 0 0" }}
           >
-            <p className="p-semi text-[#FFF]">1 Children selected</p>
-            <div className="flex items-center gap-5">
+            <p className="p-semi !text-[15px] text-[#FFF]">
+              1 Children selected
+            </p>
+            <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center gap-2.5 lg:gap-5 self-stretch lg:self-auto">
               <ChangeStudentStatus />
               <button
-                className="flex h-[45px] justify-center items-center rounded-[5px] p-5 gap-3 label-reg text-[#FFF]"
+                className="flex self-stretch lg:self-auto h-[45px] justify-center items-center rounded-[5px] p-5 gap-3 label-reg text-[#FFF]"
                 style={{ border: "1px solid #FFF" }}
               >
                 Change Room
@@ -134,7 +133,10 @@ function ChildrenTab() {
           </div>
           <div className="flex flex-col items-start gap-5 self-stretch">
             {/* Table */}
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+            <div
+              id="custom-scroll"
+              className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+            >
               <table className="w-full text-left rtl:text-right bg-[#FFF] ">
                 <thead
                   className=" bg-[#EBEBEB] text-[#383838]"

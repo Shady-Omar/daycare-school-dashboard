@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import plusIcon from "../../../Assets/circle-plus-icon.svg";
 
 function AddNewRoomModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ function AddNewRoomModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="cyan-btn flex flex-row items-center "
+        className="cyan-btn flex justify-center items-center self-stretch gap-3"
       >
         <img src={plusIcon} alt="" />
         Add New Room
@@ -49,7 +49,7 @@ function AddNewRoomModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-[500px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -74,7 +74,7 @@ function AddNewRoomModal() {
                 <div className="flex flex-col justify-center items-center gap-[20px] self-stretch">
                   {/* form */}
                   <div className="flex flex-col items-start justify-center gap-5 self-stretch">
-                    <div className="flex w-[400px] flex-col items-start gap-2">
+                    <div className="flex self-stretch flex-col items-start gap-2">
                       <label className="label text-[#868686]">Room Name</label>
                       <input
                         type="text"
@@ -83,9 +83,9 @@ function AddNewRoomModal() {
                         placeholder="Enter Room Name"
                       />
                     </div>
-                    <div className="flex justify-center items-center gap-5 self-stretch">
+                    <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
                       <div
-                        className="flex max-w-[200px] flex-col items-start gap-2"
+                        className="flex self-stretch flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <div className="flex items-start gap-[-1] self-stretch">
@@ -118,7 +118,7 @@ function AddNewRoomModal() {
                         </div>
                       </div>
                       <div
-                        className="flex max-w-[200px] flex-col items-start gap-2"
+                        className="flex self-stretch flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <div className="flex items-start gap-[-1] self-stretch">
@@ -151,7 +151,7 @@ function AddNewRoomModal() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex w-[400px] flex-col items-start gap-2">
+                    <div className="flex self-stretch flex-col items-start gap-2">
                       <label className="label text-[#868686]">
                         Room Capacity
                       </label>

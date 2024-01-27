@@ -1,12 +1,12 @@
 import React from "react";
 
-import babyIcon from "../Assets/baby-bottle-icon.svg";
-import diaperIcon from "../Assets/diaper-icon.svg";
-import teethIcon from "../Assets/teeth-icon.svg";
-import peoplePlaceholder from "../Assets/people-placeholder.png";
-import editIcon from "../Assets/action-edit.svg";
-import imageIcon from "../Assets/image-icon.svg";
-import photosPlaceholder from "../Assets/photos-placeholder.png";
+import babyIcon from "../../../Assets/baby-bottle-icon.svg";
+import diaperIcon from "../../../Assets/diaper-icon.svg";
+import teethIcon from "../../../Assets/teeth-icon.svg";
+import peoplePlaceholder from "../../../Assets/people-placeholder.png";
+import editIcon from "../../../Assets/action-edit.svg";
+import imageIcon from "../../../Assets/image-icon.svg";
+import photosPlaceholder from "../../../Assets/photos-placeholder.png";
 
 function ActivitesTab() {
   return (

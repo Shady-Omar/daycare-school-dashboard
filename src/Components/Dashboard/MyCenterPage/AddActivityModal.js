@@ -1,8 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-import plusWhiteBtnIcon from "../Assets/plus-white-btn.svg";
-import SelectActivityType from "./SelectActivityType";
+import plusWhiteBtnIcon from "../../../Assets/plus-white-btn.svg";
+import SelectActivityType from "../../SelectActivityType";
 
 function AddActivityModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,7 @@ function AddActivityModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="white-btn flex flex-row items-center "
+        className="white-btn flex items-center justify-center self-stretch lg:self-auto lg:order-3"
       >
         <img src={plusWhiteBtnIcon} alt="" />
         Add Activity

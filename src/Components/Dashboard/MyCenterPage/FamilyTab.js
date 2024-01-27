@@ -1,10 +1,10 @@
 import React from "react";
 
-import childrenPlaceholder from "../Assets/children-placeholder.png";
-import editIcon from "../Assets/action-edit.svg";
-import deleteIcon from "../Assets/delete-icon.svg";
-import AddFamilyModal from "./AddFamilyModal";
-import EditFamilyModal from "./EditFamilyModal";
+import childrenPlaceholder from "../../../Assets/children-placeholder.png";
+import editIcon from "../../../Assets/action-edit.svg";
+import deleteIcon from "../../../Assets/delete-icon.svg";
+import AddFamilyModal from "../../AddFamilyModal";
+import EditFamilyModal from "../../EditFamilyModal";
 
 function FamilyTab() {
   return (

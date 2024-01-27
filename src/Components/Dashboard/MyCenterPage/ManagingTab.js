@@ -1,9 +1,9 @@
 import React from "react";
 
-import sortArrow from "../Assets/sort-dropdown-arrow.svg";
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import sortArrow from "../../../Assets/sort-dropdown-arrow.svg";
+import plusIcon from "../../../Assets/circle-plus-icon.svg";
 
-import childrenPlaceholder from "../Assets/children-placeholder.png";
+import childrenPlaceholder from "../../../Assets/children-placeholder.png";
 
 function ManagingTab() {
   return (

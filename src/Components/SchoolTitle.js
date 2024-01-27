@@ -178,11 +178,16 @@ function SchoolTitle() {
         ) : currentPath === "/my-center/room" ? (
           <h2 className="h2-bold text-[#202020]">Room List</h2>
         ) : currentPath.includes("/my-center/room/details") ? (
-          <div className="flex items-center gap-5">
-            <h2 className="h2-bold text-[#202020]">Room 1</h2>
+          <div className="flex items-end lg:items-center gap-[5px] lg:gap-5 self-stretch lg:self-auto">
+            <h2
+              className="h2-bold text-[#202020] text-left"
+              style={{ flex: "1 0 0" }}
+            >
+              Room 1
+            </h2>
             <div className="flex py-2.5 px-5 justify-center items-center gap-2.5 rounded-[10px] bg-[#FFF]">
-              <h5 className="h5-bold text-[#202020]">5/50</h5>
-              <p className="p-reg text-[#646464]">Children</p>
+              <h5 className="h5-bold !text-[18px] text-[#202020]">5/50</h5>
+              <p className="p-reg !text-[15px] text-[#646464]">Children</p>
             </div>
           </div>
         ) : currentPath === "/my-center/calendar" ? (

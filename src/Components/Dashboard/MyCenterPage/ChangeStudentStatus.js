@@ -7,7 +7,7 @@ function ChangeStudentStatus() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="flex h-[45px] justify-center items-center rounded-[5px] bg-[#FFF] p-5 gap-3 label-reg text-[#383838]"
+        className="flex self-stretch lg:self-auto h-[45px] justify-center items-center rounded-[5px] bg-[#FFF] p-5 gap-3 label-reg text-[#383838]"
       >
         Change Student Status
       </button>
@@ -46,9 +46,9 @@ function ChangeStudentStatus() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-[500px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
-                  className="flex pb-2.5 justify-between items-center self-stretch"
+                  className="flex pb-2.5 justify-between items-center self-stretch gap-[21px]"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
                 >
                   <div
@@ -79,7 +79,7 @@ function ChangeStudentStatus() {
                 <div className="flex flex-col justify-center items-center gap-[20px] self-stretch">
                   {/* form */}
                   <div className="flex flex-col items-start justify-center gap-5 self-stretch">
-                    <div className="flex w-[400px] flex-col items-start gap-2">
+                    <div className="flex self-stretch flex-col items-start gap-2">
                       <label className="label text-[#868686]">Children</label>
                       <select
                         className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left self-stretch focus:border-none focus:outline-none placeholder-gray-400"
@@ -90,7 +90,7 @@ function ChangeStudentStatus() {
                         {/* <option value="PM">PM</option> */}
                       </select>
                     </div>
-                    <div className="flex w-[400px] flex-col items-start gap-2">
+                    <div className="flex self-stretch flex-col items-start gap-2">
                       <label className="label text-[#868686]">New Status</label>
                       <select
                         className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left self-stretch focus:border-none focus:outline-none placeholder-gray-400"
