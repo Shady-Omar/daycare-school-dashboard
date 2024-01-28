@@ -1,15 +1,21 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import AddStudentFamilyModal from "./AddStudentFamilyModal";
 
-import placeholder from "../Assets/select-children-activity-placeholder.png";
-
-function SelectChildActivity() {
+function AddFamilyModal() {
   let [isOpen, setIsOpen] = useState(false);
-
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className="cyan-btn w-full">
-        Add Note
+      <button
+        onClick={() => setIsOpen(true)}
+        className="flex items-start flex-col gap-2"
+      >
+        <div
+          className="flex py-2.5 px-[15px] gap-2.5 rounded-md"
+          style={{ background: "rgba(0, 204, 182, 0.10)" }}
+        >
+          <p className="label-semi text-[#00CCB6] !text-xs">Add Family</p>
+        </div>
       </button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
@@ -35,7 +41,10 @@ function SelectChildActivity() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen items-start justify-center p-10 overflow-y-scroll"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -46,13 +55,14 @@ function SelectChildActivity() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF] scale-90">
+              <Dialog.Panel className="flex w-[340px] lg:w-[500px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
                 >
                   <h5 className="h5-bold text-[#202020]">
-                    Select child to add the activate
+                    Add Family for <br className="lg:hidden" />
+                    <span className="text-[#00CCB6]">Mohammad Ashraf</span>
                   </h5>
                   <button onClick={() => setIsOpen(false)}>
                     <svg
@@ -71,12 +81,15 @@ function SelectChildActivity() {
                 </Dialog.Title>
 
                 <div className="flex flex-col justify-center items-center gap-[20px] self-stretch">
+                  {/* Buttons */}
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch">
+                    <AddStudentFamilyModal />
+                    <button className="white-btn w-full">Existing</button>
+                  </div>
                   {/* form */}
                   <div className="flex flex-col items-start justify-center gap-5 self-stretch">
-                    <div className="flex w-[400px] flex-col items-start gap-2">
-                      <label className="label text-[#868686]">
-                        Select Room
-                      </label>
+                    <div className="flex flex-col items-start gap-2 self-stretch">
+                      <label className="label text-[#868686]">Family</label>
                       <select
                         className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
                         style={{ border: "1px solid #DBDADE" }}
@@ -87,64 +100,43 @@ function SelectChildActivity() {
                       </select>
                     </div>
 
-                    <div className="flex flex-col items-start gap-[15px] self-stretch rounded-[10px] bg-[#FFF]">
-                      <div className="flex justify-between items-start self-stretch">
-                        <p className="label text-[#868686]">Date From</p>
-                        <p className="p-reg text-[#868686] cursor-pointer">
-                          Select All
-                        </p>
-                      </div>
-                      <div
-                        className="flex pb-[15px] justify-between items-center self-stretch"
-                        style={{ borderBottom: "1px solid #EBEBEB" }}
-                      >
-                        <div className="flex items-center gap-[15px]">
-                          <div className="flex h-[45px] w-[45px] justify-center items-start gap-2.5">
-                            <img src={placeholder} alt="" />
-                          </div>
-                          <div className="flex flex-col justify-center items-start gap-[5px]">
-                            <p className="p-bold text-[#383838]">
-                              Mohammad Ashraf
-                            </p>
-                          </div>
-                        </div>
-                        <input type="checkbox" />
-                      </div>
-                      <div
-                        className="flex pb-[15px] justify-between items-center self-stretch"
-                        style={{ borderBottom: "1px solid #EBEBEB" }}
-                      >
-                        <div className="flex items-center gap-[15px]">
-                          <div className="flex h-[45px] w-[45px] justify-center items-start gap-2.5">
-                            <img src={placeholder} alt="" />
-                          </div>
-                          <div className="flex flex-col justify-center items-start gap-[5px]">
-                            <p className="p-bold text-[#383838]">
-                              Mohammad Ashraf
-                            </p>
-                          </div>
-                        </div>
-                        <input type="checkbox" checked />
-                      </div>
-                      <div
-                        className="flex pb-[15px] justify-between items-center self-stretch"
-                        style={{ borderBottom: "1px solid #EBEBEB" }}
-                      >
-                        <div className="flex items-center gap-[15px]">
-                          <div className="flex h-[45px] w-[45px] justify-center items-start gap-2.5">
-                            <img src={placeholder} alt="" />
-                          </div>
-                          <div className="flex flex-col justify-center items-start gap-[5px]">
-                            <p className="p-bold text-[#383838]">
-                              Mohammad Ashraf
-                            </p>
-                          </div>
-                        </div>
-                        <input type="checkbox" />
-                      </div>
-                      <p className="p-reg text-center text-[#383838] self-stretch">
-                        Class 1 (1 Selected)
-                      </p>
+                    <div className="flex self-stretch flex-col items-start gap-2">
+                      <label className="label text-[#868686]">First Name</label>
+                      <input
+                        type="text"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                        style={{ border: "1px solid #DBDADE" }}
+                        placeholder="Enter First Name"
+                      />
+                    </div>
+                    <div className="flex self-stretch flex-col items-start gap-2">
+                      <label className="label text-[#868686]">Last Name</label>
+                      <input
+                        type="text"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                        style={{ border: "1px solid #DBDADE" }}
+                        placeholder="Enter Last Name"
+                      />
+                    </div>
+                    <div className="flex self-stretch flex-col items-start gap-2">
+                      <label className="label text-[#868686]">Email ID</label>
+                      <input
+                        type="text"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                        style={{ border: "1px solid #DBDADE" }}
+                        placeholder="Enter Email ID"
+                      />
+                    </div>
+                    <div className="flex self-stretch flex-col items-start gap-2">
+                      <label className="label text-[#868686]">
+                        mobile number
+                      </label>
+                      <input
+                        type="text"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                        style={{ border: "1px solid #DBDADE" }}
+                        placeholder="Enter Phone Number"
+                      />
                     </div>
                   </div>
 
@@ -154,7 +146,13 @@ function SelectChildActivity() {
                       onClick={() => setIsOpen(false)}
                       className="cyan-btn w-full"
                     >
-                      Next
+                      Save Contact
+                    </button>
+                    <button
+                      onClick={() => setIsOpen(false)}
+                      className="p-semi text-[#878787]"
+                    >
+                      Cancel and close
                     </button>
                   </div>
                 </div>
@@ -167,4 +165,4 @@ function SelectChildActivity() {
   );
 }
 
-export default SelectChildActivity;
+export default AddFamilyModal;

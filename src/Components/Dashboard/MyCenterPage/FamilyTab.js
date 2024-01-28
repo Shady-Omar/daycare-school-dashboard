@@ -3,7 +3,7 @@ import React from "react";
 import childrenPlaceholder from "../../../Assets/children-placeholder.png";
 import editIcon from "../../../Assets/action-edit.svg";
 import deleteIcon from "../../../Assets/delete-icon.svg";
-import AddFamilyModal from "../../AddFamilyModal";
+import AddFamilyModal from "./AddFamilyModal";
 import EditFamilyModal from "../../EditFamilyModal";
 
 function FamilyTab() {
@@ -14,7 +14,10 @@ function FamilyTab() {
     >
       <div className="flex flex-col items-start gap-5 self-stretch">
         {/* Table */}
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+        <div
+          id="custom-scroll"
+          className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+        >
           <table className="w-full text-left rtl:text-right bg-[#FFF] ">
             <thead
               className=" bg-[#EBEBEB] text-[#383838]"

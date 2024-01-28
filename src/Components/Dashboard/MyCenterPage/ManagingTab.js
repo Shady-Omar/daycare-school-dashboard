@@ -7,12 +7,9 @@ import childrenPlaceholder from "../../../Assets/children-placeholder.png";
 
 function ManagingTab() {
   return (
-    <div
-      className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch bg-white"
-      style={{ borderRadius: "0px 10px 10px 10px" }}
-    >
+    <div className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch bg-white rounded-[10px] lg:rounded-[0px_10px_10px_10px]">
       <div className="flex flex-col justify-center items-start gap-5 self-stretch">
-        <div className="flex justify-between items-center self-stretch">
+        <div className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center gap-[30px] lg:gap-0 self-stretch">
           {/* Sort */}
           <div className="flex items-start gap-[5px]">
             <p className="label-reg text-[#646464]">Sort by:</p>
@@ -21,14 +18,17 @@ function ManagingTab() {
               <img src={sortArrow} alt="" />
             </div>
           </div>
-          <button className="cyan-btn flex flex-row items-center ">
+          <button className="cyan-btn flex flex-row items-center justify-center self-stretch">
             <img src={plusIcon} alt="" />
             Add Staff
           </button>
         </div>
         <div className="flex flex-col items-start gap-5 self-stretch">
           {/* Table */}
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+          <div
+            id="custom-scroll"
+            className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+          >
             <table className="w-full text-left rtl:text-right bg-[#FFF] ">
               <thead
                 className=" bg-[#EBEBEB] text-[#383838]"

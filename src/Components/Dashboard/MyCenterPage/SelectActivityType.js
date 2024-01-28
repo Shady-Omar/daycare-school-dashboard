@@ -3,22 +3,22 @@ import { Fragment, useState } from "react";
 
 import AddNotes from "./AddNotes";
 
-import activityPhoto from "../Assets/activity-photo.svg";
-import babyBottle from "../Assets/baby-bottle.svg";
-import moodIcon from "../Assets/mood-icon.svg";
-import diaperIcon from "../Assets/diapers.svg";
-import showerIcon from "../Assets/shower.svg";
-import exerciseIcon from "../Assets/exercise.svg";
-import foodIcon from "../Assets/food.svg";
-import allergyIcon from "../Assets/allergy.svg";
-import temperatureIcon from "../Assets/temperature.svg";
-import medicationIcon from "../Assets/medication.svg";
-import teethingIcon from "../Assets/teething.svg";
+import activityPhoto from "../../../Assets/activity-photo.svg";
+import babyBottle from "../../../Assets/baby-bottle.svg";
+import moodIcon from "../../../Assets/mood-icon.svg";
+import diaperIcon from "../../../Assets/diapers.svg";
+import showerIcon from "../../../Assets/shower.svg";
+import exerciseIcon from "../../../Assets/exercise.svg";
+import foodIcon from "../../../Assets/food.svg";
+import allergyIcon from "../../../Assets/allergy.svg";
+import temperatureIcon from "../../../Assets/temperature.svg";
+import medicationIcon from "../../../Assets/medication.svg";
+import teethingIcon from "../../../Assets/teething.svg";
 
 function SelectActivityType() {
   let [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="flex w-[400px] flex-col items-start gap-2">
+    <div className="flex self-stretch flex-col items-start gap-2">
       <label className="label text-[#868686]">Activity Type</label>
       <select
         onClick={() => setIsOpen(true)}
@@ -53,7 +53,10 @@ function SelectActivityType() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen items-start lg:items-center justify-center p-10 lg:overflow-y-visible overflow-y-scroll"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -64,7 +67,7 @@ function SelectActivityType() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex p-[30px] min-w-[820px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex p-[30px] w-[340px] lg:min-w-[820px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -88,7 +91,7 @@ function SelectActivityType() {
                   </button>
                 </Dialog.Title>
 
-                <div className=" grid grid-cols-6 grid-rows-2 gap-5 self-stretch">
+                <div className=" grid lg:grid-cols-6 grid-cols-2 lg:grid-rows-2 grid-rows-6 gap-5 self-stretch">
                   {/* Activity Icons */}
 
                   <div className="flex min-w-[110px] cursor-pointer flex-col justify-center items-center gap-2.5">

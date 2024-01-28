@@ -1,20 +1,26 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-import plusWhiteBtnIcon from "../../../Assets/plus-white-btn.svg";
-import SelectActivityType from "./SelectActivityType";
+import notesIcon from "../../../Assets/notes.svg";
+import infoIcon from "../../../Assets/info-icon.svg";
+import SelectChildActivity from "./SelectChildActivity";
 
-function AddActivityModal() {
+function AddNotes() {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="white-btn flex items-center justify-center self-stretch lg:self-auto lg:order-3"
+        className="flex min-w-[110px] cursor-pointer flex-col justify-center items-center gap-2.5"
       >
-        <img src={plusWhiteBtnIcon} alt="" />
-        Add Activity
+        <div
+          className="flex w-[110px] h-[110px] justify-center items-center gap-2.5 rounded-[10px]"
+          style={{ background: "rgba(0, 204, 182, 0.70)" }}
+        >
+          <img src={notesIcon} alt="notes" />
+        </div>
+        <h5 className="h5-med text-[#646464]">Notes</h5>
       </button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
@@ -40,7 +46,10 @@ function AddActivityModal() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen items-start justify-center p-10 lg:p-5 overflow-y-scroll"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -51,14 +60,12 @@ function AddActivityModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex w-[340px] lg:w-[500px]  p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex p-[30px] w-[340px] lg:w-auto flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF] scale-90">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
                 >
-                  <h5 className="h5-bold text-[#202020]">
-                    Add Children Activity
-                  </h5>
+                  <h5 className="h5-bold text-[#202020]">Add Note</h5>
                   <button onClick={() => setIsOpen(false)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -79,6 +86,20 @@ function AddActivityModal() {
                   {/* form */}
                   <div className="flex flex-col items-start justify-center gap-5 self-stretch">
                     <div className="flex self-stretch flex-col items-start gap-2">
+                      <label className="label text-[#868686]">
+                        Select Children
+                      </label>
+                      <select
+                        className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
+                        style={{ border: "1px solid #DBDADE" }}
+                        defaultValue={"Select"}
+                      >
+                        <option value="Select">Select</option>
+                        {/* <option value="PM">PM</option> */}
+                      </select>
+                    </div>
+
+                    <div className="flex self-stretch flex-col items-start gap-2">
                       <label className="label text-[#868686]">Date From</label>
                       <input
                         type="date"
@@ -86,7 +107,6 @@ function AddActivityModal() {
                         style={{ border: "1px solid #DBDADE" }}
                       />
                     </div>
-
                     <div className="flex self-stretch flex-col items-start gap-2">
                       <label className="label text-[#868686]">Date To</label>
                       <input
@@ -95,17 +115,34 @@ function AddActivityModal() {
                         style={{ border: "1px solid #DBDADE" }}
                       />
                     </div>
-                    <SelectActivityType />
+                    <div className="flex h-[134px] self-stretch flex-col items-start gap-2">
+                      <label className="label text-[#868686]">Notes</label>
+                      <textarea
+                        className="h-[134px] rounded-[10px] p-reg flex border px-5 items-center self-stretch  border-[#DBDADE] p-3 outline-none focus:outline-none bg-[#FFF]"
+                        rows="4"
+                        cols="50"
+                        placeholder="Placeholder Text"
+                        style={{ flex: "1 0 0" }}
+                      ></textarea>
+                    </div>
+                    <div className="flex items-center gap-2.5 self-stretch">
+                      <div className="flex items-center gap-2.5">
+                        <input type="checkbox" />
+                        <p className="p-reg text-[#646464]">
+                          Visible to staff only
+                        </p>
+                      </div>
+                      <img
+                        className="cursor-pointer"
+                        src={infoIcon}
+                        alt="info"
+                      />
+                    </div>
                   </div>
 
                   {/* Submit Button */}
                   <div className="flex flex-col items-center justify-center gap-5 self-stretch">
-                    <button
-                      onClick={() => setIsOpen(false)}
-                      className="cyan-btn w-full"
-                    >
-                      Save Activity
-                    </button>
+                    <SelectChildActivity />
                     <button
                       onClick={() => setIsOpen(false)}
                       className="p-semi text-[#878787]"
@@ -123,4 +160,4 @@ function AddActivityModal() {
   );
 }
 
-export default AddActivityModal;
+export default AddNotes;
