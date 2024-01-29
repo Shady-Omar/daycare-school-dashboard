@@ -53,8 +53,6 @@ import StaffActivityLogContent from "./Components/StaffActivityLogContent";
 import StaffRequestsLogContent from "./Components/StaffRequestsLogContent";
 import StaffSalaryLogContent from "./Components/StaffSalaryLogContent";
 import StaffAttendanceLogContent from "./Components/StaffAttendanceLogContent";
-import Review from "./Pages/Review";
-import ReviewsContent from "./Components/ReviewsContent";
 import Reporting from "./Pages/Reporting";
 import ReportingAttendanceContent from "./Components/ReportingAttendanceContent";
 import ReportingDailyContent from "./Components/ReportingDailyContent";
@@ -92,6 +90,7 @@ import SupportContent from "./Components/Dashboard/SupportPage/SupportContent";
 import MyCenterContent from "./Components/Dashboard/MyCenterPage/MyCenterContent";
 import MessagingContent from "./Components/Dashboard/MessagingPage/MessagingContent";
 import ArticlesContent from "./Components/Dashboard/ArticlesPage/ArticlesContent";
+import ReviewContent from "./Components/Dashboard/ReviewsPage/ReviewContent";
 
 function App() {
   return (
@@ -227,6 +226,10 @@ function App() {
             <Route path="blog" element={<BlogContent />} />
             <Route path="new" element={<CreateNewArticle />} />
           </Route>
+
+          {/* Reviews */}
+          <Route path={"review"} element={<ReviewContent />} />
+
           {/*  */}
         </Route>
 
@@ -269,12 +272,6 @@ function App() {
           <Route index element={<ReportingAttendanceContent />} />
           <Route path="attendance" element={<ReportingAttendanceContent />} />
           <Route path="daily" element={<ReportingDailyContent />} />
-        </Route>
-
-        {/* Reviews */}
-        <Route path={"/review"} element={<Review />}>
-          {/* Make 'reviews' the default child route */}
-          <Route index element={<ReviewsContent />} />
         </Route>
       </Routes>
     </div>

@@ -41,7 +41,7 @@ function CreateNewArticle() {
     <div className="flex flex-col items-start self-stretch">
       {/* Form */}
       <div className="flex py-[50px] px-[30px] flex-col justify-center items-center gap-[30px] self-stretch rounded-[10px] bg-white">
-        <div className="flex w-[615px] flex-col items-start gap-2">
+        <div className="flex self-stretch lg:self-auto lg:w-[615px] flex-col items-start gap-2">
           <label className="label text-[#868686]">Title</label>
           <input
             type="text"
@@ -50,7 +50,7 @@ function CreateNewArticle() {
             placeholder="Enter blog title here"
           />
         </div>
-        <div className="flex w-[615px] flex-col items-start gap-2">
+        <div className="flex self-stretch lg:self-auto lg:w-[615px] flex-col items-start gap-2">
           <label className="label text-[#868686]">Specialty</label>
           <select
             className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
@@ -61,7 +61,7 @@ function CreateNewArticle() {
             {/* <option value="PM">PM</option> */}
           </select>
         </div>
-        <div className="flex w-[615px] flex-col items-start gap-2">
+        <div className="flex self-stretch lg:self-auto lg:w-[615px] flex-col items-start gap-2">
           <label className="label text-[#868686]">Target Age</label>
           <select
             className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
@@ -72,7 +72,7 @@ function CreateNewArticle() {
             {/* <option value="PM">PM</option> */}
           </select>
         </div>
-        <div className="flex w-[615px] flex-col justify-center items-center gap-2.5">
+        <div className="flex self-stretch lg:self-auto lg:w-[615px] flex-col justify-center items-center gap-2.5">
           <label className="label text-[#868686] flex items-start self-stretch gap-1">
             Upload blog Cover image
           </label>
@@ -96,10 +96,10 @@ function CreateNewArticle() {
                 </div>
                 <p className="p-reg text-[#646464]">Or</p>
                 <div className="flex flex-col items-center justify-center self-stretch gap-2.5">
-                  <button className="p-bold !text-[15px] cyan-btn">
+                  <button className="p-bold !text-[15px] cyan-btn self-stretch lg:self-auto lg:w-[200px]">
                     Choose File
                   </button>
-                  <p className="p-reg text-[#646464]">
+                  <p className="p-reg text-[#646464] text-center">
                     Maximum file size is 50MB.
                   </p>
                 </div>
@@ -107,12 +107,12 @@ function CreateNewArticle() {
             )}
           </div>
         </div>
-        <div className="flex w-[615px] flex-col justify-center items-center gap-2.5">
+        <div className="flex self-stretch lg:self-auto lg:w-[615px] flex-col justify-center items-center gap-2.5">
           <label className="label text-[#868686] flex items-start self-stretch gap-1">
             ARTICLE
           </label>
           <div
-            className="flex w-[615px] h-[375px] flex-col items-start rounded-[10px] bg-white"
+            className="flex self-stretch lg:self-auto lg:w-[615px] h-[375px] flex-col items-start rounded-[10px] bg-white"
             style={{ border: "1px solid #DCDCDC" }}
           >
             <textarea
@@ -123,7 +123,7 @@ function CreateNewArticle() {
             ></textarea>
             {/* Controls */}
             <div
-              className="flex py-5 px-[30px] justify-between items-center self-stretch bg-white"
+              className="flex py-5 px-[30px] flex-col lg:flex-row lg:justify-between items-start lg:items-center gap-[30px] lg:gap-0 self-stretch bg-white"
               style={{
                 borderRadius: "0px 0px 10px 10px",
                 borderTop: "1px solid #EBEBEB",
@@ -149,11 +149,15 @@ function CreateNewArticle() {
               </div>
               {/* Buttons */}
               <div
-                className="flex justify-end items-center gap-2.5"
+                className="flex flex-col lg:flex-row justify-center lg:justify-end items-end lg:items-center gap-2.5 self-stretch lg:self-auto"
                 style={{ flex: "1 0 0" }}
               >
-                <button className="white-btn !h-auto">Save Draft</button>
-                <button className="cyan-btn !h-auto">Publish</button>
+                <button className="white-btn !h-auto self-stretch lg:self-auto">
+                  Save Draft
+                </button>
+                <button className="cyan-btn !h-auto self-stretch lg:self-auto">
+                  Publish
+                </button>
               </div>
             </div>
           </div>

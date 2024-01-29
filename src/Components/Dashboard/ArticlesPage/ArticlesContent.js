@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import SchoolTitle from "../../SchoolTitle";
 
-import ArticlesTabs from "../../ArticlesTabs";
+import ArticlesTabs from "./ArticlesTabs";
 import plusIcon from "../../../Assets/circle-plus-icon.svg";
 
 function ArticlesContent() {
@@ -12,19 +12,17 @@ function ArticlesContent() {
   return (
     <div className="flex px-[30px] flex-col items-start gap-10 self-stretch">
       {/* Title */}
-      <div className="flex justify-between items-center self-stretch">
+      <div className="flex flex-col lg:flex-row gap-[30px] lg:gap-0 justify-between items-center self-stretch">
         <SchoolTitle />
         {/* Conditionally render the button based on the current path */}
         {currentPath === "/articles/blog" || currentPath === "/articles" ? (
-          <div className="flex justify-end items-center gap-5">
-            <Link
-              to="/articles/new"
-              className="cyan-btn flex justify-center items-center gap-3"
-            >
-              <img src={plusIcon} alt="" />
-              Add New Article
-            </Link>
-          </div>
+          <Link
+            to="/articles/new"
+            className="cyan-btn flex justify-center items-center gap-3 self-stretch"
+          >
+            <img src={plusIcon} alt="" />
+            Add New Article
+          </Link>
         ) : (
           ""
         )}

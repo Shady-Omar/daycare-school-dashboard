@@ -1,7 +1,7 @@
 import { Dialog, Transition, Menu } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-function ReviewDetailsModal() {
+function ReviewReportModal() {
   let [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -16,7 +16,7 @@ function ReviewDetailsModal() {
               active ? "bg-gray-100 text-gray-900" : "text-gray-700"
             } block px-4 py-2 text-sm`}
           >
-            Details
+            report
           </span>
         )}
       </Menu.Item>
@@ -46,7 +46,7 @@ function ReviewDetailsModal() {
           {/* Full-screen container to center the panel */}
           <div
             id="custom-scroll"
-            className="fixed inset-0 flex w-screen items-start justify-center p-4 overflow-y-scroll"
+            className="fixed inset-0 flex w-screen items-start justify-center p-10 overflow-y-scroll"
           >
             <Transition.Child
               as={Fragment}
@@ -58,12 +58,14 @@ function ReviewDetailsModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex w-[784px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-[784px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
-                  className="flex pb-2.5 justify-between items-center self-stretch"
+                  className="flex pb-2.5 justify-between items-center self-stretch gap-2 lg:gap-0"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
                 >
-                  <h5 className="h5-bold text-[#202020]">Review Details</h5>
+                  <h5 className="h5-bold text-[#202020]">
+                    Tell us why you're reporting this feedback
+                  </h5>
                   <button onClick={() => setIsOpen(false)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -83,87 +85,74 @@ function ReviewDetailsModal() {
                 <div className="flex flex-col justify-center items-center gap-5 self-stretch">
                   <div className="flex flex-col justify-center items-center gap-2.5 self-stretch">
                     <div
-                      className="flex justify-between items-start self-stretch"
+                      className="flex py-5 items-start gap-[25px] self-stretch"
                       style={{ borderBottom: "1px solid #EBEBEB" }}
                     >
-                      <div className="flex w-[193px] py-5 items-start gap-[15px] self-stretch">
-                        <h5 className="h5-bold text-[#383838]">Date</h5>
-                      </div>
-                      <div className="flex w-[483px] p-5 items-start gap-2.5 self-stretch">
-                        <h5 className="h5-med text-[#646464]">01\01\2024</h5>
-                      </div>
-                    </div>
-                    <div
-                      className="flex justify-between items-start self-stretch"
-                      style={{ borderBottom: "1px solid #EBEBEB" }}
-                    >
-                      <div className="flex w-[193px] py-5 items-start gap-[15px] self-stretch">
-                        <h5 className="h5-bold text-[#383838]">Parents Name</h5>
-                      </div>
-                      <div className="flex w-[483px] p-5 items-start gap-2.5 self-stretch">
-                        <h5 className="h5-med text-[#646464]">Ashraf Gazali</h5>
-                      </div>
-                    </div>
-                    <div
-                      className="flex justify-between items-start self-stretch"
-                      style={{ borderBottom: "1px solid #EBEBEB" }}
-                    >
-                      <div className="flex w-[193px] py-5 items-start gap-[15px] self-stretch">
-                        <h5 className="h5-bold text-[#383838]">Education</h5>
-                      </div>
-                      <div className="flex w-[483px] p-5 items-start gap-2.5 self-stretch">
-                        <div className="flex flex-col items-start gap-2">
-                          <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#FFAB2D] p-semi !text-[15px] text-white">
-                            5.0
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="flex justify-between items-start self-stretch"
-                      style={{ borderBottom: "1px solid #EBEBEB" }}
-                    >
-                      <div className="flex w-[193px] py-5 items-start gap-[15px] self-stretch">
-                        <h5 className="h5-bold text-[#383838]">Recommended</h5>
-                      </div>
-                      <div className="flex w-[483px] p-5 items-start gap-2.5 self-stretch">
-                        <div className="flex flex-col items-start gap-2">
-                          <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#FFAB2D] p-semi !text-[15px] text-white">
-                            4.0
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="flex justify-between items-start self-stretch"
-                      style={{ borderBottom: "1px solid #EBEBEB" }}
-                    >
-                      <div className="flex w-[193px] py-5 items-start gap-[15px] self-stretch">
-                        <h5 className="h5-bold text-[#383838]">Safety</h5>
-                      </div>
-                      <div className="flex w-[483px] p-5 items-start gap-2.5 self-stretch">
-                        <div className="flex flex-col items-start gap-2">
-                          <div className="flex py-2.5 px-[15px] items-center gap-2.5 rounded-md bg-[#FFAB2D] p-semi !text-[15px] text-white">
-                            5.0
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="flex justify-between items-start self-stretch"
-                      style={{ borderBottom: "1px solid #EBEBEB" }}
-                    >
-                      <div className="flex w-[193px] py-5 items-start gap-[15px] self-stretch">
-                        <h5 className="h5-bold text-[#383838]">Review</h5>
-                      </div>
-                      <div className="flex w-[483px] p-5 items-start gap-2.5 self-stretch">
+                      <div className="flex items-center gap-2.5 self-stretch">
+                        <input
+                          type="checkbox"
+                          className="!w-[18px] !h-[18px] rounded"
+                        />
                         <h5 className="h5-med text-[#646464]">
                           Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt. Lorem ipsum
-                          dolor sit amet, consectetur adipiscing elit, sed do
-                          eiusmod tempor incididunt. Lorem ipsum dolor sit amet,
-                          consectetur adipiscing elit, sed do eiusmod tempor
-                          incididunt
+                          elit.
+                        </h5>
+                      </div>
+                    </div>
+                    <div
+                      className="flex py-5 items-start gap-[25px] self-stretch"
+                      style={{ borderBottom: "1px solid #EBEBEB" }}
+                    >
+                      <div className="flex items-center gap-2.5 self-stretch">
+                        <input
+                          type="checkbox"
+                          checked
+                          className="w-[18px] h-[18px] rounded"
+                        />
+                        <h5 className="h5-med text-[#646464]">
+                          Lorem ipsum dolor sit amet consectetur.
+                        </h5>
+                      </div>
+                    </div>
+                    <div
+                      className="flex py-5 items-start gap-[25px] self-stretch"
+                      style={{ borderBottom: "1px solid #EBEBEB" }}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <input
+                          type="checkbox"
+                          className="w-[18px] h-[18px] rounded"
+                        />
+                        <h5 className="h5-med text-[#646464]">
+                          Lorem ipsum dolor sit amet.
+                        </h5>
+                      </div>
+                    </div>
+                    <div
+                      className="flex py-5 items-start gap-[25px] self-stretch"
+                      style={{ borderBottom: "1px solid #EBEBEB" }}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <input
+                          type="checkbox"
+                          className="w-[18px] h-[18px] rounded"
+                        />
+                        <h5 className="h5-med text-[#646464]">
+                          Lorem ipsum dolor sit amet consectetur adipiscing.
+                        </h5>
+                      </div>
+                    </div>
+                    <div
+                      className="flex py-5 items-start gap-[25px] self-stretch"
+                      style={{ borderBottom: "1px solid #EBEBEB" }}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <input
+                          type="checkbox"
+                          className="w-[18px] h-[18px] rounded"
+                        />
+                        <h5 className="h5-med text-[#646464]">
+                          Lorem ipsum dolor sit.
                         </h5>
                       </div>
                     </div>
@@ -175,7 +164,7 @@ function ReviewDetailsModal() {
                       onClick={() => setIsOpen(false)}
                       className="cyan-btn w-full"
                     >
-                      Close
+                      Send Report
                     </button>
                   </div>
                 </div>
@@ -188,4 +177,4 @@ function ReviewDetailsModal() {
   );
 }
 
-export default ReviewDetailsModal;
+export default ReviewReportModal;

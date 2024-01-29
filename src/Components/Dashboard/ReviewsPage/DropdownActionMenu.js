@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Transition, Menu } from "@headlessui/react";
 
-import actionArrow from "../Assets/action-arrow.svg";
+import actionArrow from "../../../Assets/action-arrow.svg";
 import ReviewDetailsModal from "./ReviewDetailsModal";
 import ReviewReportModal from "./ReviewReportModal";
 

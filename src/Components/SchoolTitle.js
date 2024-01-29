@@ -150,7 +150,14 @@ function SchoolTitle() {
             )}
           </p>
         ) : currentPath.includes("articles") ? (
-          <p className="label-reg !text-[13px] text-[#383838]">Article</p>
+          <p className="label-reg !text-[13px] text-[#383838]">
+            Article
+            {currentPath === "/articles/new" ? (
+              <span className="text-[#878787]"> / Create</span>
+            ) : (
+              ""
+            )}
+          </p>
         ) : currentPath.includes("review") ? (
           <p className="label-reg !text-[13px] text-[#383838]">Reviews</p>
         ) : currentPath.includes("report") ? (

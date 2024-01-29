@@ -7,13 +7,10 @@ import articleEye from "../../../Assets/article-eye.svg";
 function BlogContent() {
   return (
     <>
-      <div
-        className="grid grid-cols-3 p-[30px] items-center content-center self-stretch bg-white"
-        style={{ gap: "30px 20px", borderRadius: "0px 10px 10px 10px" }}
-      >
+      <div className="flex lg:grid grid-cols-3 p-5 lg:p-[30px] flex-col lg:flex-row gap-5 lg:gap-[30px_20px] rounded-[10px] lg:rounded-[0px_10px_10px_10px] justify-center items-start lg:items-center lg:content-center self-stretch bg-white">
         {/* Article Card */}
         <div
-          className="flex min-w-[340px] p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
+          className="flex self-stretch p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
           style={{ flex: "1 0 0", border: "1px solid #EBEBEB" }}
         >
           {/* Image */}
@@ -66,7 +63,7 @@ function BlogContent() {
         </div>
         {/* Article Card */}
         <div
-          className="flex min-w-[340px] p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
+          className="flex self-stretch p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
           style={{ flex: "1 0 0", border: "1px solid #EBEBEB" }}
         >
           {/* Image */}
@@ -119,7 +116,7 @@ function BlogContent() {
         </div>
         {/* Article Card */}
         <div
-          className="flex min-w-[340px] p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
+          className="flex self-stretch p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
           style={{ flex: "1 0 0", border: "1px solid #EBEBEB" }}
         >
           {/* Image */}
@@ -172,7 +169,7 @@ function BlogContent() {
         </div>
         {/* Article Card */}
         <div
-          className="flex min-w-[340px] p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
+          className="flex self-stretch p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
           style={{ flex: "1 0 0", border: "1px solid #EBEBEB" }}
         >
           {/* Image */}
@@ -225,7 +222,7 @@ function BlogContent() {
         </div>
         {/* Article Card */}
         <div
-          className="flex min-w-[340px] p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
+          className="flex self-stretch p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
           style={{ flex: "1 0 0", border: "1px solid #EBEBEB" }}
         >
           {/* Image */}
@@ -278,7 +275,7 @@ function BlogContent() {
         </div>
         {/* Article Card */}
         <div
-          className="flex min-w-[340px] p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
+          className="flex self-stretch p-[15px] flex-col items-start gap-5 rounded-[10px] bg-white"
           style={{ flex: "1 0 0", border: "1px solid #EBEBEB" }}
         >
           {/* Image */}
