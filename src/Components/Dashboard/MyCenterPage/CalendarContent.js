@@ -2,7 +2,7 @@ import React from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import EventDetailsModal from "../../EventDetailsModal";
+import EventDetailsModal from "./EventDetailsModal";
 
 const localizer = momentLocalizer(moment);
 
@@ -47,8 +47,9 @@ function CalendarContent() {
         />
       </div>
       <div className="flex py-[18px] justify-center flex-col items-center gap-5 self-stretch rounded-[10px] bg-[#FFF]">
+        {/* Title */}
         <div
-          className="flex justify-between items-center self-stretch"
+          className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center gap-5 lg:gap-0 self-stretch"
           style={{
             padding: "0px 30px 20px 30px",
             borderBottom: "1px solid #EBEBEB",
@@ -58,10 +59,10 @@ function CalendarContent() {
             <h5 className="h5-bold text-[#202020]">Scheduled Events</h5>
             <p className="label-reg text-[#595959]">November 2023</p>
           </div>
-          <button className="white-btn ">View All Events</button>
+          <button className="white-btn">View All Events</button>
         </div>
         {/* Events */}
-        <div className=" px-[30px]  gap-5 self-stretch grid grid-cols-4 grid-rows-2">
+        <div className="flex flex-col items-start px-[30px] gap-5 lg:grid grid-cols-4 grid-rows-2 self-stretch">
           <EventDetailsModal />
           <div
             className="flex min-w-[250px] py-[5px] items-start gap-2.5"

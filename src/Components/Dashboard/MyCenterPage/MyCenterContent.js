@@ -1,7 +1,7 @@
 import React from "react";
 import SchoolTitle from "../../SchoolTitle";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import NewEventBtn from "../../NewEventBtn";
+import NewEventBtn from "./NewEventBtn";
 import AddActivityModal from "./AddActivityModal";
 import AddNewRoomModal from "./AddNewRoomModal";
 
@@ -34,12 +34,12 @@ function MyCenterContent() {
             <AddActivityModal />
           </div>
         ) : currentPath === "/my-center/calendar" ? (
-          <div className="flex w-[638.5px] justify-end items-center gap-5">
-            <button className="white-btn flex justify-between gap-2 items-center !text-[#646464]">
+          <div className="flex self-stretch flex-col lg:flex-row justify-end items-center gap-2.5 lg:gap-5">
+            <button className="white-btn flex justify-center lg:justify-between gap-2 items-center !text-[#646464] self-stretch lg:self-auto">
               November
               <img src={calendarArrow} alt="" />
             </button>
-            <button className="white-btn flex justify-between gap-2 items-center !text-[#646464]">
+            <button className="white-btn flex justify-center lg:justify-between gap-2 items-center !text-[#646464] self-stretch lg:self-auto">
               2023
               <img src={calendarArrow} alt="" />
             </button>

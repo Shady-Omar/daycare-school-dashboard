@@ -1,12 +1,12 @@
 import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
-import uploadIcon from "../Assets/upload-icon.svg";
-import boldBtn from "../Assets/bold-btn.svg";
-import italicBtn from "../Assets/italic-btn.svg";
-import attachBtn from "../Assets/attach-btn.svg";
-import cameraBtn from "../Assets/CameraPlus-btn.svg";
-import clearBtn from "../Assets/clear-btn.svg";
+import uploadIcon from "../../../Assets/upload-icon.svg";
+import boldBtn from "../../../Assets/bold-btn.svg";
+import italicBtn from "../../../Assets/italic-btn.svg";
+import attachBtn from "../../../Assets/attach-btn.svg";
+import cameraBtn from "../../../Assets/CameraPlus-btn.svg";
+import clearBtn from "../../../Assets/clear-btn.svg";
 
 const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
 

@@ -1,16 +1,19 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import plusIcon from "../../../Assets/circle-plus-icon.svg";
 
-function NewMessageModal() {
+function NewEventBtn() {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className="cyan-btn flex">
+      <button
+        onClick={() => setIsOpen(true)}
+        className="cyan-btn flex flex-row justify-center items-center self-stretch lg:self-auto"
+      >
         <img src={plusIcon} alt="" />
-        New Message
+        New Event
       </button>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
@@ -36,7 +39,10 @@ function NewMessageModal() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen items-start justify-center p-10 overflow-y-scroll"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -47,12 +53,12 @@ function NewMessageModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex p-[30px] w-[909px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF] scale-75">
+              <Dialog.Panel className="flex w-[340px] lg:w-auto p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
                 >
-                  <h5 className="h5-bold text-[#202020]">Send New Message</h5>
+                  <h5 className="h5-bold text-[#202020]">Create New Event</h5>
                   <button onClick={() => setIsOpen(false)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -70,50 +76,87 @@ function NewMessageModal() {
                 </Dialog.Title>
 
                 <div className="flex flex-col justify-center items-center gap-[20px] self-stretch">
-                  {/* Details */}
-                  <div className="flex flex-col justify-center items-center gap-[30px] self-stretch">
-                    {/* type */}
-                    <div className="flex flex-col justify-center items-center gap-2.5 self-stretch">
-                      <div className="flex items-start gap-1 self-stretch">
-                        <p className="label text-[#868686]">MESSAGE Type</p>
-                      </div>
-                      <div className="flex justify-center items-center gap-2.5 self-stretch">
-                        <button className="w-full cyan-btn">
-                          Individual Parent (Staff)
-                        </button>
-                        <button className="w-full white-btn">
-                          Individual Parent (Admin)
-                        </button>
-                        <button className="w-full white-btn">
-                          Entire Room
-                        </button>
-                      </div>
+                  {/* form */}
+                  <div className="flex flex-col items-start justify-center gap-5 self-stretch">
+                    <div className="flex self-stretch flex-col items-start gap-2">
+                      <label className="label text-[#868686]">
+                        Event Title
+                      </label>
+                      <input
+                        type="text"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                        style={{ border: "1px solid #DBDADE" }}
+                        placeholder="Enter Title"
+                      />
                     </div>
-                    {/* form */}
-                    <div className="flex flex-col items-start gap-2 self-stretch">
+
+                    <div className="flex items-center gap-5">
+                      <p className="p-reg text-left text-[#646464]">
+                        Staff Only
+                      </p>
+                      <label className="relative inline-flex items-center cursor-pointer">
+                        <input
+                          type="checkbox"
+                          value=""
+                          className="sr-only peer"
+                        />
+                        <div className="w-11 h-6 bg-[#DCDCDC] peer-checked:bg-[#00CCB6] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full  after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white  after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                      </label>
+                    </div>
+
+                    <div className="flex self-stretch flex-col items-start gap-2">
                       <label className="label text-[#868686]">Room</label>
                       <select
                         className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
                         style={{ border: "1px solid #DBDADE" }}
-                        defaultValue={"Select Room"}
+                        defaultValue={"Select"}
                       >
-                        <option value="Select Room">Select Room</option>
+                        <option value="Select">Select</option>
                         {/* <option value="PM">PM</option> */}
                       </select>
                     </div>
-                    <div className="flex flex-col items-start gap-2 self-stretch">
-                      <label className="label text-[#868686]">Students</label>
-                      <select
-                        className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
+
+                    <div className="flex self-stretch flex-col items-start gap-2">
+                      <label className="label text-[#868686]">Date</label>
+                      <input
+                        type="date"
+                        className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
                         style={{ border: "1px solid #DBDADE" }}
-                        defaultValue={"Select Students"}
-                      >
-                        <option value="Select Students">Select Students</option>
-                        {/* <option value="PM">PM</option> */}
-                      </select>
+                      />
                     </div>
-                    <div className="flex h-[120px] flex-col items-start gap-2 self-stretch">
-                      <label className="label text-[#868686]">Message</label>
+
+                    <div className="flex flex-col justify-center items-start gap-2.5 self-stretch">
+                      <div className="flex flex-col lg:flex-row items-center justify-center gap-5 self-stretch">
+                        <div className="flex w-full flex-col items-start gap-2">
+                          <label className="label text-[#868686]">
+                            Start Time
+                          </label>
+                          <input
+                            type="time"
+                            className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                            style={{ border: "1px solid #DBDADE" }}
+                          />
+                        </div>
+                        <div className="flex w-full flex-col items-start gap-2">
+                          <label className="label text-[#868686]">
+                            End Time
+                          </label>
+                          <input
+                            type="time"
+                            className="text-[#A4A4A4] p-reg flex h-[50px] px-5 items-center self-stretch rounded-[10px] bg-[#FFF]"
+                            style={{ border: "1px solid #DBDADE" }}
+                          />
+                        </div>
+                      </div>
+                      <p className="label-reg text-[#878787]">
+                        All times are in local time zone (GMT+5:30)
+                      </p>
+                    </div>
+
+                    <div className="flex h-[134px] self-stretch flex-col items-start gap-2">
+                      <label className="label text-[#868686]">
+                        Description
+                      </label>
                       <textarea
                         className="h-[134px] rounded-[10px] p-reg flex border px-5 items-center self-stretch  border-[#DBDADE] p-3 outline-none focus:outline-none bg-[#FFF]"
                         rows="4"
@@ -123,13 +166,14 @@ function NewMessageModal() {
                       ></textarea>
                     </div>
                   </div>
+
                   {/* Submit Button */}
                   <div className="flex flex-col items-center justify-center gap-5 self-stretch">
                     <button
                       onClick={() => setIsOpen(false)}
                       className="cyan-btn w-full"
                     >
-                      Send Message
+                      Create Event
                     </button>
                     <button
                       onClick={() => setIsOpen(false)}
@@ -148,4 +192,4 @@ function NewMessageModal() {
   );
 }
 
-export default NewMessageModal;
+export default NewEventBtn;

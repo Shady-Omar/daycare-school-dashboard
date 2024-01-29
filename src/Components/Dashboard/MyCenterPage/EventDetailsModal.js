@@ -68,7 +68,10 @@ function EventDetailsModal() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen  items-center justify-center p-10 overflow-y-scroll lg:overflow-y-visible"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -79,7 +82,7 @@ function EventDetailsModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-auto p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -103,56 +106,56 @@ function EventDetailsModal() {
                   </button>
                 </Dialog.Title>
 
-                <div className="flex flex-col justify-center items-center gap-[20px] self-stretch">
+                <div className="flex flex-col justify-center items-center gap-[30px] lg:gap-5 self-stretch">
                   {/* Details */}
-                  <div className="flex flex-col justify-center items-center gap-2.5">
+                  <div className="flex flex-col justify-center items-center gap-5 lg:gap-2.5">
                     <div
-                      className="flex justify-between items-start self-stretch"
+                      className="flex flex-col lg:flex-row lg:justify-between gap-2.5 lg:gap-0 items-start self-stretch"
                       style={{ borderBottom: "1px solid #EBEBEB" }}
                     >
-                      <div className="flex w-[193px] py-5 items-start gap-[15px] self-stretch">
+                      <div className="flex lg:w-[193px] lg:py-5 items-start gap-[15px] self-stretch">
                         <h5 className="h5-bold text-[#383838]">Event Title</h5>
                       </div>
-                      <div className="flex w-[483px] p-5 items-start gap-2.5 self-stretch">
+                      <div className="flex lg:w-[483px] lg:p-5 items-start gap-2.5 self-stretch">
                         <h5 className="h5-med text-[#646464]">
                           School Event Lorem Ipsum Dolor
                         </h5>
                       </div>
                     </div>
                     <div
-                      className="flex justify-between items-start self-stretch"
+                      className="flex flex-col lg:flex-row lg:justify-between gap-2.5 lg:gap-0 items-start self-stretch"
                       style={{ borderBottom: "1px solid #EBEBEB" }}
                     >
-                      <div className="flex w-[193px] py-5 items-start gap-[15px] self-stretch">
+                      <div className="flex lg:w-[193px] lg:py-5 items-start gap-[15px] self-stretch">
                         <h5 className="h5-bold text-[#383838]">Event Date</h5>
                       </div>
-                      <div className="flex w-[483px] p-5 items-start gap-2.5 self-stretch">
+                      <div className="flex lg:w-[483px] lg:p-5 items-start gap-2.5 self-stretch">
                         <h5 className="h5-med text-[#646464]">
                           Monday, November 30th, 2023
                         </h5>
                       </div>
                     </div>
                     <div
-                      className="flex justify-between items-start self-stretch"
+                      className="flex flex-col lg:flex-row lg:justify-between gap-2.5 lg:gap-0 items-start self-stretch"
                       style={{ borderBottom: "1px solid #EBEBEB" }}
                     >
-                      <div className="flex w-[193px] py-5 items-start gap-[15px] self-stretch">
+                      <div className="flex lg:w-[193px] lg:py-5 items-start gap-[15px] self-stretch">
                         <h5 className="h5-bold text-[#383838]">Event Time</h5>
                       </div>
-                      <div className="flex w-[483px] p-5 items-start gap-2.5 self-stretch">
+                      <div className="flex lg:w-[483px] lg:p-5 items-start gap-2.5 self-stretch">
                         <h5 className="h5-med text-[#646464]">
                           10:00 AM - 11:00 AM (GMT +5:30)
                         </h5>
                       </div>
                     </div>
                     <div
-                      className="flex justify-between items-start self-stretch"
+                      className="flex flex-col lg:flex-row lg:justify-between gap-2.5 lg:gap-0 items-start self-stretch"
                       style={{ borderBottom: "1px solid #EBEBEB" }}
                     >
-                      <div className="flex w-[193px] py-5 items-start gap-[15px] self-stretch">
+                      <div className="flex lg:w-[193px] lg:py-5 items-start gap-[15px] self-stretch">
                         <h5 className="h5-bold text-[#383838]">Description</h5>
                       </div>
-                      <div className="flex w-[483px] p-5 items-start gap-2.5 self-stretch">
+                      <div className="flex lg:w-[483px] lg:p-5 items-start gap-2.5 self-stretch">
                         <h5 className="h5-med text-[#646464]">
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit, sed do eiusmod tempor incididunt

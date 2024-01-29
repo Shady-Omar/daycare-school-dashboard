@@ -1,15 +1,12 @@
 import React from "react";
 
-import sortArrow from "../Assets/sort-dropdown-arrow.svg";
-import actionArrow from "../Assets/action-arrow.svg";
+import sortArrow from "../../../Assets/sort-dropdown-arrow.svg";
+import actionArrow from "../../../Assets/action-arrow.svg";
 
 function ManagementContent() {
   return (
     <div className="flex flex-col gap-10 self-stretch">
-      <div
-        className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch bg-white"
-        style={{ borderRadius: "0px 10px 10px 10px" }}
-      >
+      <div className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch rounded-[10px] lg:rounded-[0px_10px_10px_10px] bg-white">
         <div className="flex flex-col items-start gap-[30px] self-stretch">
           <div className="flex flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-white">
             <div className="flex flex-col items-start gap-5 self-stretch">
@@ -22,7 +19,10 @@ function ManagementContent() {
                 </div>
               </div>
               {/* Table */}
-              <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+              <div
+                id="custom-scroll"
+                className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+              >
                 <table className="w-full text-left rtl:text-right bg-[#FFF] ">
                   <thead
                     className=" bg-[#EBEBEB] text-[#383838]"
@@ -167,7 +167,10 @@ function ManagementContent() {
         {/* Table */}
         <div className="flex flex-col items-start gap-5 self-stretch">
           {/* Table */}
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+          <div
+            id="custom-scroll"
+            className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+          >
             <table className="w-full text-left rtl:text-right bg-[#FFF] ">
               <thead
                 className=" bg-[#EBEBEB] text-[#383838]"

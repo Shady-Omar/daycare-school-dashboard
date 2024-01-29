@@ -32,13 +32,11 @@ import FamilyTab from "./Components/Dashboard/MyCenterPage/FamilyTab";
 import ActivitesTab from "./Components/Dashboard/MyCenterPage/ActivitesTab";
 import ManagingTab from "./Components/Dashboard/MyCenterPage/ManagingTab";
 import CalendarContent from "./Components/Dashboard/MyCenterPage/CalendarContent";
-import Messaging from "./Pages/Messaging";
-import MessagesContent from "./Components/MessagesContent";
-import AnnouncementContent from "./Components/AnnouncementContent";
-import ManagementContent from "./Components/ManagementContent";
-import Articles from "./Pages/Articles";
-import BlogContent from "./Components/BlogContent";
-import CreateNewArticle from "./Components/CreateNewArticle";
+import MessagesContent from "./Components/Dashboard/MessagingPage/MessagesContent";
+import AnnouncementContent from "./Components/Dashboard/MessagingPage/AnnouncementContent";
+import ManagementContent from "./Components/Dashboard/MessagingPage/ManagementContent";
+import BlogContent from "./Components/Dashboard/ArticlesPage/BlogContent";
+import CreateNewArticle from "./Components/Dashboard/ArticlesPage/CreateNewArticle";
 import Staff from "./Pages/Staff";
 import StaffListContent from "./Components/StaffListContent";
 import StaffDetails from "./Components/StaffDetails";
@@ -92,6 +90,8 @@ import ServicesContent from "./Components/Dashboard/ServicesPage/ServicesContent
 import StudentsContent from "./Components/Dashboard/StudentsPage/StudentsContent";
 import SupportContent from "./Components/Dashboard/SupportPage/SupportContent";
 import MyCenterContent from "./Components/Dashboard/MyCenterPage/MyCenterContent";
+import MessagingContent from "./Components/Dashboard/MessagingPage/MessagingContent";
+import ArticlesContent from "./Components/Dashboard/ArticlesPage/ArticlesContent";
 
 function App() {
   return (
@@ -210,16 +210,24 @@ function App() {
             </Route>
             <Route path="calendar" element={<CalendarContent />} />
           </Route>
-          {/*  */}
-        </Route>
 
-        {/* Messaging */}
-        <Route path={"/chat"} element={<Messaging />}>
-          {/* Make 'messsages' the default child route */}
-          <Route index element={<MessagesContent />} />
-          <Route path="messages" element={<MessagesContent />} />
-          <Route path="announcements" element={<AnnouncementContent />} />
-          <Route path="management" element={<ManagementContent />} />
+          {/* Messaging Page */}
+          <Route path={"chat"} element={<MessagingContent />}>
+            {/* Make 'messsages' the default child route */}
+            <Route index element={<MessagesContent />} />
+            <Route path="messages" element={<MessagesContent />} />
+            <Route path="announcements" element={<AnnouncementContent />} />
+            <Route path="management" element={<ManagementContent />} />
+          </Route>
+
+          {/* Articles */}
+          <Route path={"articles"} element={<ArticlesContent />}>
+            {/* Make 'blog' the default child route */}
+            <Route index element={<BlogContent />} />
+            <Route path="blog" element={<BlogContent />} />
+            <Route path="new" element={<CreateNewArticle />} />
+          </Route>
+          {/*  */}
         </Route>
 
         {/* Billing */}
@@ -253,14 +261,6 @@ function App() {
               element={<StaffAttendanceLogContent />}
             />
           </Route>
-        </Route>
-
-        {/* Articles */}
-        <Route path={"/articles"} element={<Articles />}>
-          {/* Make 'blog' the default child route */}
-          <Route index element={<BlogContent />} />
-          <Route path="blog" element={<BlogContent />} />
-          <Route path="new" element={<CreateNewArticle />} />
         </Route>
 
         {/* Reporting */}

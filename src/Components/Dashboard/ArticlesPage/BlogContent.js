@@ -1,8 +1,8 @@
 import React from "react";
 
-import articlePlaceholder from "../Assets/article-placeholder.png";
-import authorPlaceholder from "../Assets/author-placeholder.png";
-import articleEye from "../Assets/article-eye.svg";
+import articlePlaceholder from "../../../Assets/article-placeholder.png";
+import authorPlaceholder from "../../../Assets/author-placeholder.png";
+import articleEye from "../../../Assets/article-eye.svg";
 
 function BlogContent() {
   return (

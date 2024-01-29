@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import RoomDetailsTabs from "../../RoomDetailsTabs";
+import RoomDetailsTabs from "./RoomDetailsTabs";
 
 function RoomDetails() {
   return (

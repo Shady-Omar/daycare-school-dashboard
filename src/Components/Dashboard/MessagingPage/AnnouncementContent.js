@@ -2,14 +2,11 @@ import React from "react";
 
 import NewAnnouncementModal from "./NewAnnouncementModal";
 
-import sortArrow from "../Assets/sort-dropdown-arrow.svg";
+import sortArrow from "../../../Assets/sort-dropdown-arrow.svg";
 
 function AnnouncementContent() {
   return (
-    <div
-      className="flex p-[30px] flex-col items-start justify-center gap-[30px] self-stretch bg-white"
-      style={{ borderRadius: "0px 10px 10px 10px" }}
-    >
+    <div className="flex p-[30px] flex-col items-start justify-center gap-[30px] rounded-[10px] lg:rounded-[0px_10px_10px_10px] self-stretch bg-white">
       <div className="flex flex-col gap-[30px] items-start self-stretch">
         <div
           className="flex flex-col items-start gap-5 self-stretch"
@@ -23,8 +20,11 @@ function AnnouncementContent() {
         {/* Filter */}
         <div className="flex flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-white">
           <div className="flex justify-between items-center self-stretch rounded-xl">
-            <div className="flex items-end gap-2.5" style={{ flex: "1 0 0" }}>
-              <div className="flex w-[320px] flex-col items-start gap-2">
+            <div
+              className="flex flex-col lg:flex-row items-end gap-5 lg:gap-2.5"
+              style={{ flex: "1 0 0" }}
+            >
+              <div className="flex self-stretch lg:w-[320px] flex-col items-start gap-2">
                 <label className="label text-[#868686]">Room</label>
                 <select
                   className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
@@ -36,7 +36,7 @@ function AnnouncementContent() {
                 </select>
               </div>
               <div
-                className="flex flex-col items-start gap-2"
+                className="flex flex-col items-start gap-2 self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <label className="label text-[#868686]">Date From</label>
@@ -48,7 +48,7 @@ function AnnouncementContent() {
                 />
               </div>
               <div
-                className="flex flex-col items-start gap-2"
+                className="flex flex-col items-start gap-2 self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <label className="label text-[#868686]">Date To</label>
@@ -60,7 +60,7 @@ function AnnouncementContent() {
                 />
               </div>
               <div
-                className="flex flex-col items-start gap-2"
+                className="flex flex-col items-start gap-2 self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <label className="label text-[#868686]">Status</label>
@@ -73,7 +73,9 @@ function AnnouncementContent() {
                   {/* <option value="PM">PM</option> */}
                 </select>
               </div>
-              <button className="white-btn w-[150px]">Filter</button>
+              <button className="white-btn lg:w-[150px] self-stretch lg:self-auto">
+                Filter
+              </button>
             </div>
           </div>
         </div>
@@ -89,7 +91,10 @@ function AnnouncementContent() {
               </div>
             </div>
             {/* Table */}
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+            <div
+              id="custom-scroll"
+              className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+            >
               <table className="w-full text-left rtl:text-right bg-[#FFF] ">
                 <thead
                   className=" bg-[#EBEBEB] text-[#383838]"

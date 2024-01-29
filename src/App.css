@@ -502,6 +502,17 @@ abbr:where([title="Saturday"]) {
   padding-top: 8px;
 }
 
+@media (max-width: 970px) {
+  .rbc-date-cell {
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0 !important;
+    text-align: center !important;
+  }
+}
+
 .rbc-today {
   background-color: #00ccb6 !important;
   color: white !important;

@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import plusIcon from "../../../Assets/circle-plus-icon.svg";
 
 function NewAnnouncementModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ function NewAnnouncementModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="cyan-btn flex gap-3 items-center w-[350px] justify-center"
+        className="cyan-btn flex items-center self-stretch lg:w-[350px] justify-center"
       >
         <img src={plusIcon} alt="" />
         Create New Announcment
@@ -38,7 +38,10 @@ function NewAnnouncementModal() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen items-start justify-center p-10 overflow-y-scroll"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -49,7 +52,7 @@ function NewAnnouncementModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex p-[30px] w-[613px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF] scale-75">
+              <Dialog.Panel className="flex p-[30px] w-[340px] lg:w-[613px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -102,7 +105,10 @@ function NewAnnouncementModal() {
                           </div>
                         </div>
                         <div className="flex items-center gap-2.5">
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            className="w-[18px] h-[18px] rounded"
+                          />
                         </div>
                       </div>
                       <div
@@ -110,18 +116,22 @@ function NewAnnouncementModal() {
                         style={{ borderBottom: "1px solid #EBEBEB" }}
                       >
                         <div className="flex items-center gap-[15px]">
-                          <div className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 rounded-full bg-[#00CCB6] label text-white">
-                            C1
+                          <div className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 rounded-full bg-[#6418C3] label text-white">
+                            C2
                           </div>
                           <div className="flex flex-col justify-center items-start gap-[5px]">
-                            <p className="p-bold text-[#383838]">Room 1</p>
+                            <p className="p-bold text-[#383838]">Room 2</p>
                             <p className="label-reg text-[#878787]">
-                              24 Students
+                              26 Students
                             </p>
                           </div>
                         </div>
                         <div className="flex items-center gap-2.5">
-                          <input type="checkbox" checked />
+                          <input
+                            type="checkbox"
+                            className="w-[18px] h-[18px] rounded"
+                            checked
+                          />
                         </div>
                       </div>
                       <div
@@ -129,18 +139,21 @@ function NewAnnouncementModal() {
                         style={{ borderBottom: "1px solid #EBEBEB" }}
                       >
                         <div className="flex items-center gap-[15px]">
-                          <div className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 rounded-full bg-[#00CCB6] label text-white">
-                            C1
+                          <div className="flex w-[45px] h-[45px] justify-center items-center gap-2.5 rounded-full bg-[#5ECFFF] label text-white">
+                            C3
                           </div>
                           <div className="flex flex-col justify-center items-start gap-[5px]">
-                            <p className="p-bold text-[#383838]">Room 1</p>
+                            <p className="p-bold text-[#383838]">Room 3</p>
                             <p className="label-reg text-[#878787]">
-                              24 Students
+                              16 Students
                             </p>
                           </div>
                         </div>
                         <div className="flex items-center gap-2.5">
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            className="w-[18px] h-[18px] rounded"
+                          />
                         </div>
                       </div>
                     </div>
