@@ -37,22 +37,21 @@ import AnnouncementContent from "./Components/Dashboard/MessagingPage/Announceme
 import ManagementContent from "./Components/Dashboard/MessagingPage/ManagementContent";
 import BlogContent from "./Components/Dashboard/ArticlesPage/BlogContent";
 import CreateNewArticle from "./Components/Dashboard/ArticlesPage/CreateNewArticle";
-import Staff from "./Pages/Staff";
-import StaffListContent from "./Components/StaffListContent";
-import StaffDetails from "./Components/StaffDetails";
-import StaffAttendanceContent from "./Components/StaffAttendanceContent";
-import ShiftContent from "./Components/ShiftContent";
-import LeavesContent from "./Components/LeavesContent";
-import SalariesContent from "./Components/SalariesContent";
-import SalariesHistoryContent from "./Components/SalariesHistoryContent";
-import StaffProfile from "./Components/StaffProfile";
-import StaffProfileContent from "./Components/StaffProfileContent";
-import StaffAttachmentsContent from "./Components/StaffAttachmentsContent";
-import StaffPermissionsContent from "./Components/StaffPermissionsContent";
-import StaffActivityLogContent from "./Components/StaffActivityLogContent";
-import StaffRequestsLogContent from "./Components/StaffRequestsLogContent";
-import StaffSalaryLogContent from "./Components/StaffSalaryLogContent";
-import StaffAttendanceLogContent from "./Components/StaffAttendanceLogContent";
+import StaffListContent from "./Components/Dashboard/StaffPage/StaffListContent";
+import StaffDetails from "./Components/Dashboard/StaffPage/StaffDetails";
+import StaffAttendanceContent from "./Components/Dashboard/StaffPage/StaffAttendanceContent";
+import ShiftContent from "./Components/Dashboard/StaffPage/ShiftContent";
+import LeavesContent from "./Components/Dashboard/StaffPage/LeavesContent";
+import SalariesContent from "./Components/Dashboard/StaffPage/SalariesContent";
+import SalariesHistoryContent from "./Components/Dashboard/StaffPage/SalariesHistoryContent";
+import StaffProfile from "./Components/Dashboard/StaffPage/StaffProfile/StaffProfile";
+import StaffProfileContent from "./Components/Dashboard/StaffPage/StaffProfile/StaffProfileContent";
+import StaffAttachmentsContent from "./Components/Dashboard/StaffPage/StaffProfile/StaffAttachmentsContent";
+import StaffPermissionsContent from "./Components/Dashboard/StaffPage/StaffProfile/StaffPermissionsContent";
+import StaffActivityLogContent from "./Components/Dashboard/StaffPage/StaffProfile/StaffActivityLogContent";
+import StaffRequestsLogContent from "./Components/Dashboard/StaffPage/StaffProfile/StaffRequestsLogContent";
+import StaffSalaryLogContent from "./Components/Dashboard/StaffPage/StaffProfile/StaffSalaryLogContent";
+import StaffAttendanceLogContent from "./Components/Dashboard/StaffPage/StaffProfile/StaffAttendanceLogContent";
 import Reporting from "./Pages/Reporting";
 import ReportingAttendanceContent from "./Components/ReportingAttendanceContent";
 import ReportingDailyContent from "./Components/ReportingDailyContent";
@@ -91,6 +90,7 @@ import MyCenterContent from "./Components/Dashboard/MyCenterPage/MyCenterContent
 import MessagingContent from "./Components/Dashboard/MessagingPage/MessagingContent";
 import ArticlesContent from "./Components/Dashboard/ArticlesPage/ArticlesContent";
 import ReviewContent from "./Components/Dashboard/ReviewsPage/ReviewContent";
+import StaffContent from "./Components/Dashboard/StaffPage/StaffContent";
 
 function App() {
   return (
@@ -219,6 +219,40 @@ function App() {
             <Route path="management" element={<ManagementContent />} />
           </Route>
 
+          {/* Staff Page */}
+          <Route path={"staff"} element={<StaffContent />}>
+            {/* Make 'list' the default child route */}
+            <Route index element={<StaffListContent />} />
+            <Route path="list" element={<StaffListContent />} />
+            <Route path="attendance" element={<StaffAttendanceContent />} />
+            <Route path="shifts" element={<ShiftContent />} />
+            <Route path="leave" element={<LeavesContent />} />
+            <Route path="salaries" element={<SalariesContent />} />
+            <Route
+              path="salaries-history"
+              element={<SalariesHistoryContent />}
+            />
+            <Route path="details" element={<StaffDetails />} />
+            <Route path="profile" element={<StaffProfile />}>
+              <Route index element={<StaffProfileContent />} />
+              <Route path="attachments" element={<StaffAttachmentsContent />} />
+              <Route path="permissions" element={<StaffPermissionsContent />} />
+              <Route
+                path="activity-log"
+                element={<StaffActivityLogContent />}
+              />
+              <Route
+                path="requests-log"
+                element={<StaffRequestsLogContent />}
+              />
+              <Route path="salary-log" element={<StaffSalaryLogContent />} />
+              <Route
+                path="attendance-log"
+                element={<StaffAttendanceLogContent />}
+              />
+            </Route>
+          </Route>
+
           {/* Articles */}
           <Route path={"articles"} element={<ArticlesContent />}>
             {/* Make 'blog' the default child route */}
@@ -239,31 +273,6 @@ function App() {
           <Route index element={<BillingContent />} />
           <Route path="request" element={<BillingRequestContent />} />
           <Route path="refund" element={<BillingRefundContent />} />
-        </Route>
-
-        {/* Staff */}
-        <Route path={"/staff"} element={<Staff />}>
-          {/* Make 'list' the default child route */}
-          <Route index element={<StaffListContent />} />
-          <Route path="list" element={<StaffListContent />} />
-          <Route path="attendance" element={<StaffAttendanceContent />} />
-          <Route path="shifts" element={<ShiftContent />} />
-          <Route path="leave" element={<LeavesContent />} />
-          <Route path="salaries" element={<SalariesContent />} />
-          <Route path="salaries-history" element={<SalariesHistoryContent />} />
-          <Route path="details" element={<StaffDetails />} />
-          <Route path="profile" element={<StaffProfile />}>
-            <Route index element={<StaffProfileContent />} />
-            <Route path="attachments" element={<StaffAttachmentsContent />} />
-            <Route path="permissions" element={<StaffPermissionsContent />} />
-            <Route path="activity-log" element={<StaffActivityLogContent />} />
-            <Route path="requests-log" element={<StaffRequestsLogContent />} />
-            <Route path="salary-log" element={<StaffSalaryLogContent />} />
-            <Route
-              path="attendance-log"
-              element={<StaffAttendanceLogContent />}
-            />
-          </Route>
         </Route>
 
         {/* Reporting */}

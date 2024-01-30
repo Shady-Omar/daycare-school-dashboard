@@ -2,9 +2,9 @@ import { Fragment, useState, useCallback } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useDropzone } from "react-dropzone";
 
-import plusIcon from "../Assets/circle-plus-icon.svg";
-import staffPlaceholder from "../Assets/staff-placeholder.png";
-import uploadIcon from "../Assets/upload-icon.svg";
+import plusIcon from "../../../Assets/circle-plus-icon.svg";
+import staffPlaceholder from "../../../Assets/staff-placeholder.png";
+import uploadIcon from "../../../Assets/upload-icon.svg";
 
 const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
 
@@ -40,7 +40,7 @@ function AddLeaveModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="cyan-btn flex justify-center items-center gap-3"
+        className="cyan-btn flex justify-center items-center gap-3 self-stretch lg:self-auto"
       >
         <img src={plusIcon} alt="" />
         Add Leave

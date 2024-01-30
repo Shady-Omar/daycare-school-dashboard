@@ -1,13 +1,13 @@
 import React from "react";
 
-import whitePlusIcon from "../Assets/plus-white-btn.svg";
+import whitePlusIcon from "../../../Assets/plus-white-btn.svg";
 
 function StaffDetails() {
   return (
     <div className="flex flex-col items-start gap-[30px] self-stretch">
-      <div className="flex items-start self-stretch rounded-[10px] bg-white">
+      <div className="flex flex-col lg:grid grid-cols-3 items-start self-stretch rounded-[10px] bg-white">
         {/* Left Side */}
-        <div className="flex w-[400px] py-[50px] px-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-white">
+        <div className="flex col-span-1 self-stretch p-5 lg:py-[50px] lg:px-[30px] flex-col justify-start items-center gap-[30px] rounded-[10px] bg-white">
           <div className="flex flex-col items-start gap-2 self-stretch">
             <label className="label text-[#868686]">Search staff</label>
             <input
@@ -19,10 +19,10 @@ function StaffDetails() {
           </div>
         </div>
         {/* Right Side */}
-        <div className="flex w-[720px] flex-col py-[50px] px-[30px] justify-center items-start content-start gap-[30px] rounded-[10px] bg-white">
-          <div className="grid grid-cols-2 gap-[30px] self-stretch">
+        <div className="flex col-span-2 self-stretch flex-col py-[30px] lg:py-[50px] px-5 lg:px-[30px] justify-center items-start content-start gap-[30px] rounded-[10px] bg-white">
+          <div className="flex flex-col lg:grid grid-cols-2 gap-[30px] self-stretch">
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Name</label>
@@ -34,7 +34,7 @@ function StaffDetails() {
               />
             </div>
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">ID NUMBER</label>
@@ -46,7 +46,7 @@ function StaffDetails() {
               />
             </div>
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Gender</label>
@@ -60,7 +60,7 @@ function StaffDetails() {
               </select>
             </div>
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Nationality</label>
@@ -74,7 +74,7 @@ function StaffDetails() {
               </select>
             </div>
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Email</label>
@@ -86,7 +86,7 @@ function StaffDetails() {
               />
             </div>
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">enter phone number</label>
@@ -98,7 +98,7 @@ function StaffDetails() {
               />
             </div>
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Role Title</label>
@@ -112,7 +112,7 @@ function StaffDetails() {
               </select>
             </div>
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Contract Type</label>
@@ -130,7 +130,7 @@ function StaffDetails() {
               style={{ flex: "1 0 0" }}
             >
               <div
-                className="flex min-w-[315px] flex-col items-start gap-2 self-stretch"
+                className="flex  flex-col items-start gap-2 self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <label className="label text-[#868686]">Work Shift</label>
@@ -152,7 +152,7 @@ function StaffDetails() {
               style={{ flex: "1 0 0" }}
             >
               <div
-                className="flex min-w-[315px] flex-col items-start gap-2 self-stretch"
+                className="flex flex-col items-start gap-2 self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <label className="label text-[#868686]">
@@ -166,14 +166,14 @@ function StaffDetails() {
                 />
               </div>
               <div className="flex items-center gap-2.5">
-                <input type="checkbox" />
-                <p className="p-reg text-[#646464]">
+                <input type="checkbox" className="w-[18px] h-[18px] rounded" />
+                <p className="p-reg text-[#646464] text-left">
                   Leave can be used during preparation
                 </p>
               </div>
             </div>
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">probation period</label>
@@ -187,7 +187,7 @@ function StaffDetails() {
               </select>
             </div>
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">probation Days</label>
@@ -201,7 +201,7 @@ function StaffDetails() {
               </select>
             </div>
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Start Date</label>
@@ -212,7 +212,7 @@ function StaffDetails() {
               />
             </div>
             <div
-              className="flex min-w-[315px] flex-col items-start gap-2"
+              className="flex self-stretch flex-col items-start gap-2"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">End Date</label>
@@ -224,7 +224,7 @@ function StaffDetails() {
             </div>
           </div>
           <div
-            className="flex flex-col items-start gap-2"
+            className="flex flex-col items-start gap-2 self-stretch"
             style={{ flex: "1 0 0" }}
           >
             <div className="flex items-start gap-1 self-stretch">
@@ -234,9 +234,9 @@ function StaffDetails() {
               className="flex p-5 items-center flex-col content-center gap-[15px] self-stretch rounded-[10px] bg-white"
               style={{ border: "1px solid #DBDADE" }}
             >
-              <div className="grid grid-cols-3 gap-[15px] self-stretch">
+              <div className="flex flex-col lg:grid grid-cols-3 gap-[15px] self-stretch">
                 <div
-                  className="flex min-w-[196px] flex-col items-start gap-2"
+                  className="flex self-stretch flex-col items-start gap-2"
                   style={{ flex: "1 0 0" }}
                 >
                   <label className="label text-[#868686]">Basic Salary</label>
@@ -263,7 +263,7 @@ function StaffDetails() {
                   </div>
                 </div>
                 <div
-                  className="flex min-w-[196px] flex-col items-start gap-2"
+                  className="flex self-stretch flex-col items-start gap-2"
                   style={{ flex: "1 0 0" }}
                 >
                   <label className="label text-[#868686]">Housing</label>
@@ -290,7 +290,7 @@ function StaffDetails() {
                   </div>
                 </div>
                 <div
-                  className="flex min-w-[196px] flex-col items-start gap-2"
+                  className="flex self-stretch flex-col items-start gap-2"
                   style={{ flex: "1 0 0" }}
                 >
                   <label className="label text-[#868686]">OTHERS</label>
@@ -317,9 +317,9 @@ function StaffDetails() {
                   </div>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-[15px] self-stretch">
+              <div className="flex flex-col lg:grid grid-cols-2 gap-[15px] self-stretch">
                 <div
-                  className="flex min-w-[196px] flex-col items-start gap-2"
+                  className="flex self-stretch flex-col items-start gap-2"
                   style={{ flex: "1 0 0" }}
                 >
                   <label className="label text-[#868686]">Total Salary</label>
@@ -346,7 +346,7 @@ function StaffDetails() {
                   </div>
                 </div>
                 <div
-                  className="flex min-w-[196px] flex-col items-start gap-2"
+                  className="flex self-stretch flex-col items-start gap-2"
                   style={{ flex: "1 0 0" }}
                 >
                   <label className="label text-[#868686]">Gosi Deduction</label>
@@ -376,7 +376,7 @@ function StaffDetails() {
             </div>
           </div>
           <div
-            className="flex flex-col items-start gap-2"
+            className="flex flex-col items-start gap-2 self-stretch"
             style={{ flex: "1 0 0" }}
           >
             <div className="flex items-start gap-1 self-stretch">
@@ -386,9 +386,9 @@ function StaffDetails() {
               className="flex p-5 items-center flex-col content-center gap-[15px] self-stretch rounded-[10px] bg-white"
               style={{ border: "1px solid #DBDADE" }}
             >
-              <div className="grid grid-cols-2 gap-[15px] self-stretch">
+              <div className="flex flex-col lg:grid grid-cols-2 gap-[15px] self-stretch">
                 <div
-                  className="flex min-w-[302px] flex-col items-start gap-2"
+                  className="flex self-stretch flex-col items-start gap-2"
                   style={{ flex: "1 0 0" }}
                 >
                   <label className="label text-[#868686]">Terms</label>
@@ -400,7 +400,7 @@ function StaffDetails() {
                   />
                 </div>
                 <div
-                  className="flex min-w-[302px] flex-col items-start gap-2"
+                  className="flex self-stretch flex-col items-start gap-2"
                   style={{ flex: "1 0 0" }}
                 >
                   <label className="label text-[#868686]">Type</label>
@@ -421,171 +421,196 @@ function StaffDetails() {
             </div>
           </div>
           <div
-            className="flex flex-col items-start gap-[15px]"
+            className="flex flex-col items-start gap-[15px] self-stretch"
             style={{ flex: "1 0 0" }}
           >
             <div className="flex items-start gap-1 self-stretch">
               <p className="label text-[#868686]">Managing Room</p>
             </div>
             <div className="flex items-center gap-2.5">
-              <input type="checkbox" />
+              <input type="checkbox" className="w-[18px] h-[18px] rounded" />
               <p className="p-reg text-[#646464]">All Room</p>
             </div>
             <div
-              className="grid grid-cols-2 gap-[15px] self-stretch p-5 items-center content-center rounded-[10px] bg-white"
+              className="flex flex-col lg:grid grid-cols-2 gap-[15px] self-stretch p-5 items-center content-center rounded-[10px] bg-white"
               style={{ border: "1px solid #DBDADE" }}
             >
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" checked />
+                <input
+                  type="checkbox"
+                  checked
+                  className="w-[18px] h-[18px] rounded"
+                />
                 <p className="p-reg text-[#646464]">Room 1</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" />
+                <input type="checkbox" className="w-[18px] h-[18px] rounded" />
                 <p className="p-reg text-[#646464]">Room 2</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" />
+                <input type="checkbox" className="w-[18px] h-[18px] rounded" />
                 <p className="p-reg text-[#646464]">Room 3</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" checked />
+                <input
+                  type="checkbox"
+                  checked
+                  className="w-[18px] h-[18px] rounded"
+                />
                 <p className="p-reg text-[#646464]">Room 4</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" />
+                <input type="checkbox" className="w-[18px] h-[18px] rounded" />
                 <p className="p-reg text-[#646464]">Room 5</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" checked />
+                <input
+                  type="checkbox"
+                  checked
+                  className="w-[18px] h-[18px] rounded"
+                />
                 <p className="p-reg text-[#646464]">Room 6</p>
               </div>
             </div>
           </div>
           <div
-            className="flex flex-col items-start gap-[15px]"
+            className="flex flex-col items-start gap-[15px] self-stretch"
             style={{ flex: "1 0 0" }}
           >
             <div className="flex items-start gap-1 self-stretch">
               <p className="label text-[#868686]">Permissions</p>
             </div>
             <div className="flex items-center gap-2.5">
-              <input type="checkbox" />
+              <input type="checkbox" className="w-[18px] h-[18px] rounded" />
               <p className="p-reg text-[#646464]">Give Full Permissions</p>
             </div>
             <div
-              className="grid grid-cols-2 gap-[15px] self-stretch p-5 items-center content-center rounded-[10px] bg-white"
+              className="flex flex-col lg:grid grid-cols-2 gap-[15px] self-stretch p-5 items-center content-center rounded-[10px] bg-white"
               style={{ border: "1px solid #DBDADE" }}
             >
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" checked />
+                <input
+                  type="checkbox"
+                  checked
+                  className="w-[18px] h-[18px] rounded"
+                />
                 <p className="p-reg text-[#646464]">My Center</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" />
+                <input type="checkbox" className="w-[18px] h-[18px] rounded" />
                 <p className="p-reg text-[#646464]">Admission</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" />
+                <input type="checkbox" className="w-[18px] h-[18px] rounded" />
                 <p className="p-reg text-[#646464]">Billing</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" checked />
+                <input
+                  type="checkbox"
+                  checked
+                  className="w-[18px] h-[18px] rounded"
+                />
                 <p className="p-reg text-[#646464]">Review</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" />
+                <input type="checkbox" className="w-[18px] h-[18px] rounded" />
                 <p className="p-reg text-[#646464]">Staff</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" checked />
+                <input
+                  type="checkbox"
+                  checked
+                  className="w-[18px] h-[18px] rounded"
+                />
                 <p className="p-reg text-[#646464]">Notifications</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" checked />
+                <input
+                  type="checkbox"
+                  checked
+                  className="w-[18px] h-[18px] rounded"
+                />
                 <p className="p-reg text-[#646464]">Articles</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" />
+                <input type="checkbox" className="w-[18px] h-[18px] rounded" />
                 <p className="p-reg text-[#646464]">Settings</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" />
+                <input type="checkbox" className="w-[18px] h-[18px] rounded" />
                 <p className="p-reg text-[#646464]">Reporting</p>
               </div>
               <div
-                className="flex min-w-[280px] items-center gap-2.5"
+                className="flex self-stretch items-center gap-2.5"
                 style={{ flex: "1 0 0" }}
               >
-                <input type="checkbox" />
+                <input type="checkbox" className="w-[18px] h-[18px] rounded" />
                 <p className="p-reg text-[#646464]">Support</p>
               </div>
             </div>
           </div>
           <div
-            className="flex justify-center items-center gap-5 self-stretch"
+            className="flex flex-col lg:flex-row justify-center items-center gap-5 self-stretch"
             style={{ flex: "1 0 0" }}
           >
             <button
-              className="flex h-[50px] justify-center items-center rounded-[10px] bg-white py-2.5 px-5 p-bold text-[#383838] !text-[15px]"
+              className="flex self-stretch h-[50px] justify-center items-center rounded-[10px] bg-white py-2.5 px-5 p-bold text-[#383838] !text-[15px]"
               style={{ flex: "1 0 0", border: "1px solid #5ECFFF" }}
             >
               Resend Invitation
             </button>
             <button
-              className="flex h-[50px] justify-center items-center rounded-[10px] bg-white py-2.5 px-5 p-bold text-[#383838] !text-[15px]"
+              className="flex self-stretch h-[50px] justify-center items-center rounded-[10px] bg-white py-2.5 px-5 p-bold text-[#383838] !text-[15px]"
               style={{ flex: "1 0 0", border: "1px solid #FF4A55" }}
             >
               Delete
             </button>
-            <button
-              className="cyan-btn  self-stretch"
-              style={{ flex: "1 0 0" }}
-            >
+            <button className="cyan-btn self-stretch" style={{ flex: "1 0 0" }}>
               Save
             </button>
           </div>

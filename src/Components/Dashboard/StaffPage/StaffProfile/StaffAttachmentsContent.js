@@ -1,7 +1,7 @@
 import React from "react";
 
-import plusIcon from "../Assets/circle-plus-icon.svg";
-import actionArrow from "../Assets/action-arrow.svg";
+import plusIcon from "../../../../Assets/circle-plus-icon.svg";
+import actionArrow from "../../../../Assets/action-arrow.svg";
 
 function StaffAttachmentsContent() {
   return (

@@ -1,15 +1,18 @@
 import React from "react";
 
-import actionArrow from "../Assets/action-arrow.svg";
+import actionArrow from "../../../Assets/action-arrow.svg";
 
 function ShiftContent() {
   return (
     <div className="flex p-5 flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-white">
       {/* Filter */}
-      <div className="flex justify-between items-center self-stretch rounded-xl">
-        <div className="flex items-end gap-2.5" style={{ flex: "1 0 0" }}>
+      <div className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center self-stretch rounded-xl">
+        <div
+          className="flex flex-col lg:flex-row justify-end lg:justify-normal items-start lg:items-end gap-2.5 self-stretch"
+          style={{ flex: "1 0 0" }}
+        >
           <div
-            className="flex flex-col items-start gap-2"
+            className="flex flex-col items-start gap-2 self-stretch"
             style={{ flex: "1 0 0" }}
           >
             <label className="label text-[#868686]">Shift Name</label>
@@ -20,13 +23,18 @@ function ShiftContent() {
               placeholder="Search by shift name..."
             />
           </div>
-          <button className="white-btn w-[150px]">Search</button>
+          <button className="white-btn self-stretch lg:self-auto lg:w-[150px]">
+            Search
+          </button>
         </div>
       </div>
       {/* Data */}
       <div className="flex flex-col items-start gap-5 self-stretch">
         {/* Table */}
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+        <div
+          id="custom-scroll"
+          className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+        >
           <table className="w-full text-left rtl:text-right bg-[#FFF] ">
             <thead
               className=" bg-[#EBEBEB] text-[#383838]"

@@ -1,8 +1,8 @@
 import React from "react";
 
-import sortArrow from "../Assets/sort-dropdown-arrow.svg";
-import actionArrow from "../Assets/action-arrow.svg";
-import childrenPlaceholder from "../Assets/children-placeholder.png";
+import sortArrow from "../../../Assets/sort-dropdown-arrow.svg";
+import actionArrow from "../../../Assets/action-arrow.svg";
+import childrenPlaceholder from "../../../Assets/children-placeholder.png";
 
 function LeavesContent() {
   return (

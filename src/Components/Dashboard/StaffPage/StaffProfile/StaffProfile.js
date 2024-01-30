@@ -1,10 +1,10 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import StaffProfileTabs from "./StaffProfileTabs";
+import StaffProfileTabs from "../../../StaffProfileTabs";
 
-import staffPlaceholder from "../Assets/staff-placeholder.png";
-import editIcon from "../Assets/pencil-edit-icon.svg";
+import staffPlaceholder from "../../../../Assets/staff-placeholder.png";
+import editIcon from "../../../../Assets/pencil-edit-icon.svg";
 
 function StaffProfile() {
   return (

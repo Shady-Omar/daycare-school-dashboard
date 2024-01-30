@@ -1,27 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import infoUpArrow from "../Assets/info-up-arrow.svg";
-import staffCardPlaceholder from "../Assets/staff-card-placeholder.png";
-import phoneIcon from "../Assets/phone-icon.svg";
-import emailIcon from "../Assets/email-icon.svg";
-import sortArrow from "../Assets/sort-dropdown-arrow.svg";
-import childrenPlaceholder from "../Assets/children-placeholder.png";
-import actionArrow from "../Assets/action-arrow.svg";
+import infoUpArrow from "../../../Assets/info-up-arrow.svg";
+import staffCardPlaceholder from "../../../Assets/staff-card-placeholder.png";
+import phoneIcon from "../../../Assets/phone-icon.svg";
+import emailIcon from "../../../Assets/email-icon.svg";
+import sortArrow from "../../../Assets/sort-dropdown-arrow.svg";
+import childrenPlaceholder from "../../../Assets/children-placeholder.png";
+import actionArrow from "../../../Assets/action-arrow.svg";
 
 function StaffListContent() {
   return (
     <div className="flex flex-col items-start gap-[30px] self-stretch">
       {/* OverView Row */}
-      <div className="flex items-start gap-[30px] self-stretch">
+      <div className="flex flex-col lg:flex-row items-start gap-[30px] self-stretch">
         <div
-          className="flex p-5 items-start gap-[30px] rounded-[10px] bg-white"
+          className="flex p-5 items-start gap-[30px] rounded-[10px] bg-white self-stretch"
           style={{ flex: "1 0 0" }}
         >
           {/* Overview Cards */}
-          <div className="grid grid-cols-2 grid-rows-2 gap-5 items-center content-center">
+          <div
+            className="flex flex-col lg:grid grid-cols-2 grid-rows-2 gap-5 items-center content-center self-stretch"
+            style={{ flex: "1 0 0" }}
+          >
             <div
-              className="flex min-w-[242px] flex-col justify-center items-start"
+              className="flex self-stretch flex-col justify-center items-start"
               style={{ flex: "1 0 0" }}
             >
               <div
@@ -79,7 +82,7 @@ function StaffListContent() {
               </div>
             </div>
             <div
-              className="flex min-w-[242px] flex-col justify-center items-start"
+              className="flex self-stretch flex-col justify-center items-start"
               style={{ flex: "1 0 0" }}
             >
               <div
@@ -133,7 +136,7 @@ function StaffListContent() {
               </div>
             </div>
             <div
-              className="flex min-w-[242px] flex-col justify-center items-start"
+              className="flex self-stretch flex-col justify-center items-start"
               style={{ flex: "1 0 0" }}
             >
               <div
@@ -189,7 +192,7 @@ function StaffListContent() {
               </div>
             </div>
             <div
-              className="flex min-w-[242px] flex-col justify-center items-start"
+              className="flex self-stretch flex-col justify-center items-start"
               style={{ flex: "1 0 0" }}
             >
               <div
@@ -257,14 +260,18 @@ function StaffListContent() {
               className="flex justify-between items-center"
               style={{ flex: "1 0 0" }}
             >
-              <h5 className="h5-bold text-[#202020]">Latest Activity</h5>
-              <p className="label-reg text-[#595959]">13 November 2023</p>
+              <h5 className="h5-bold !text-[18px] text-[#202020]">
+                Latest Activity
+              </h5>
+              <p className="label-reg !text-[13px] text-[#595959]">
+                13 November 2023
+              </p>
             </div>
           </div>
           {/* Timeline */}
           <div
             id="custom-scroll"
-            className="flex justify-between items-start self-stretch bg-white max-h-[250px] overflow-y-scroll"
+            className="flex justify-between items-start self-stretch bg-white lg:max-h-[250px] overflow-y-scroll"
           >
             <div
               className="flex flex-col items-start gap-6"
@@ -273,52 +280,44 @@ function StaffListContent() {
               <div className="flex items-center gap-4 self-stretch">
                 <h5 className="h5-semi text-[#A4A4A4]">08.00 AM</h5>
                 <span className="w-1 h-10 bg-[#6418C3]" />
-                <div
-                  className="flex items-start gap-1"
-                  style={{ flex: "1 0 0" }}
-                >
-                  <h5 className="h5-bold text-[#383838]">Abdullah Bilal</h5>
-
-                  <h5 className="h5-med text-[#878787]">
-                    adding food for room 3
+                <div className="flex items-start" style={{ flex: "1 0 0" }}>
+                  <h5 className="h5-bold text-[#383838] text-left">
+                    Abdullah Bilal{" "}
+                    <span className="h5-med text-[#878787]">
+                      adding food for room 3
+                    </span>
                   </h5>
                 </div>
               </div>
               <div className="flex items-center gap-4 self-stretch">
                 <h5 className="h5-semi text-[#A4A4A4]">10.00 AM</h5>
                 <span className="w-1 h-10 bg-[#5ECFFF]" />
-                <div
-                  className="flex items-start gap-1"
-                  style={{ flex: "1 0 0" }}
-                >
-                  <h5 className="h5-bold text-[#383838]">Muhammad Ashraf</h5>
-
-                  <h5 className="h5-med text-[#878787]">Checking In</h5>
+                <div className="flex items-start" style={{ flex: "1 0 0" }}>
+                  <h5 className="h5-bold text-[#383838] text-left">
+                    Muhammad Ashraf{" "}
+                    <span className="h5-med text-[#878787]">Checking In</span>
+                  </h5>
                 </div>
               </div>
               <div className="flex items-center gap-4 self-stretch">
                 <h5 className="h5-semi text-[#A4A4A4]">01.00 PM</h5>
                 <span className="w-1 h-10 bg-[#E328AF]" />
-                <div
-                  className="flex items-start gap-1"
-                  style={{ flex: "1 0 0" }}
-                >
-                  <h5 className="h5-bold text-[#383838]">Zubair</h5>
-
-                  <h5 className="h5-med text-[#878787]">Checking Out</h5>
+                <div className="flex items-start" style={{ flex: "1 0 0" }}>
+                  <h5 className="h5-bold text-[#383838] text-left">
+                    Zubair{" "}
+                    <span className="h5-med text-[#878787]">Checking Out</span>
+                  </h5>
                 </div>
               </div>
               <div className="flex items-center gap-4 self-stretch">
                 <h5 className="h5-semi text-[#A4A4A4]">01.00 PM</h5>
                 <span className="w-1 h-10 bg-[#FFAB2D]" />
-                <div
-                  className="flex items-start gap-1"
-                  style={{ flex: "1 0 0" }}
-                >
-                  <h5 className="h5-bold text-[#383838]">Ashlan</h5>
-
-                  <h5 className="h5-med text-[#878787]">
-                    replace diaper on room 1
+                <div className="flex items-start" style={{ flex: "1 0 0" }}>
+                  <h5 className="h5-bold text-[#383838] text-left">
+                    Ashlan{" "}
+                    <span className="h5-med text-[#878787]">
+                      replace diaper on room 1
+                    </span>
                   </h5>
                 </div>
               </div>
@@ -338,11 +337,13 @@ function StaffListContent() {
             style={{ borderBottom: "1px solid #EBEBEB" }}
           >
             <div className="flex flex-col items-start gap-[5px]">
-              <h5 className="h5-bold text-[#202020]">Staff Lists</h5>
+              <h5 className="h5-bold !text-[18px] text-[#202020]">
+                Staff Lists
+              </h5>
             </div>
           </div>
           {/* Cards */}
-          <div className="flex items-start gap-[30px] self-stretch">
+          <div className="flex flex-col lg:flex-row items-start gap-[30px] self-stretch">
             <Link
               to="/staff/details"
               className="flex p-5 flex-col items-start gap-2.5 rounded-lg"
@@ -361,17 +362,17 @@ function StaffListContent() {
               </div>
               {/* Contact */}
               <div
-                className="flex items-start gap-7 self-stretch"
+                className="flex flex-col lg:flex-row items-start gap-2.5 lg:gap-7 self-stretch"
                 style={{
                   padding: "10px 0px 20px 0px",
                   borderBottom: "1px solid #EBEBEB",
                 }}
               >
-                <span className=" flex justify-center items-center gap-2 w-[110px] h-[18px]">
+                <span className=" flex lg:justify-center lg:items-center gap-2 w-[110px] h-[18px]">
                   <img className="w-4 h-4 shrink-0" src={phoneIcon} alt="" />
                   <p className="label-semi text-[#383838]">+12 34567890</p>
                 </span>
-                <span className=" flex justify-center items-center gap-2 w-[110px] h-[18px]">
+                <span className=" flex lg:justify-center lg:items-center gap-2 w-[110px] h-[18px]">
                   <img className="w-4 h-4 shrink-0" src={emailIcon} alt="" />
                   <p className="label-semi text-[#383838]">email@mail.com</p>
                 </span>
@@ -419,8 +420,40 @@ function StaffListContent() {
               </div>
               {/* Statistic 2 */}
               <div className="flex py-2.5 items-start gap-3 self-stretch">
-                <div className="flex w-full flex-col items-start gap-[5px]">
-                  <h6 className="h6-bold text-[#202020] !tracking-normal">
+                {/* for mobile screen */}
+                <div className="lg:hidden flex w-full flex-col items-start gap-[5px]">
+                  <h6 className="h6-bold text-[#202020] !tracking-normal text-left">
+                    Leave Balance
+                  </h6>
+                  <div className="flex justify-between items-start self-stretch">
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        15 <span className="p-reg text-[#A5A5A5]">/8h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Personal</p>
+                    </div>
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        5 <span className="p-reg text-[#A5A5A5]">/21h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Sick</p>
+                    </div>
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        7 <span className="p-reg text-[#A5A5A5]">/30h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Vacation</p>
+                    </div>
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        21 <span className="p-reg text-[#A5A5A5]">/12h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Annual</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden lg:flex w-full flex-col items-start gap-[5px]">
+                  <h6 className="h6-bold text-[#202020] !tracking-normal text-left">
                     Used Leave
                   </h6>
                   <div className="flex w-[102px] justify-between items-start">
@@ -436,8 +469,8 @@ function StaffListContent() {
                     </div>
                   </div>
                 </div>
-                <div className="flex w-full flex-col items-start gap-[5px]">
-                  <h6 className="h6-bold text-[#202020] !tracking-normal">
+                <div className="hidden lg:flex w-full flex-col items-start gap-[5px]">
+                  <h6 className="h6-bold text-[#202020] !tracking-normal text-left">
                     Without Excuse
                   </h6>
                   <div className="flex w-[102px] justify-between items-start">
@@ -470,17 +503,17 @@ function StaffListContent() {
               </div>
               {/* Contact */}
               <div
-                className="flex items-start gap-7 self-stretch"
+                className="flex flex-col lg:flex-row items-start gap-2.5 lg:gap-7 self-stretch"
                 style={{
                   padding: "10px 0px 20px 0px",
                   borderBottom: "1px solid #EBEBEB",
                 }}
               >
-                <span className=" flex justify-center items-center gap-2 w-[110px] h-[18px]">
+                <span className=" flex lg:justify-center lg:items-center gap-2 w-[110px] h-[18px]">
                   <img className="w-4 h-4 shrink-0" src={phoneIcon} alt="" />
                   <p className="label-semi text-[#383838]">+12 34567890</p>
                 </span>
-                <span className=" flex justify-center items-center gap-2 w-[110px] h-[18px]">
+                <span className=" flex lg:justify-center lg:items-center gap-2 w-[110px] h-[18px]">
                   <img className="w-4 h-4 shrink-0" src={emailIcon} alt="" />
                   <p className="label-semi text-[#383838]">email@mail.com</p>
                 </span>
@@ -528,8 +561,40 @@ function StaffListContent() {
               </div>
               {/* Statistic 2 */}
               <div className="flex py-2.5 items-start gap-3 self-stretch">
-                <div className="flex w-full flex-col items-start gap-[5px]">
-                  <h6 className="h6-bold text-[#202020] !tracking-normal">
+                {/* for mobile screen */}
+                <div className="lg:hidden flex w-full flex-col items-start gap-[5px]">
+                  <h6 className="h6-bold text-[#202020] !tracking-normal text-left">
+                    Leave Balance
+                  </h6>
+                  <div className="flex justify-between items-start self-stretch">
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        15 <span className="p-reg text-[#A5A5A5]">/8h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Personal</p>
+                    </div>
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        5 <span className="p-reg text-[#A5A5A5]">/21h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Sick</p>
+                    </div>
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        7 <span className="p-reg text-[#A5A5A5]">/30h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Vacation</p>
+                    </div>
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        21 <span className="p-reg text-[#A5A5A5]">/12h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Annual</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden lg:flex w-full flex-col items-start gap-[5px]">
+                  <h6 className="h6-bold text-[#202020] !tracking-normal text-left">
                     Used Leave
                   </h6>
                   <div className="flex w-[102px] justify-between items-start">
@@ -545,8 +610,8 @@ function StaffListContent() {
                     </div>
                   </div>
                 </div>
-                <div className="flex w-full flex-col items-start gap-[5px]">
-                  <h6 className="h6-bold text-[#202020] !tracking-normal">
+                <div className="hidden lg:flex w-full flex-col items-start gap-[5px]">
+                  <h6 className="h6-bold text-[#202020] !tracking-normal text-left">
                     Without Excuse
                   </h6>
                   <div className="flex w-[102px] justify-between items-start">
@@ -579,17 +644,17 @@ function StaffListContent() {
               </div>
               {/* Contact */}
               <div
-                className="flex items-start gap-7 self-stretch"
+                className="flex flex-col lg:flex-row items-start gap-2.5 lg:gap-7 self-stretch"
                 style={{
                   padding: "10px 0px 20px 0px",
                   borderBottom: "1px solid #EBEBEB",
                 }}
               >
-                <span className=" flex justify-center items-center gap-2 w-[110px] h-[18px]">
+                <span className=" flex lg:justify-center lg:items-center gap-2 w-[110px] h-[18px]">
                   <img className="w-4 h-4 shrink-0" src={phoneIcon} alt="" />
                   <p className="label-semi text-[#383838]">+12 34567890</p>
                 </span>
-                <span className=" flex justify-center items-center gap-2 w-[110px] h-[18px]">
+                <span className=" flex lg:justify-center lg:items-center gap-2 w-[110px] h-[18px]">
                   <img className="w-4 h-4 shrink-0" src={emailIcon} alt="" />
                   <p className="label-semi text-[#383838]">email@mail.com</p>
                 </span>
@@ -637,8 +702,40 @@ function StaffListContent() {
               </div>
               {/* Statistic 2 */}
               <div className="flex py-2.5 items-start gap-3 self-stretch">
-                <div className="flex w-full flex-col items-start gap-[5px]">
-                  <h6 className="h6-bold text-[#202020] !tracking-normal">
+                {/* for mobile screen */}
+                <div className="lg:hidden flex w-full flex-col items-start gap-[5px]">
+                  <h6 className="h6-bold text-[#202020] !tracking-normal text-left">
+                    Leave Balance
+                  </h6>
+                  <div className="flex justify-between items-start self-stretch">
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        15 <span className="p-reg text-[#A5A5A5]">/8h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Personal</p>
+                    </div>
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        5 <span className="p-reg text-[#A5A5A5]">/21h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Sick</p>
+                    </div>
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        7 <span className="p-reg text-[#A5A5A5]">/30h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Vacation</p>
+                    </div>
+                    <div className="w-[49px] flex-col-reverse h-[46px] shrink-0 text-left">
+                      <h5 className="h5 text-[#202020] flex flex-row items-baseline">
+                        21 <span className="p-reg text-[#A5A5A5]">/12h</span>
+                      </h5>
+                      <p className="label-reg text-[#A5A5A5]">Annual</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden lg:flex w-full flex-col items-start gap-[5px]">
+                  <h6 className="h6-bold text-[#202020] !tracking-normal text-left">
                     Used Leave
                   </h6>
                   <div className="flex w-[102px] justify-between items-start">
@@ -654,8 +751,8 @@ function StaffListContent() {
                     </div>
                   </div>
                 </div>
-                <div className="flex w-full flex-col items-start gap-[5px]">
-                  <h6 className="h6-bold text-[#202020] !tracking-normal">
+                <div className="hidden lg:flex w-full flex-col items-start gap-[5px]">
+                  <h6 className="h6-bold text-[#202020] !tracking-normal text-left">
                     Without Excuse
                   </h6>
                   <div className="flex w-[102px] justify-between items-start">
@@ -693,7 +790,10 @@ function StaffListContent() {
               </div>
             </div>
             {/* Table */}
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+            <div
+              id="custom-scroll"
+              className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+            >
               <table className="w-full text-left rtl:text-right bg-[#FFF] ">
                 <thead
                   className=" bg-[#EBEBEB] text-[#383838]"

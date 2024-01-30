@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-import whitePlusIcon from "../Assets/plus-white-btn.svg";
+import whitePlusIcon from "../../../Assets/plus-white-btn.svg";
 
 function InviteStaffModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ function InviteStaffModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="white-btn flex justify-center items-center gap-3"
+        className="white-btn flex justify-center items-center gap-3 self-stretch lg:self-auto"
       >
         <img src={whitePlusIcon} alt="" />
         Invite
@@ -50,7 +50,7 @@ function InviteStaffModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex p-[30px] w-[483px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex p-[30px] w-[340px] lg:w-[483px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}

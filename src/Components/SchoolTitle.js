@@ -244,7 +244,7 @@ function SchoolTitle() {
           ) : currentPath.includes("/staff/profile") ? (
             <h2 className="h2-bold text-[#202020]">Staff Profile</h2>
           ) : (
-            <h2 className="h2-bold text-[#202020]">
+            <h2 className="h2-bold text-[#202020] text-left">
               Saud International School Staff
             </h2>
           )

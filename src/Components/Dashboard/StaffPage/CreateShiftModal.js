@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import plusIcon from "../../../Assets/circle-plus-icon.svg";
 
 function CreateShiftModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ function CreateShiftModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="cyan-btn flex justify-center items-center gap-3"
+        className="cyan-btn flex justify-center items-center gap-3 self-stretch lg:self-auto"
       >
         <img src={plusIcon} alt="" />
         Create New Shift
@@ -40,7 +40,7 @@ function CreateShiftModal() {
           {/* Full-screen container to center the panel */}
           <div
             id="custom-scroll"
-            className="fixed inset-0 flex w-screen items-start justify-center p-4 overflow-y-scroll"
+            className="fixed inset-0 flex w-screen items-start justify-center p-10 overflow-y-scroll"
           >
             <Transition.Child
               as={Fragment}
@@ -52,7 +52,7 @@ function CreateShiftModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex w-[752px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-[752px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -91,27 +91,47 @@ function CreateShiftModal() {
                     <p className="label text-[#868686]">Add Days</p>
                     <div className="flex flex-col items-start gap-2.5">
                       <div className="flex items-center gap-2.5">
-                        <input type="checkbox" checked />
+                        <input
+                          type="checkbox"
+                          className="w-[18px] h-[18px] rounded"
+                          checked
+                        />
                         <p className="p-reg text-[#646464]">Sunday</p>
                       </div>
                       <div className="flex items-center gap-2.5">
-                        <input type="checkbox" checked />
+                        <input
+                          type="checkbox"
+                          className="w-[18px] h-[18px] rounded"
+                          checked
+                        />
                         <p className="p-reg text-[#646464]">Monday</p>
                       </div>
                       <div className="flex items-center gap-2.5">
-                        <input type="checkbox" />
+                        <input
+                          type="checkbox"
+                          className="w-[18px] h-[18px] rounded"
+                        />
                         <p className="p-reg text-[#646464]">Tuesday</p>
                       </div>
                       <div className="flex items-center gap-2.5">
-                        <input type="checkbox" />
+                        <input
+                          type="checkbox"
+                          className="w-[18px] h-[18px] rounded"
+                        />
                         <p className="p-reg text-[#646464]">Wednesday</p>
                       </div>
                       <div className="flex items-center gap-2.5">
-                        <input type="checkbox" />
+                        <input
+                          type="checkbox"
+                          className="w-[18px] h-[18px] rounded"
+                        />
                         <p className="p-reg text-[#646464]">Thursday</p>
                       </div>
                       <div className="flex items-center gap-2.5">
-                        <input type="checkbox" />
+                        <input
+                          type="checkbox"
+                          className="w-[18px] h-[18px] rounded"
+                        />
                         <p className="p-reg text-[#646464]">Friday</p>
                       </div>
                     </div>
@@ -119,9 +139,9 @@ function CreateShiftModal() {
                   {/* Hours */}
                   <div className="flex flex-col items-center justify-center gap-5 self-stretch">
                     {/* Form */}
-                    <div className="flex items-center content-center gap-5 self-stretch">
+                    <div className="flex flex-col lg:flex-row items-center content-center gap-5 self-stretch">
                       <div
-                        className="flex w-full  flex-col items-start gap-2"
+                        className="flex w-full flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <p className="label text-[#868686]">From</p>
@@ -156,7 +176,7 @@ function CreateShiftModal() {
                         </div>
                       </div>
                       <div
-                        className="flex w-full  flex-col items-start gap-2"
+                        className="flex w-full flex-col items-start gap-2"
                         style={{ flex: "1 0 0" }}
                       >
                         <p className="label text-[#868686]">To</p>
@@ -267,7 +287,7 @@ function CreateShiftModal() {
                     </div>
                     {/* form */}
                     <div className="flex flex-col items-center justify-center gap-5 self-stretch">
-                      <div className="flex items-center content-center gap-5 self-stretch">
+                      <div className="flex flex-col lg:flex-row items-center content-center gap-5 self-stretch">
                         <div className="flex min-w-[210px] flex-col items-start gap-2 self-stretch">
                           <label className="label text-[#868686]">
                             No earlier than
