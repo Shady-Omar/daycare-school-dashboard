@@ -1,5 +1,5 @@
 import React from "react";
-import BillingTabs from "../../BillingTabs";
+import BillingTabs from "./BillingTabs";
 import actionArrow from "../../../Assets/action-arrow.svg";
 
 function BillingContent() {
@@ -8,9 +8,9 @@ function BillingContent() {
       {/* Overview Row */}
       <div className="flex p-5 flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-white">
         {/* Cards */}
-        <div className="flex w-full items-center gap-5 self-stretch">
+        <div className="flex flex-col lg:flex-row w-full items-center gap-5 self-stretch">
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white self-stretch"
             style={{ flex: "1 0 0", border: "1px solid #DCDCDC" }}
           >
             {/* Icon */}
@@ -46,7 +46,7 @@ function BillingContent() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white self-stretch"
             style={{ flex: "1 0 0", border: "1px solid #DCDCDC" }}
           >
             {/* Icon */}
@@ -78,7 +78,7 @@ function BillingContent() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white self-stretch"
             style={{ flex: "1 0 0", border: "1px solid #DCDCDC" }}
           >
             {/* Icon */}
@@ -114,7 +114,7 @@ function BillingContent() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white self-stretch"
             style={{ flex: "1 0 0", border: "1px solid #DCDCDC" }}
           >
             {/* Icon */}
@@ -151,7 +151,7 @@ function BillingContent() {
       </div>
       {/* Main Row */}
       <div className="flex flex-col items-start gap-[30px] self-stretch">
-        <div className="flex flex-col items-start self-stretch">
+        <div className="flex flex-col items-start gap-[30px] lg:gap-0 self-stretch">
           {/* Tabs */}
           <BillingTabs />
           <div
@@ -159,9 +159,9 @@ function BillingContent() {
             style={{ borderRadius: "0px 10px 10px 10px" }}
           >
             {/* Filter */}
-            <div className="flex items-end gap-5 self-stretch">
+            <div className="flex flex-col lg:flex-row items-end gap-5 self-stretch">
               <div
-                className="flex flex-col items-start gap-2"
+                className="flex flex-col items-start gap-2 self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <label className="label text-[#868686]">Search Students</label>
@@ -173,7 +173,7 @@ function BillingContent() {
                 />
               </div>
               <div
-                className="flex flex-col items-start gap-2"
+                className="flex flex-col items-start gap-2 self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <label className="label text-[#868686]">Status</label>
@@ -187,7 +187,7 @@ function BillingContent() {
                 </select>
               </div>
               <div
-                className="flex flex-col items-start gap-2"
+                className="flex flex-col items-start gap-2 self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <label className="label text-[#868686]">Date From</label>
@@ -198,7 +198,7 @@ function BillingContent() {
                 />
               </div>
               <div
-                className="flex flex-col items-start gap-2"
+                className="flex flex-col items-start gap-2 self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <label className="label text-[#868686]">Date To</label>
@@ -212,7 +212,10 @@ function BillingContent() {
             {/* Data */}
             <div className="flex flex-col items-start gap-5 self-stretch">
               {/* Table */}
-              <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+              <div
+                id="custom-scroll"
+                className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+              >
                 <table className="w-full text-left rtl:text-right bg-[#FFF] ">
                   <thead
                     className=" bg-[#EBEBEB] text-[#383838]"

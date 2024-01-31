@@ -96,6 +96,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
+        {/* SignIn / SignUp */}
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup/step-one" element={<SignUpStepOne />} />
         <Route path="/signup/step-two" element={<SignUpStepTwo />} />

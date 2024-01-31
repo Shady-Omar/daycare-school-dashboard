@@ -1,21 +1,18 @@
 import React from "react";
-import BillingTabs from "../../BillingTabs";
+import BillingTabs from "./BillingTabs";
 import actionArrow from "../../../Assets/action-arrow.svg";
 
 function BillingRefundContent() {
   return (
     <div className="flex flex-col items-start gap-[30px] self-stretch">
-      <div className="flex flex-col items-start self-stretch">
+      <div className="flex flex-col gap-[30px] lg:gap-0 items-start self-stretch">
         {/* Tabs */}
         <BillingTabs />
-        <div
-          className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch bg-white"
-          style={{ borderRadius: "0px 10px 10px 10px" }}
-        >
+        <div className="flex p-[30px] flex-col justify-center items-start gap-[30px] rounded-[10px] lg:rounded-[0px_10px_10px_10px] self-stretch bg-white">
           {/* Filter */}
-          <div className="flex items-end gap-5 self-stretch">
+          <div className="flex flex-col lg:flex-row items-end gap-5 self-stretch">
             <div
-              className="flex flex-col items-start gap-2"
+              className="flex flex-col items-start gap-2 self-stretch"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Search Students</label>
@@ -27,7 +24,7 @@ function BillingRefundContent() {
               />
             </div>
             <div
-              className="flex flex-col items-start gap-2"
+              className="flex flex-col items-start gap-2 self-stretch"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Status</label>
@@ -41,7 +38,7 @@ function BillingRefundContent() {
               </select>
             </div>
             <div
-              className="flex flex-col items-start gap-2"
+              className="flex flex-col items-start gap-2 self-stretch"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Date From</label>
@@ -52,7 +49,7 @@ function BillingRefundContent() {
               />
             </div>
             <div
-              className="flex flex-col items-start gap-2"
+              className="flex flex-col items-start gap-2 self-stretch"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Date To</label>
@@ -62,12 +59,17 @@ function BillingRefundContent() {
                 style={{ border: "1px solid #DBDADE" }}
               />
             </div>
-            <button className="cyan-btn">Filter</button>
+            <button className="cyan-btn self-stretch lg:self-auto">
+              Filter
+            </button>
           </div>
           {/* Data */}
           <div className="flex flex-col items-start gap-5 self-stretch">
             {/* Table */}
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+            <div
+              id="custom-scroll"
+              className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+            >
               <table className="w-full text-left rtl:text-right bg-[#FFF] ">
                 <thead
                   className=" bg-[#EBEBEB] text-[#383838]"

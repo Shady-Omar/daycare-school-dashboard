@@ -1,18 +1,18 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-import editIcon from "../Assets/action-edit.svg";
+import editIcon from "../../../Assets/action-edit.svg";
 
 function EditFamilyModal() {
   let [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <button
+      <img
         onClick={() => setIsOpen(true)}
-        className="flex items-start flex-col gap-2"
-      >
-        <img className="w-[18px] h-[18px]" src={editIcon} alt="edit" />
-      </button>
+        className="w-[18px] h-[18px]"
+        src={editIcon}
+        alt="edit"
+      />
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           open={isOpen}
@@ -37,7 +37,10 @@ function EditFamilyModal() {
           </Transition.Child>
 
           {/* Full-screen container to center the panel */}
-          <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <div
+            id="custom-scroll"
+            className="fixed inset-0 flex w-screen items-start justify-center overflow-y-scroll p-10"
+          >
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -48,7 +51,7 @@ function EditFamilyModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-[500px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -76,7 +79,7 @@ function EditFamilyModal() {
                 <div className="flex flex-col justify-center items-center gap-[20px] self-stretch">
                   {/* form */}
                   <div className="flex flex-col items-start justify-center gap-5 self-stretch">
-                    <div className="flex w-[400px] flex-col items-start gap-2">
+                    <div className="flex flex-col items-start gap-2 self-stretch">
                       <label className="label text-[#868686]">First Name</label>
                       <input
                         type="text"
@@ -85,7 +88,7 @@ function EditFamilyModal() {
                         placeholder="Enter First Name"
                       />
                     </div>
-                    <div className="flex w-[400px] flex-col items-start gap-2">
+                    <div className="flex flex-col items-start gap-2 self-stretch">
                       <label className="label text-[#868686]">Last Name</label>
                       <input
                         type="text"
@@ -94,7 +97,7 @@ function EditFamilyModal() {
                         placeholder="Enter Last Name"
                       />
                     </div>
-                    <div className="flex w-[400px] flex-col items-start gap-2">
+                    <div className="flex flex-col items-start gap-2 self-stretch">
                       <label className="label text-[#868686]">Email ID</label>
                       <input
                         type="text"
@@ -103,7 +106,7 @@ function EditFamilyModal() {
                         placeholder="Enter Email ID"
                       />
                     </div>
-                    <div className="flex w-[400px] flex-col items-start gap-2">
+                    <div className="flex flex-col items-start gap-2 self-stretch">
                       <label className="label text-[#868686]">
                         mobile number
                       </label>

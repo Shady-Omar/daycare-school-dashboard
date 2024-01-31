@@ -33,9 +33,9 @@ function BillingRequestContent() {
   });
 
   return (
-    <div className="grid grid-cols-2 p-[30px] items-start content-start gap-[30px] self-stretch rounded-[10px] bg-white">
+    <div className="flex flex-col lg:grid grid-cols-2 p-[30px] items-start content-start gap-[30px] self-stretch rounded-[10px] bg-white">
       <div
-        className="flex flex-col items-start gap-2"
+        className="flex flex-col items-start gap-2 self-stretch"
         style={{ flex: "1 0 0" }}
       >
         <label className="label text-[#868686]">Title</label>
@@ -47,7 +47,7 @@ function BillingRequestContent() {
         />
       </div>
       <div
-        className="flex flex-col items-start gap-2"
+        className="flex flex-col items-start gap-2 self-stretch"
         style={{ flex: "1 0 0" }}
       >
         <label className="label text-[#868686]">Category</label>
@@ -61,7 +61,7 @@ function BillingRequestContent() {
         </select>
       </div>
       <div
-        className="flex flex-col items-start gap-2"
+        className="flex flex-col items-start gap-2 self-stretch"
         style={{ flex: "1 0 0" }}
       >
         <label className="label text-[#868686]">Plan Type</label>
@@ -75,7 +75,7 @@ function BillingRequestContent() {
         </select>
       </div>
       <div
-        className="flex flex-col items-start gap-2"
+        className="flex flex-col items-start gap-2 self-stretch"
         style={{ flex: "1 0 0" }}
       >
         <label className="label text-[#868686]">Plan time</label>
@@ -89,7 +89,7 @@ function BillingRequestContent() {
         </select>
       </div>
       <div
-        className="flex flex-col items-start gap-2"
+        className="flex flex-col items-start gap-2 self-stretch"
         style={{ flex: "1 0 0" }}
       >
         <label className="label text-[#868686]">Start Date</label>
@@ -101,7 +101,7 @@ function BillingRequestContent() {
         />
       </div>
       <div
-        className="flex flex-col items-start gap-2"
+        className="flex flex-col items-start gap-2 self-stretch"
         style={{ flex: "1 0 0" }}
       >
         <label className="label text-[#868686]">End Date</label>
@@ -112,10 +112,7 @@ function BillingRequestContent() {
           placeholder="Search here"
         />
       </div>
-      <div
-        className="flex flex-col h-[273px] items-start gap-2"
-        style={{ flex: "1 0 0" }}
-      >
+      <div className="flex flex-col h-[273px] items-start gap-2 self-stretch">
         <label className="label text-[#868686]">Description</label>
         <textarea
           className="h-[273px] rounded-[10px] p-reg flex border px-5 items-center self-stretch  border-[#DBDADE] p-3 outline-none focus:outline-none bg-[#FFF]"
@@ -126,7 +123,7 @@ function BillingRequestContent() {
         ></textarea>
       </div>
       <div
-        className="flex flex-col h-[273px] items-start gap-2"
+        className="flex flex-col h-[273px] items-start gap-2 self-stretch"
         style={{ flex: "1 0 0" }}
       >
         <label className="label text-[#868686]">Attachment</label>
@@ -150,10 +147,10 @@ function BillingRequestContent() {
               </div>
               <p className="p-reg text-[#646464]">Or</p>
               <div className="flex flex-col items-center justify-center self-stretch gap-2.5">
-                <button className="flex w-[200px] p-bold h-[50px] justify-center items-center rounded-[10px] bg-[#00CCB6] text-[#FFF] py-[10px] px-5">
+                <button className="flex self-stretch lg:self-auto lg:w-[200px] p-bold h-[50px] justify-center items-center rounded-[10px] bg-[#00CCB6] text-[#FFF] py-[10px] px-5">
                   Choose File
                 </button>
-                <p className="p-reg text-[#646464]">
+                <p className="p-reg text-[#646464] text-center">
                   Maximum file size is 50MB.
                 </p>
               </div>
@@ -163,16 +160,16 @@ function BillingRequestContent() {
       </div>
       {/* Payment Details */}
       <div
-        className="flex col-span-2 pt-[30px] flex-col items-start gap-5"
+        className="flex lg:col-span-2 pt-[30px] flex-col items-start gap-5 self-stretch"
         style={{ flex: "1 0 0", borderTop: "1px solid #DCDCDC" }}
       >
         <div className="flex flex-col items-start gap-2.5">
           <label className="label text-[#383838]">PAYMENT DETAILS</label>
         </div>
         <div className="flex items-center gap-5 self-stretch">
-          <div className="flex flex-col items-start gap-5 w-full">
-            <div className="flex self-stretch items-center gap-5">
-              <p className="p-reg text-left w-[210px] text-[#646464]">
+          <div className="flex flex-col items-start gap-5 w-full self-stretch">
+            <div className="flex flex-col lg:flex-row self-stretch items-start lg:items-center gap-5">
+              <p className="p-reg text-left lg:w-[210px] text-[#646464]">
                 Amount (SAR)*
               </p>
 
@@ -181,7 +178,7 @@ function BillingRequestContent() {
                 style={{ flex: "1 0 0" }}
               >
                 <div
-                  className="flex flex-col items-end w-full gap-2"
+                  className="flex flex-col items-end w-full gap-2 self-stretch"
                   style={{ flex: "1 0 0" }}
                 >
                   <input
@@ -193,17 +190,17 @@ function BillingRequestContent() {
                 </div>
               </div>
             </div>
-            <div className="flex self-stretch items-center gap-5">
-              <p className="p-reg text-left w-[210px] text-[#646464]">
+            <div className="flex flex-col lg:flex-row self-stretch items-start lg:items-center gap-5">
+              <p className="p-reg text-left lg:w-[210px] text-[#646464]">
                 Discount
               </p>
 
               <div
-                className="flex items-center gap-5 w-full self-stretch"
+                className="flex flex-col lg:flex-row items-center gap-5 w-full self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <div
-                  className="flex flex-col items-end w-full gap-2"
+                  className="flex flex-col items-end self-stretch gap-2"
                   style={{ flex: "1 0 0" }}
                 >
                   <select
@@ -216,7 +213,7 @@ function BillingRequestContent() {
                   </select>
                 </div>
                 <div
-                  className="flex flex-col items-end w-full gap-2"
+                  className="flex flex-col items-end self-stretch gap-2"
                   style={{ flex: "1 0 0" }}
                 >
                   <input
@@ -227,7 +224,7 @@ function BillingRequestContent() {
                   />
                 </div>
                 <div
-                  className="flex flex-col items-end w-full gap-2"
+                  className="flex flex-col items-end self-stretch gap-2"
                   style={{ flex: "1 0 0" }}
                 >
                   <select
@@ -240,7 +237,7 @@ function BillingRequestContent() {
                   </select>
                 </div>
                 <div
-                  className="flex flex-col items-end w-full gap-2"
+                  className="flex flex-col items-end self-stretch gap-2"
                   style={{ flex: "1 0 0" }}
                 >
                   <input
@@ -253,16 +250,16 @@ function BillingRequestContent() {
                 </div>
               </div>
             </div>
-            <div className="flex self-stretch justify-between items-center">
+            <div className="flex flex-col lg:flex-row self-stretch gap-5 lg:gap-0 lg:justify-between items-start lg:items-center">
               <p className="p-reg text-left w-[210px] text-[#646464]">
                 Gross (SAR)
               </p>
 
               <div className="flex items-center gap-5 self-stretch">
-                <div className="flex flex-col justify-center items-end gap-2">
+                <div className="flex flex-col justify-center w-full items-end gap-2 self-stretch">
                   <input
                     type="text"
-                    className="text-[#A4A4A4] p-reg flex w-[187.5px] h-[50px] px-5 items-center text-right self-stretch rounded-[10px] bg-[#EDEDED]"
+                    className="text-[#A4A4A4] p-reg flex w-full h-[50px] px-5 items-center text-right self-stretch rounded-[10px] bg-[#EDEDED]"
                     style={{ border: "1px solid #DBDADE" }}
                     placeholder="0.00"
                     disabled
@@ -270,22 +267,22 @@ function BillingRequestContent() {
                 </div>
               </div>
             </div>
-            <div className="flex self-stretch justify-between items-center">
+            <div className="flex flex-col lg:flex-row self-stretch gap-5 lg:gap-0 lg:justify-between items-start lg:items-center">
               <p className="p-reg text-left w-[210px] text-[#646464]">Tax</p>
 
-              <div className="flex items-center gap-5 self-stretch">
-                <div className="flex flex-col justify-center items-end gap-2">
+              <div className="flex flex-col lg:flex-row items-center gap-5 self-stretch">
+                <div className="flex flex-col justify-center items-end gap-2 self-stretch">
                   <input
                     type="text"
-                    className="text-[#A4A4A4] p-reg flex w-[187.5px] h-[50px] px-5 items-center text-right self-stretch rounded-[10px] bg-[#FFF]"
+                    className="text-[#A4A4A4] p-reg flex w-full h-[50px] px-5 items-center text-right self-stretch rounded-[10px] bg-[#FFF]"
                     style={{ border: "1px solid #DBDADE" }}
                     placeholder="%"
                   />
                 </div>
-                <div className="flex flex-col justify-center items-end gap-2">
+                <div className="flex flex-col justify-center items-end gap-2 self-stretch">
                   <input
                     type="text"
-                    className="text-[#A4A4A4] p-reg flex w-[187.5px] h-[50px] px-5 items-center text-right self-stretch rounded-[10px] bg-[#EDEDED]"
+                    className="text-[#A4A4A4] p-reg flex w-full h-[50px] px-5 items-center text-right self-stretch rounded-[10px] bg-[#EDEDED]"
                     style={{ border: "1px solid #DBDADE" }}
                     placeholder="0.00"
                     disabled
@@ -293,16 +290,16 @@ function BillingRequestContent() {
                 </div>
               </div>
             </div>
-            <div className="flex self-stretch justify-between items-center">
+            <div className="flex flex-col lg:flex-row self-stretch gap-5 lg:gap-0 lg:justify-between items-start lg:items-center">
               <p className="p-reg text-left w-[210px] text-[#646464]">
                 Net Amount (SAR)
               </p>
 
-              <div className="flex items-center gap-5 self-stretch">
-                <div className="flex flex-col justify-center items-end gap-2">
+              <div className="flex flex-col lg:flex-row items-center gap-5 self-stretch">
+                <div className="flex flex-col justify-center items-end gap-2 self-stretch">
                   <input
                     type="text"
-                    className="text-[#A4A4A4] p-reg flex w-[187.5px] h-[50px] px-5 items-center text-right self-stretch rounded-[10px] bg-[#EDEDED]"
+                    className="text-[#A4A4A4] p-reg flex w-full h-[50px] px-5 items-center text-right self-stretch rounded-[10px] bg-[#EDEDED]"
                     style={{ border: "1px solid #DBDADE" }}
                     placeholder="0.00"
                     disabled
@@ -323,7 +320,7 @@ function BillingRequestContent() {
         </div>
         <div className="flex items-center gap-5 self-stretch">
           <div className="flex flex-col items-start gap-[30px]">
-            <div className="flex items-center gap-5 self-stretch">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-5 self-stretch">
               <p className="p-reg text-left w-[210px] text-[#646464]">
                 Select Recipient
               </p>
@@ -350,11 +347,15 @@ function BillingRequestContent() {
       </div>
       {/* Buttons */}
       <div
-        className="flex pt-[30px] col-span-2 items-center justify-between "
+        className="flex pt-[30px] flex-col lg:flex-row lg:col-span-2 items-center justify-between self-stretch gap-2.5 lg:gap-0"
         style={{ flex: "1 0 0", borderTop: "1px solid #DCDCDC" }}
       >
-        <button className="unactive-btn w-[400px]">Cancel</button>
-        <button className="cyan-btn w-[400px]">Add Request Payment</button>
+        <button className="unactive-btn self-stretch lg:w-[400px]">
+          Cancel
+        </button>
+        <button className="cyan-btn self-stretch lg:w-[400px]">
+          Add Request Payment
+        </button>
       </div>
     </div>
   );
