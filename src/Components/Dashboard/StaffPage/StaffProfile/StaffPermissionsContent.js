@@ -4,10 +4,10 @@ function StaffPermissionsContent() {
   return (
     <div className="flex p-[30px] flex-col justify-center items-end gap-[30px] self-stretch rounded-[10px] bg-white">
       {/* Form */}
-      <div className="flex items-start gap-[30px] self-stretch w-full">
+      <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-[30px] self-stretch w-full">
         {/* Left Side */}
         <div
-          className="flex flex-col items-start gap-[15px]"
+          className="flex flex-col items-start gap-[15px] self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <div className="flex items-start gap-1 self-stretch">
@@ -79,7 +79,7 @@ function StaffPermissionsContent() {
         </div>
         {/* Right Side */}
         <div
-          className="flex flex-col items-start gap-[15px]"
+          className="flex flex-col items-start gap-[15px] self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <div className="flex items-start gap-1 self-stretch">
@@ -187,7 +187,9 @@ function StaffPermissionsContent() {
         className="flex pt-[30px] flex-col justify-center items-end gap-2.5 self-stretch"
         style={{ borderTop: "1px solid #DCDCDC" }}
       >
-        <button className="cyan-btn w-[515px]">Save Edit</button>
+        <button className="cyan-btn self-stretch lg:self-auto lg:w-[515px]">
+          Save Edit
+        </button>
       </div>
     </div>
   );

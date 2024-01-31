@@ -6,8 +6,8 @@ function StaffAttendanceLogContent() {
       {/* Filter */}
       <div className="flex flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-white">
         {/* Form */}
-        <div className="flex items-end gap-[15px]">
-          <div className="flex flex-col w-[205px] items-start gap-2">
+        <div className="flex flex-col lg:flex-row items-end gap-[15px] self-stretch">
+          <div className="flex flex-col self-stretch lg:w-[205px] items-start gap-2">
             <label className="label text-[#868686]">Month</label>
             <select
               className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
@@ -18,7 +18,7 @@ function StaffAttendanceLogContent() {
               {/* <option value="PM">PM</option> */}
             </select>
           </div>
-          <div className="flex flex-col w-[205px] items-start gap-2">
+          <div className="flex flex-col self-stretch lg:w-[205px] items-start gap-2">
             <label className="label text-[#868686]">Year</label>
             <select
               className="text-[#A4A4A4] h-[50px] cursor-pointer rounded-[10px] px-5 p-reg text-left bg-[#FFF] self-stretch focus:border-none focus:outline-none placeholder-gray-400"
@@ -35,7 +35,10 @@ function StaffAttendanceLogContent() {
       <div className="flex flex-col items-center gap-[30px] self-stretch rounded-[10px] bg-white">
         <div className="flex flex-col items-center gap-5 self-stretch">
           {/* Table */}
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+          <div
+            id="custom-scroll"
+            className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+          >
             <table className="w-full text-left rtl:text-right bg-[#FFF] ">
               <thead
                 className=" bg-[#EBEBEB] text-[#383838]"

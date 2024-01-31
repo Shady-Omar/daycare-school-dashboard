@@ -6,9 +6,9 @@ function StaffSalaryLogContent() {
       {/* Filter */}
       <div className="flex flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-white">
         {/* Form */}
-        <div className="flex items-end gap-[15px] self-stretch">
+        <div className="flex flex-col lg:flex-row items-end gap-[15px] self-stretch">
           <div
-            className="flex flex-col items-start gap-2"
+            className="flex flex-col items-start gap-2 self-stretch"
             style={{ flex: "1 0 0" }}
           >
             <label className="label text-[#868686]">Status</label>
@@ -22,7 +22,7 @@ function StaffSalaryLogContent() {
             </select>
           </div>
           <div
-            className="flex flex-col items-start gap-2"
+            className="flex flex-col items-start gap-2 self-stretch"
             style={{ flex: "1 0 0" }}
           >
             <label className="label text-[#868686]">Year</label>
@@ -37,7 +37,10 @@ function StaffSalaryLogContent() {
           </div>
         </div>
         {/* Table */}
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+        <div
+          id="custom-scroll"
+          className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+        >
           <table className="w-full text-left rtl:text-right bg-[#FFF] ">
             <thead
               className=" bg-[#EBEBEB] text-[#383838]"

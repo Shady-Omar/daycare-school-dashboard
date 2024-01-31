@@ -52,13 +52,11 @@ import StaffActivityLogContent from "./Components/Dashboard/StaffPage/StaffProfi
 import StaffRequestsLogContent from "./Components/Dashboard/StaffPage/StaffProfile/StaffRequestsLogContent";
 import StaffSalaryLogContent from "./Components/Dashboard/StaffPage/StaffProfile/StaffSalaryLogContent";
 import StaffAttendanceLogContent from "./Components/Dashboard/StaffPage/StaffProfile/StaffAttendanceLogContent";
-import Reporting from "./Pages/Reporting";
-import ReportingAttendanceContent from "./Components/ReportingAttendanceContent";
-import ReportingDailyContent from "./Components/ReportingDailyContent";
-import Billing from "./Pages/Billing";
-import BillingContent from "./Components/BillingContent";
-import BillingRequestContent from "./Components/BillingRequestContent";
-import BillingRefundContent from "./Components/BillingRefundContent";
+import ReportingAttendanceContent from "./Components/Dashboard/ReportingPage/ReportingAttendanceContent";
+import ReportingDailyContent from "./Components/Dashboard/ReportingPage/ReportingDailyContent";
+import BillingContent from "./Components/Dashboard/BillingPage/BillingContent";
+import BillingRequestContent from "./Components/Dashboard/BillingPage/BillingRequestContent";
+import BillingRefundContent from "./Components/Dashboard/BillingPage/BillingRefundContent";
 import StudentsProfileContent from "./Components/Dashboard/StudentsPage/StudentsProfile/StudentsProfileContent";
 import StudentsProfileTab from "./Components/Dashboard/StudentsPage/StudentsProfile/StudentsProfileTab";
 import StudentsProfileActivitiesTab from "./Components/Dashboard/StudentsPage/StudentsProfile/StudentsProfileActivitiesTab";
@@ -91,6 +89,8 @@ import MessagingContent from "./Components/Dashboard/MessagingPage/MessagingCont
 import ArticlesContent from "./Components/Dashboard/ArticlesPage/ArticlesContent";
 import ReviewContent from "./Components/Dashboard/ReviewsPage/ReviewContent";
 import StaffContent from "./Components/Dashboard/StaffPage/StaffContent";
+import ReportingContent from "./Components/Dashboard/ReportingPage/ReportingContent";
+import BillingPageContent from "./Components/Dashboard/BillingPage/BillingPageContent";
 
 function App() {
   return (
@@ -219,6 +219,14 @@ function App() {
             <Route path="management" element={<ManagementContent />} />
           </Route>
 
+          {/* Billing Page */}
+          <Route path={"billing"} element={<BillingPageContent />}>
+            {/* Make 'billing' the default child route */}
+            <Route index element={<BillingContent />} />
+            <Route path="request" element={<BillingRequestContent />} />
+            <Route path="refund" element={<BillingRefundContent />} />
+          </Route>
+
           {/* Staff Page */}
           <Route path={"staff"} element={<StaffContent />}>
             {/* Make 'list' the default child route */}
@@ -253,7 +261,7 @@ function App() {
             </Route>
           </Route>
 
-          {/* Articles */}
+          {/* Articles Page */}
           <Route path={"articles"} element={<ArticlesContent />}>
             {/* Make 'blog' the default child route */}
             <Route index element={<BlogContent />} />
@@ -261,26 +269,16 @@ function App() {
             <Route path="new" element={<CreateNewArticle />} />
           </Route>
 
-          {/* Reviews */}
+          {/* Reviews Page */}
           <Route path={"review"} element={<ReviewContent />} />
 
-          {/*  */}
-        </Route>
-
-        {/* Billing */}
-        <Route path={"/billing"} element={<Billing />}>
-          {/* Make 'billing' the default child route */}
-          <Route index element={<BillingContent />} />
-          <Route path="request" element={<BillingRequestContent />} />
-          <Route path="refund" element={<BillingRefundContent />} />
-        </Route>
-
-        {/* Reporting */}
-        <Route path={"/report"} element={<Reporting />}>
-          {/* Make 'reporting' the default child route */}
-          <Route index element={<ReportingAttendanceContent />} />
-          <Route path="attendance" element={<ReportingAttendanceContent />} />
-          <Route path="daily" element={<ReportingDailyContent />} />
+          {/* Reporting Page*/}
+          <Route path={"report"} element={<ReportingContent />}>
+            {/* Make 'reporting' the default child route */}
+            <Route index element={<ReportingAttendanceContent />} />
+            <Route path="attendance" element={<ReportingAttendanceContent />} />
+            <Route path="daily" element={<ReportingDailyContent />} />
+          </Route>
         </Route>
       </Routes>
     </div>

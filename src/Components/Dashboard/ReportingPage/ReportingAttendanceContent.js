@@ -2,14 +2,11 @@ import React from "react";
 
 function ReportingAttendanceContent() {
   return (
-    <div
-      className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch bg-white"
-      style={{ borderRadius: "0px 10px 10px 10px" }}
-    >
+    <div className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch bg-white rounded-[10px] lg:rounded-[0px_10px_10px_10px]">
       {/* Filter */}
-      <div className="flex items-center gap-5 self-stretch">
+      <div className="flex flex-col lg:flex-row items-center gap-5 self-stretch">
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">Date From</label>
@@ -20,7 +17,7 @@ function ReportingAttendanceContent() {
           />
         </div>
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">Date To</label>
@@ -31,7 +28,7 @@ function ReportingAttendanceContent() {
           />
         </div>
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">Students</label>
@@ -45,7 +42,7 @@ function ReportingAttendanceContent() {
           </select>
         </div>
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">Room</label>
@@ -59,7 +56,7 @@ function ReportingAttendanceContent() {
           </select>
         </div>
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">Students Status</label>
@@ -76,7 +73,10 @@ function ReportingAttendanceContent() {
       {/* Data */}
       <div className="flex flex-col items-start gap-5 self-stretch">
         {/* Table */}
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+        <div
+          id="custom-scroll"
+          className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+        >
           <table className="w-full text-left rtl:text-right bg-[#FFF] ">
             <thead
               className=" bg-[#EBEBEB] text-[#383838]"

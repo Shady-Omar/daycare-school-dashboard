@@ -2,7 +2,7 @@ import React from "react";
 
 function StaffProfileContent() {
   return (
-    <div className="flex p-[30px] items-start gap-[30px] self-stretch rounded-[10px] bg-white">
+    <div className="flex p-5 lg:p-[30px] flex-col lg:flex-row items-start gap-[30px] self-stretch rounded-[10px] bg-white">
       {/* Personal Info */}
       <div className="flex flex-col items-start gap-[30px] self-stretch w-full">
         <div
@@ -51,7 +51,10 @@ function StaffProfileContent() {
                 >
                   <h5 className="h5-bold text-[#383838]">Name</h5>
                 </div>
-                <div className="flex p-5 items-start gap-2.5 self-stretch">
+                <div
+                  className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                  style={{ flex: "1 0 0" }}
+                >
                   <h5 className="h5-med text-[#646464]">Muhammad Ashraf</h5>
                 </div>
               </div>
@@ -65,7 +68,10 @@ function StaffProfileContent() {
                 >
                   <h5 className="h5-bold text-[#383838]">ID\IQAMA</h5>
                 </div>
-                <div className="flex p-5 items-start gap-2.5 self-stretch">
+                <div
+                  className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                  style={{ flex: "1 0 0" }}
+                >
                   <h5 className="h5-med text-[#646464]">0123456789</h5>
                 </div>
               </div>
@@ -79,7 +85,10 @@ function StaffProfileContent() {
                 >
                   <h5 className="h5-bold text-[#383838]">Birthday</h5>
                 </div>
-                <div className="flex p-5 items-start gap-2.5 self-stretch">
+                <div
+                  className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                  style={{ flex: "1 0 0" }}
+                >
                   <h5 className="h5-med text-[#646464]">February 2, 1990</h5>
                 </div>
               </div>
@@ -93,7 +102,10 @@ function StaffProfileContent() {
                 >
                   <h5 className="h5-bold text-[#383838]">Age</h5>
                 </div>
-                <div className="flex p-5 items-start gap-2.5 self-stretch">
+                <div
+                  className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                  style={{ flex: "1 0 0" }}
+                >
                   <h5 className="h5-med text-[#646464]">33 years old</h5>
                 </div>
               </div>
@@ -107,7 +119,10 @@ function StaffProfileContent() {
                 >
                   <h5 className="h5-bold text-[#383838]">Gender</h5>
                 </div>
-                <div className="flex p-5 items-start gap-2.5 self-stretch">
+                <div
+                  className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                  style={{ flex: "1 0 0" }}
+                >
                   <h5 className="h5-med text-[#646464]">Male</h5>
                 </div>
               </div>
@@ -121,7 +136,10 @@ function StaffProfileContent() {
                 >
                   <h5 className="h5-bold text-[#383838]">Nationality</h5>
                 </div>
-                <div className="flex p-5 items-start gap-2.5 self-stretch">
+                <div
+                  className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                  style={{ flex: "1 0 0" }}
+                >
                   <h5 className="h5-med text-[#646464]">Saudi Arabia</h5>
                 </div>
               </div>
@@ -135,7 +153,10 @@ function StaffProfileContent() {
                 >
                   <h5 className="h5-bold text-[#383838]">Vaccination</h5>
                 </div>
-                <div className="flex p-5 items-start gap-2.5 self-stretch">
+                <div
+                  className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                  style={{ flex: "1 0 0" }}
+                >
                   <h5 className="h5-med text-[#646464]">Yes</h5>
                 </div>
               </div>
@@ -149,7 +170,10 @@ function StaffProfileContent() {
                 >
                   <h5 className="h5-bold text-[#383838]">Role Title</h5>
                 </div>
-                <div className="flex p-5 items-start gap-2.5 self-stretch">
+                <div
+                  className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                  style={{ flex: "1 0 0" }}
+                >
                   <h5 className="h5-med text-[#646464]">Manager</h5>
                 </div>
               </div>
@@ -163,7 +187,10 @@ function StaffProfileContent() {
                 >
                   <h5 className="h5-bold text-[#383838]">Disability</h5>
                 </div>
-                <div className="flex p-5 items-start gap-2.5 self-stretch">
+                <div
+                  className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                  style={{ flex: "1 0 0" }}
+                >
                   <h5 className="h5-med text-[#646464]">No</h5>
                 </div>
               </div>
@@ -177,7 +204,10 @@ function StaffProfileContent() {
                 >
                   <h5 className="h5-bold text-[#383838]">Allergies</h5>
                 </div>
-                <div className="flex p-5 items-start gap-2.5 self-stretch">
+                <div
+                  className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                  style={{ flex: "1 0 0" }}
+                >
                   <h5 className="h5-med text-[#646464]">No</h5>
                 </div>
               </div>
@@ -191,7 +221,10 @@ function StaffProfileContent() {
                 >
                   <h5 className="h5-bold text-[#383838]">Disease</h5>
                 </div>
-                <div className="flex p-5 items-start gap-2.5 self-stretch">
+                <div
+                  className="flex p-5 items-start gap-2.5 self-stretch text-left"
+                  style={{ flex: "1 0 0" }}
+                >
                   <h5 className="h5-med text-[#646464]">No</h5>
                 </div>
               </div>

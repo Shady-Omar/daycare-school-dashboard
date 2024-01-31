@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-import reportResultPlaceholder from "../Assets/report-result-placeholder.png";
+import reportResultPlaceholder from "../../../Assets/report-result-placeholder.png";
 
 function ExportReportModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ function ExportReportModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="cyan-btn flex justify-center items-center gap-3"
+        className="cyan-btn flex justify-center items-center gap-3 self-stretch lg:self-auto"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ function ExportReportModal() {
           {/* Full-screen container to center the panel */}
           <div
             id="custom-scroll"
-            className="fixed inset-0 flex w-screen items-start justify-center p-4 overflow-y-scroll"
+            className="fixed inset-0 flex w-screen items-start justify-center p-10 overflow-y-scroll"
           >
             <Transition.Child
               as={Fragment}
@@ -65,7 +65,7 @@ function ExportReportModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-[820px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -100,9 +100,9 @@ function ExportReportModal() {
                     </select>
                   </div>
                   {/* Form */}
-                  <div className="flex items-end gap-2.5 self-stretch">
+                  <div className="flex flex-col lg:flex-row items-end gap-2.5 self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">
@@ -115,7 +115,9 @@ function ExportReportModal() {
                         placeholder="Enter recipient name"
                       />
                     </div>
-                    <button className="white-btn w-[120px]">Add</button>
+                    <button className="white-btn self-stretch lg:self-auto lg:w-[120px]">
+                      Add
+                    </button>
                   </div>
                   {/* Results */}
                   <div className="flex py-[15px] flex-col items-start gap-[15px] self-stretch rounded-[10px] bg-white">

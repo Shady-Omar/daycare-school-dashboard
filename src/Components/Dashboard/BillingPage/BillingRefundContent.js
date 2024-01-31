@@ -1,6 +1,6 @@
 import React from "react";
-import BillingTabs from "./BillingTabs";
-import actionArrow from "../Assets/action-arrow.svg";
+import BillingTabs from "../../BillingTabs";
+import actionArrow from "../../../Assets/action-arrow.svg";
 
 function BillingRefundContent() {
   return (

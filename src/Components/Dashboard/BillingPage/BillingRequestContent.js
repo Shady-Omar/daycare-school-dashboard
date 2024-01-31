@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 
-import uploadIcon from "../Assets/upload-icon.svg";
+import uploadIcon from "../../../Assets/upload-icon.svg";
 
 const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
 

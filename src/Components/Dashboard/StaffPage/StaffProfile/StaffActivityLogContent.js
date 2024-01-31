@@ -9,10 +9,12 @@ function StaffActivityLogContent() {
         style={{ borderBottom: "1px solid #EBEBEB" }}
       >
         <div
-          className="flex justify-between items-center"
+          className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center gap-[15px] lg:gap-0"
           style={{ flex: "1 0 0" }}
         >
-          <h5 className="h5-bold text-[#202020]">Latest Activity</h5>
+          <h5 className="h5-bold !text-[18px] text-[#202020]">
+            Latest Activity
+          </h5>
           {/* dropdown */}
           <div
             className="flex py-2.5 px-5 items-center gap-[11px] rounded-lg bg-white"
@@ -40,44 +42,50 @@ function StaffActivityLogContent() {
         className="flex justify-between items-start self-stretch bg-white max-h-[250px] overflow-y-scroll"
       >
         <div
-          className="flex flex-col items-start gap-6"
+          className="flex flex-col items-start gap-[30px] lg:gap-6"
           style={{ flex: "1 0 0" }}
         >
           <div className="flex items-center gap-4 self-stretch">
             <h5 className="h5-semi text-[#A4A4A4]">08.00 AM</h5>
             <span className="w-1 h-10 bg-[#6418C3]" />
-            <div className="flex items-start gap-1" style={{ flex: "1 0 0" }}>
-              <h5 className="h5-bold text-[#383838]">Abdullah Bilal</h5>
-
-              <h5 className="h5-med text-[#878787]">adding food for room 3</h5>
+            <div className="flex items-start" style={{ flex: "1 0 0" }}>
+              <h5 className="h5-bold text-[#383838] text-left">
+                Abdullah Bilal{" "}
+                <span className="h5-med text-[#878787]">
+                  adding food for room 3
+                </span>
+              </h5>
             </div>
           </div>
           <div className="flex items-center gap-4 self-stretch">
             <h5 className="h5-semi text-[#A4A4A4]">10.00 AM</h5>
             <span className="w-1 h-10 bg-[#5ECFFF]" />
-            <div className="flex items-start gap-1" style={{ flex: "1 0 0" }}>
-              <h5 className="h5-bold text-[#383838]">Muhammad Ashraf</h5>
-
-              <h5 className="h5-med text-[#878787]">Checking In</h5>
+            <div className="flex items-start" style={{ flex: "1 0 0" }}>
+              <h5 className="h5-bold text-[#383838] text-left">
+                Muhammad Ashraf{" "}
+                <span className="h5-med text-[#878787]">Checking In</span>
+              </h5>
             </div>
           </div>
           <div className="flex items-center gap-4 self-stretch">
             <h5 className="h5-semi text-[#A4A4A4]">01.00 PM</h5>
             <span className="w-1 h-10 bg-[#E328AF]" />
-            <div className="flex items-start gap-1" style={{ flex: "1 0 0" }}>
-              <h5 className="h5-bold text-[#383838]">Zubair</h5>
-
-              <h5 className="h5-med text-[#878787]">Checking Out</h5>
+            <div className="flex items-start" style={{ flex: "1 0 0" }}>
+              <h5 className="h5-bold text-[#383838] text-left">
+                Zubair{" "}
+                <span className="h5-med text-[#878787]">Checking Out</span>
+              </h5>
             </div>
           </div>
           <div className="flex items-center gap-4 self-stretch">
             <h5 className="h5-semi text-[#A4A4A4]">01.00 PM</h5>
             <span className="w-1 h-10 bg-[#FFAB2D]" />
-            <div className="flex items-start gap-1" style={{ flex: "1 0 0" }}>
-              <h5 className="h5-bold text-[#383838]">Ashlan</h5>
-
-              <h5 className="h5-med text-[#878787]">
-                replace diaper on room 1
+            <div className="flex items-start" style={{ flex: "1 0 0" }}>
+              <h5 className="h5-bold text-[#383838] text-left">
+                Ashlan{" "}
+                <span className="h5-med text-[#878787]">
+                  replace diaper on room 1
+                </span>
               </h5>
             </div>
           </div>

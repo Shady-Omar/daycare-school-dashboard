@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import StaffProfileTabs from "../../../StaffProfileTabs";
+import StaffProfileTabs from "./StaffProfileTabs";
 
 import staffPlaceholder from "../../../../Assets/staff-placeholder.png";
 import editIcon from "../../../../Assets/pencil-edit-icon.svg";
@@ -11,8 +11,8 @@ function StaffProfile() {
     <div className="flex flex-col items-start gap-[30px] self-stretch">
       {/* Row 1 */}
       <div className="flex p-[30px] flex-col items-start justify-center gap-[30px] self-stretch rounded-[10px] bg-white">
-        <div className="flex items-center gap-[30px] self-stretch">
-          <div className="flex items-center gap-[30px]">
+        <div className="flex items-center gap-5 lg:gap-[30px] self-stretch">
+          <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center gap-5 lg:gap-[30px]">
             {/* Picture */}
             <div className="flex items-start gap-2.5 relative">
               <img
@@ -36,7 +36,7 @@ function StaffProfile() {
         </div>
       </div>
       {/* Row 2 */}
-      <div className="flex flex-col items-start self-stretch">
+      <div className="flex flex-col gap-[30px] lg:gap-0 items-start self-stretch">
         <StaffProfileTabs />
         <Outlet />
       </div>

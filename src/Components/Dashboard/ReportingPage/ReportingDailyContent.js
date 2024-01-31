@@ -2,14 +2,11 @@ import React from "react";
 
 function ReportingDailyContent() {
   return (
-    <div
-      className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch bg-white"
-      style={{ borderRadius: "0px 10px 10px 10px" }}
-    >
+    <div className="flex p-[30px] flex-col justify-center items-start gap-[30px] self-stretch bg-white rounded-[10px] lg:rounded-[0px_10px_10px_10px]">
       {/* Filter */}
-      <div className="flex items-end gap-5 self-stretch">
+      <div className="flex flex-col lg:flex-row items-end gap-5 self-stretch">
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">Date From</label>
@@ -20,7 +17,7 @@ function ReportingDailyContent() {
           />
         </div>
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">Date To</label>
@@ -31,7 +28,7 @@ function ReportingDailyContent() {
           />
         </div>
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">Room</label>
@@ -45,7 +42,7 @@ function ReportingDailyContent() {
           </select>
         </div>
         <div
-          className="flex flex-col items-start gap-2"
+          className="flex flex-col items-start gap-2 self-stretch"
           style={{ flex: "1 0 0" }}
         >
           <label className="label text-[#868686]">Students Status</label>
@@ -58,7 +55,7 @@ function ReportingDailyContent() {
             {/* <option value="PM">PM</option> */}
           </select>
         </div>
-        <div className="flex items-center gap-2.5">
+        <div className="flex justify-center lg:justify-normal items-center gap-2.5 self-stretch lg:self-auto">
           <input type="checkbox" className="w-[18px] h-[18px] rounded" />
           <h5 className="p-reg text-[#646464]">Exclude weekend days</h5>
         </div>
@@ -66,7 +63,10 @@ function ReportingDailyContent() {
       {/* Data */}
       <div className="flex flex-col items-start gap-5 self-stretch">
         {/* Table */}
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+        <div
+          id="custom-scroll"
+          className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+        >
           <table className="w-full text-left rtl:text-right bg-[#FFF] ">
             <thead
               className=" bg-[#EBEBEB] text-[#383838]"

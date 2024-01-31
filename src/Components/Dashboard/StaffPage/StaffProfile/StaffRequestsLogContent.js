@@ -9,7 +9,7 @@ function StaffRequestsLogContent() {
         style={{ borderBottom: "1px solid #EBEBEB" }}
       >
         <div
-          className="flex justify-between items-center"
+          className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center gap-[15px] lg:gap-0"
           style={{ flex: "1 0 0" }}
         >
           <h5 className="h5-bold text-[#202020]">Request Logs</h5>
@@ -38,7 +38,10 @@ function StaffRequestsLogContent() {
       <div className="flex flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-white">
         <div className="flex flex-col items-start gap-5 self-stretch">
           {/* Table */}
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+          <div
+            id="custom-scroll"
+            className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+          >
             <table className="w-full text-left rtl:text-right bg-[#FFF] ">
               <thead
                 className=" bg-[#EBEBEB] text-[#383838]"

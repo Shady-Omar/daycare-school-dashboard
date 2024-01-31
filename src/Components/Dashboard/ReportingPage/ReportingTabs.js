@@ -3,49 +3,50 @@ import { Link, useLocation } from "react-router-dom";
 
 import { Transition } from "@headlessui/react";
 
-function SalariesTabs() {
+function ReportingTabs() {
   const [isOpen, setIsOpen] = useState(false);
 
   const location = useLocation();
 
   // Get the current path
   const currentPath = location.pathname;
-
   return (
     <>
       <div className="hidden lg:flex items-start gap-2.5 self-stretch">
         <Link
-          to="/staff/salaries"
+          to="/report/attendance"
           className={`flex p-5 items-center gap-2.5 ${
-            currentPath === "/staff/salaries" ? "bg-[#FFF]" : ""
+            currentPath === "/report/attendance" || currentPath === "/report"
+              ? "bg-[#FFF]"
+              : ""
           }`}
           style={{ borderRadius: "8px 8px 0px 0px" }}
         >
           <h5
             className={`${
-              currentPath === "/staff/salaries"
+              currentPath === "/report/attendance" || currentPath === "/report"
                 ? "h5-semi text-[#383838]"
                 : "h5-med  text-[#878787]"
             } `}
           >
-            Salaries
+            Attendance Report
           </h5>
         </Link>
         <Link
-          to="/staff/salaries-history"
+          to="/report/daily"
           className={`flex p-5 items-center gap-2.5 ${
-            currentPath === "/staff/salaries-history" ? "bg-[#FFF]" : ""
+            currentPath === "/report/daily" ? "bg-[#FFF]" : ""
           }`}
           style={{ borderRadius: "8px 8px 0px 0px" }}
         >
           <h5
             className={`${
-              currentPath === "/staff/salaries-history"
+              currentPath === "/report/daily"
                 ? "h5-semi text-[#383838]"
                 : "h5-med  text-[#878787]"
             } `}
           >
-            Salaries History
+            Daily Report
           </h5>
         </Link>
       </div>
@@ -61,10 +62,11 @@ function SalariesTabs() {
           >
             {/* text */}
             <div className="flex items-center gap-[11px]">
-              {currentPath === "/staff/salaries" ? (
-                <h5 className="h5-semi text-[#383838]">Salaries</h5>
-              ) : currentPath === "/staff/salaries-history" ? (
-                <h5 className="h5-semi text-[#383838]">Salaries History</h5>
+              {currentPath === "/report/attendance" ||
+              currentPath === "/report" ? (
+                <h5 className="h5-semi text-[#383838]">Attendance Report</h5>
+              ) : currentPath === "/report/daily" ? (
+                <h5 className="h5-semi text-[#383838]">Daily Report</h5>
               ) : (
                 ""
               )}
@@ -101,16 +103,16 @@ function SalariesTabs() {
               {/* Dropdown content goes here */}
               <div className="py-1 self-stretch w-full">
                 <Link
-                  to="/staff/salaries"
+                  to="/report/attendance"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
-                  Salaries
+                  Attendance Report
                 </Link>
                 <Link
-                  to="/staff/salaries-history"
+                  to="/report/daily"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
-                  Salaries History
+                  Daily Report
                 </Link>
               </div>
             </div>
@@ -121,4 +123,4 @@ function SalariesTabs() {
   );
 }
 
-export default SalariesTabs;
+export default ReportingTabs;
