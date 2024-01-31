@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -22,8 +22,41 @@ ChartJS.register(
 );
 
 function LineChart() {
+  const [displayedLabels, setDisplayedLabels] = useState([]);
+  const [displayedData, setDisplayedData] = useState([]);
+  const [displayedBorderWidth, setDisplayedBorderWidth] = useState("");
+  const [displayedPointRadius, setDisplayedPointRadius] = useState("");
+
+  useEffect(() => {
+    // Adjust labels and data based on screen size
+    if (window.innerWidth < 600) {
+      setDisplayedLabels(["Jan", "Feb", "Mar", "Apr"]);
+      setDisplayedData([50, 20, 21, 9]); // Adjust data accordingly
+      setDisplayedBorderWidth(2);
+      setDisplayedPointRadius(6);
+    } else {
+      setDisplayedLabels([
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ]);
+      setDisplayedData([50, 20, 21, 9, 14, 55, 51, 18, 32, 24, 58, 36]);
+      setDisplayedBorderWidth(4);
+      setDisplayedPointRadius(10);
+    }
+  }, []);
+
   const options = {
-    responsive: false,
+    responsive: true,
     plugins: {
       legend: {
         display: false, // Set to true if you want to display the legend
@@ -69,38 +102,46 @@ function LineChart() {
     },
   };
 
-  const labels = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "aug",
-    "sep",
-    "oct",
-    "nov",
-    "dec",
-  ];
+  // const labels = [
+  //   "Jan",
+  //   "Feb",
+  //   "Mar",
+  //   "Apr",
+  //   "May",
+  //   "Jun",
+  //   "Jul",
+  //   "aug",
+  //   "sep",
+  //   "oct",
+  //   "nov",
+  //   "dec",
+  // ];
 
   const data = {
-    labels,
+    labels: displayedLabels,
     datasets: [
       {
         label: "boys",
-        data: [50, 20, 21, 9, 14, 55, 51, 18, 32, 24, 58, 36],
+        data: displayedData,
         borderColor: "#00CCB6", // Set the line color for boys
-        borderWidth: 4, // Set the line thickness for boys
+        borderWidth: displayedBorderWidth, // Set the line thickness for boys
         pointBackgroundColor: "#00CCB6", // Point color for boys
         pointBorderColor: "#fff", // Point border color for boys
-        pointRadius: 10,
+        pointRadius: displayedPointRadius,
         borderRadius: 10,
       },
     ],
   };
 
-  return <Line options={options} data={data} height={369.083} width={1080} />;
+  return (
+    <Line
+      options={options}
+      data={data}
+      // height={369.083}
+      // width={1080}
+      className="!min-w-[250px] lg:!min-w-[900px] !self-stretch !h-[281px] lg:!h-[369.083px]"
+    />
+  );
 }
 
 export default LineChart;

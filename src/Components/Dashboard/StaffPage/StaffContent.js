@@ -5,7 +5,7 @@ import CreateShiftModal from "./CreateShiftModal";
 import AddLeaveModal from "./AddLeaveModal";
 import InviteStaffModal from "./InviteStaffModal";
 import StaffAttendanceTabs from "./StaffAttendanceTabs";
-import SalariesTabs from "../../SalariesTabs";
+import SalariesTabs from "./SalariesTabs";
 
 import plusIcon from "../../../Assets/circle-plus-icon.svg";
 import exportIcon from "../../../Assets/export-icon.svg";

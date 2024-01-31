@@ -71,7 +71,7 @@ function AddLeaveModal() {
           {/* Full-screen container to center the panel */}
           <div
             id="custom-scroll"
-            className="fixed inset-0 flex w-screen items-start justify-center p-4 overflow-y-scroll"
+            className="fixed inset-0 flex w-screen items-start justify-center p-10 overflow-y-scroll"
           >
             <Transition.Child
               as={Fragment}
@@ -83,7 +83,7 @@ function AddLeaveModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex w-[752px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-[752px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -154,9 +154,9 @@ function AddLeaveModal() {
                     </select>
                   </div>
                   {/* Date */}
-                  <div className="flex justify-center items-center gap-[30px] self-stretch">
+                  <div className="flex flex-col lg:flex-row justify-center items-center gap-[30px] self-stretch">
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Start Date</label>
@@ -167,7 +167,7 @@ function AddLeaveModal() {
                       />
                     </div>
                     <div
-                      className="flex flex-col items-start gap-2"
+                      className="flex flex-col items-start gap-2 self-stretch"
                       style={{ flex: "1 0 0" }}
                     >
                       <label className="label text-[#868686]">Last Date</label>

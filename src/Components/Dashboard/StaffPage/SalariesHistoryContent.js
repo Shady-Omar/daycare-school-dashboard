@@ -2,12 +2,12 @@ import React from "react";
 
 function SalariesHistoryContent() {
   return (
-    <div className="flex flex-col gap-[30px] self-stretch">
+    <div className="flex flex-col items-start gap-[30px] self-stretch">
       {/* Stats */}
       <div className="flex flex-col p-5 items-start gap-[15px] self-stretch rounded-[10px] bg-white">
         {/* Sort Dropdown */}
         <div
-          className="flex py-2.5 px-5 items-center gap-[11px] rounded-lg bg-white"
+          className="flex py-2.5 px-5 items-center justify-center gap-[11px] rounded-lg bg-white self-stretch lg:self-auto"
           style={{ border: "1px solid #DCDCDC" }}
         >
           <p className="label-reg text-[#383838]">November 2023</p>
@@ -25,9 +25,9 @@ function SalariesHistoryContent() {
           </svg>
         </div>
         {/* Cards */}
-        <div className="flex items-center gap-5 self-stretch">
+        <div className="flex flex-col lg:flex-row items-center gap-5 self-stretch">
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white self-stretch"
             style={{ flex: "1 0 0", border: "1px solid #DCDCDC" }}
           >
             {/* Icon */}
@@ -57,7 +57,7 @@ function SalariesHistoryContent() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white self-stretch"
             style={{ flex: "1 0 0", border: "1px solid #DCDCDC" }}
           >
             {/* Icon */}
@@ -92,9 +92,9 @@ function SalariesHistoryContent() {
           {/* Filter */}
           <div className="flex flex-col items-start gap-[30px] self-stretch rounded-[10px] bg-white">
             {/* Form */}
-            <div className="flex items-end gap-[15px] self-stretch">
+            <div className="flex flex-col lg:flex-row items-end gap-[15px] self-stretch">
               <div
-                className="flex flex-col items-start gap-2"
+                className="flex flex-col items-start gap-2 self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <label className="label text-[#868686]">Status</label>
@@ -108,7 +108,7 @@ function SalariesHistoryContent() {
                 </select>
               </div>
               <div
-                className="flex flex-col items-start gap-2"
+                className="flex flex-col items-start gap-2 self-stretch"
                 style={{ flex: "1 0 0" }}
               >
                 <label className="label text-[#868686]">Year</label>
@@ -123,7 +123,10 @@ function SalariesHistoryContent() {
               </div>
             </div>
             {/* Table */}
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+            <div
+              id="custom-scroll"
+              className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+            >
               <table className="w-full text-left rtl:text-right bg-[#FFF] ">
                 <thead
                   className=" bg-[#EBEBEB] text-[#383838]"

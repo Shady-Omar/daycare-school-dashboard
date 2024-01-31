@@ -8,11 +8,11 @@ function LeavesContent() {
   return (
     <>
       {/* Row 1 */}
-      <div className="flex p-5 flex-col items-start gap-[30px] self-stretch bg-white">
+      <div className="flex p-5 flex-col items-start gap-[30px] self-stretch bg-white rounded-[10px] lg:rounded-none">
         {/* Cards */}
-        <div className="flex items-center gap-5 self-stretch">
+        <div className="flex flex-col lg:flex-row justify-center lg:justify-normal items-start lg:items-center gap-5 self-stretch">
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white self-stretch"
             style={{ flex: "1 0 0", border: "1px solid #DCDCDC" }}
           >
             {/* Icon */}
@@ -44,7 +44,7 @@ function LeavesContent() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white self-stretch"
             style={{ flex: "1 0 0", border: "1px solid #DCDCDC" }}
           >
             {/* Icon */}
@@ -76,7 +76,7 @@ function LeavesContent() {
             </div>
           </div>
           <div
-            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white"
+            className="flex h-[108px] p-[14.4px] items-center gap-5 rounded-[7.2px] bg-white self-stretch"
             style={{ flex: "1 0 0", border: "1px solid #DCDCDC" }}
           >
             {/* Icon */}
@@ -110,14 +110,14 @@ function LeavesContent() {
         </div>
       </div>
       {/* Row 2 */}
-      <div
-        className="flex p-5 flex-col items-start gap-[30px] self-stretch bg-white"
-        style={{ borderRadius: "0px 0px 10px 10px" }}
-      >
+      <div className="flex p-[30px] lg:p-5 flex-col justify-center lg:justify-normal items-start gap-[30px] rounded-[10px] lg:rounded-[0px_0px_10px_10px] self-stretch bg-white">
         {/* Filter */}
-        <div className="flex justify-between items-center self-stretch rounded-xl">
-          <div className="flex items-end gap-2.5" style={{ flex: "1 0 0" }}>
-            <div className="flex w-[320px] flex-col items-start gap-2">
+        <div className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center self-stretch gap-[30px] lg:gap-0 rounded-xl">
+          <div
+            className="flex flex-col lg:flex-row justify-end lg:justify-normal items-start lg:items-end gap-[15px] lg:gap-2.5 self-stretch"
+            style={{ flex: "1 0 0" }}
+          >
+            <div className="flex self-stretch flex-col items-start gap-2">
               <label className="label text-[#868686]">Staff Name</label>
               <input
                 type="text"
@@ -127,7 +127,7 @@ function LeavesContent() {
               />
             </div>
             <div
-              className="flex flex-col items-start gap-2"
+              className="flex flex-col items-start gap-2 self-stretch"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Leave type</label>
@@ -141,7 +141,7 @@ function LeavesContent() {
               </select>
             </div>
             <div
-              className="flex flex-col items-start gap-2"
+              className="flex flex-col items-start gap-2 self-stretch"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Status</label>
@@ -155,7 +155,7 @@ function LeavesContent() {
               </select>
             </div>
             <div
-              className="flex flex-col items-start gap-2"
+              className="flex flex-col items-start gap-2 self-stretch"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">Start Date</label>
@@ -167,7 +167,7 @@ function LeavesContent() {
               />
             </div>
             <div
-              className="flex flex-col items-start gap-2"
+              className="flex flex-col items-start gap-2 self-stretch"
               style={{ flex: "1 0 0" }}
             >
               <label className="label text-[#868686]">End Date</label>
@@ -195,19 +195,21 @@ function LeavesContent() {
             </div>
             <div className="flex items-center gap-[30px] self-stretch">
               <div
-                className="flex py-[15px] px-5 items-center justify-between self-stretch rounded-[10px] bg-[#00CCB6]"
+                className="flex py-[15px] px-5 flex-col lg:flex-row justify-center items-start lg:items-center lg:justify-between gap-5 lg:gap-0 self-stretch rounded-[10px] bg-[#00CCB6]"
                 style={{ flex: "1 0 0" }}
               >
-                <p className="p-semi text-white">1 Staff selected</p>
-                <div className="flex items-center gap-5">
+                <p className="p-semi !text-[15px] text-white">
+                  1 Staff selected
+                </p>
+                <div className="flex flex-col lg:flex-row items-center gap-2.5 lg:gap-5 self-stretch">
                   <button
-                    className="flex h-[45px] justify-center items-center rounded-[10px] bg-white py-2.5 px-5 label-reg text-[#383838] !text-[13px]"
-                    style={{ flex: "1 0 0" }}
+                    className="flex h-[45px] self-stretch justify-center items-center rounded-[10px] bg-white py-2.5 px-5 label-reg text-[#383838] !text-[13px]"
+                    style={{ flex: "1 0 0", border: "1px solid #FFF" }}
                   >
                     Approve
                   </button>
                   <button
-                    className="flex h-[45px] justify-center items-center rounded-[10px] bg-[#00CCB6] py-2.5 px-5 label-reg text-white !text-[13px]"
+                    className="flex h-[45px] self-stretch justify-center items-center rounded-[10px] bg-[#00CCB6] py-2.5 px-5 label-reg text-white !text-[13px]"
                     style={{ flex: "1 0 0", border: "1px solid #FFF" }}
                   >
                     Reject
@@ -218,7 +220,10 @@ function LeavesContent() {
           </div>
         </div>
         {/* Table */}
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+        <div
+          id="custom-scroll"
+          className="relative overflow-x-scroll lg:overflow-x-auto shadow-md rounded-lg w-full"
+        >
           <table className="w-full text-left rtl:text-right bg-[#FFF] ">
             <thead
               className=" bg-[#EBEBEB] text-[#383838]"

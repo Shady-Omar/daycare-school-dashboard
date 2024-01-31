@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-import plusIcon from "../Assets/circle-plus-icon.svg";
+import plusIcon from "../../../Assets/circle-plus-icon.svg";
 
 function CreateSalaryLogModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ function CreateSalaryLogModal() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="cyan-btn flex justify-center items-center gap-3"
+        className="cyan-btn flex justify-center items-center gap-3 self-stretch"
       >
         <img src={plusIcon} alt="" />
         Create Salary Log
@@ -40,7 +40,7 @@ function CreateSalaryLogModal() {
           {/* Full-screen container to center the panel */}
           <div
             id="custom-scroll"
-            className="fixed inset-0 flex w-screen items-start justify-center p-4 overflow-y-scroll"
+            className="fixed inset-0 flex w-screen items-start justify-center p-10 overflow-y-scroll"
           >
             <Transition.Child
               as={Fragment}
@@ -52,7 +52,7 @@ function CreateSalaryLogModal() {
               leaveTo="opacity-0 scale-95"
             >
               {/* The actual dialog panel  */}
-              <Dialog.Panel className="flex w-[582px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
+              <Dialog.Panel className="flex w-[340px] lg:w-[582px] p-[30px] flex-col justify-center items-center gap-[30px] rounded-[10px] bg-[#FFF]">
                 <Dialog.Title
                   className="flex pb-2.5 justify-between items-center self-stretch"
                   style={{ borderBottom: "1px solid #DCDCDC" }}
@@ -144,12 +144,20 @@ function CreateSalaryLogModal() {
                   </div>
                   {/* Submit Button */}
                   <div className="flex flex-col items-center justify-center gap-5 self-stretch">
-                    <button
-                      onClick={() => setIsOpen(false)}
-                      className="cyan-btn w-full"
-                    >
-                      Pay
-                    </button>
+                    <div className="flex justify-center items-center gap-5 self-stretch">
+                      <button
+                        onClick={() => setIsOpen(false)}
+                        className="cyan-btn w-full !bg-[#FFC107] !border-[#FFC107] hover:!text-[#FFF]"
+                      >
+                        Pending
+                      </button>
+                      <button
+                        onClick={() => setIsOpen(false)}
+                        className="cyan-btn w-full"
+                      >
+                        Paid
+                      </button>
+                    </div>
                     <button
                       onClick={() => setIsOpen(false)}
                       className="p-semi text-[#878787]"
